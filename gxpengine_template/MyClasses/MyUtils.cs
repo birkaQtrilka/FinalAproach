@@ -9,6 +9,13 @@ namespace gxpengine_template
     public static class MyUtils
     {
         public static MyGame MyGame => (MyGame)MyGame.main;
+
+        public static void AddVec(this Transformable obj, Vec2 vec)
+        {
+            obj.x += vec.x;
+            obj.y += vec.y;
+        }
+
         public static void SetCenterOrigin(this Sprite sprite)
         {
             if (sprite is AnimationSprite)

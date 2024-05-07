@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="74">
+ <tileset firstgid="1" name="Player" tilewidth="432" tileheight="432" tilecount="1" columns="1">
+  <image source="PortalSprite.png" width="432" height="432"/>
+ </tileset>
+ <tileset firstgid="2" name="Line" tilewidth="50" tileheight="50" tilecount="1" columns="1">
+  <image source="line.png" width="50" height="50"/>
+ </tileset>
+ <objectgroup id="6" name="UI"/>
+ <objectgroup id="2" name="Object Layer 1">
+  <object id="60" name="Player" type="gxpengine_template.MyClasses.Environment.Player" gid="1" x="297.698" y="492.058" width="39.6977" height="39.6977"/>
+  <object id="68" type="gxpengine_template.MyClasses.Edge" gid="2" x="432.344" y="509.211" width="451.036" height="63.7076" rotation="275.646">
+   <properties>
+    <property name="Bounciness" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="70" type="gxpengine_template.MyClasses.Edge" gid="2" x="197.861" y="501.127" width="432.97" height="73.5756" rotation="278.817"/>
+  <object id="71" type="gxpengine_template.MyClasses.Edge" gid="2" x="196.41" y="501.122" width="235.837" height="39.5759" rotation="9.90739"/>
+  <object id="72" type="gxpengine_template.MyClasses.Edge" gid="2" x="193.144" y="63.9841" width="219.56" height="39.7782" rotation="9.90739"/>
+  <object id="73" type="gxpengine_template.MyClasses.Edge" gid="2" x="166.004" y="240.977" width="82.7983" height="126.156" rotation="84.7291"/>
+ </objectgroup>
+ <objectgroup id="10" name="Managers"/>
+ <objectgroup id="9" name="SceneConfig">
+  <object id="55" name="Configs" type="gxpengine_template.MyClasses.SceneHandling.PlaySceneConfigs" x="-246.606" y="-100.303" width="112.121" height="109.091">
+   <properties>
+    <property name="ObjectLayersCSV" value="Assets/Test.tmx:Object Layer 1,Assets/Test.tmx:Managers,Main:UI"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

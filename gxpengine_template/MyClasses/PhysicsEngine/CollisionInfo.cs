@@ -9,6 +9,7 @@ namespace Physics
         public readonly GameObject other;
         public readonly Vec2 pointOfImpact;
         public readonly float timeOfImpact;
+
         public CollisionInfo(Vec2 pNormal, GameObject pOther, float pTimeOfImpact, Vec2 pPointofImpact)
         {
             normal = pNormal;

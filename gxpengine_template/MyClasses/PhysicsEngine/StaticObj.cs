@@ -1,9 +1,11 @@
 ﻿
+using GXPEngine;
+
 namespace Physics
 {
     public class StaticObj : CollisionInteractor
     {
-        public StaticObj(Collider collider, bool isTrigger = false) : base(collider, isTrigger)
+        public StaticObj(GameObject owner, bool isTrigger = false, float bounciness = 1) : base(owner, isTrigger, bounciness)
         {
 
         }

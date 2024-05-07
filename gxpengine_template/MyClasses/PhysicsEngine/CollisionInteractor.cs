@@ -4,18 +4,20 @@ namespace Physics
 {
     public abstract class CollisionInteractor : GameObject
     {
+        public float bounciness = 1f;
+
         public Collider Collider => myCollider;
 
         protected Collider myCollider { get; private set; }
         protected readonly ColliderManager engine;
         protected readonly bool isTrigger;
 
-        public CollisionInteractor(Collider collider, bool isTrigger = false)
+        public CollisionInteractor(GameObject owner, bool isTrigger = false, float bounciness = 1)
         {
             this.isTrigger = isTrigger;
             engine = ColliderManager.main;
-            if (collider == null) return;
-            SetCollider(collider);
+            this.bounciness = bounciness;
+            owner.AddChild(this);
         }
 
         public void SetCollider(Collider col)
@@ -26,8 +28,8 @@ namespace Physics
             else
                 engine.AddSolidCollider(myCollider);
 
-            x = myCollider.position.x;
-            y = myCollider.position.y;
+            parent.x = myCollider.position.x;
+            parent.y = myCollider.position.y;
         }
 
         public virtual void OnCollision(CollisionInfo info) { }

@@ -7,8 +7,8 @@ namespace Physics
 
         public Vec2 velocity;
         public Vec2 acceleration;
-        public float bounciness = .5f;
         public float density = 1.1f;
+
         public virtual float Mass
         {
             get
@@ -16,12 +16,12 @@ namespace Physics
                 return 10 * density;
             }
         }
+
         public Vec2 position => new Vec2(x, y);
 
-        public Mover(Collider collider, Vec2 startVelocity) : base(collider, false) 
+        public Mover(GameObject owner, Vec2 startVelocity, float bounciness = 1) : base(owner, false, bounciness) 
         {
             velocity = startVelocity;
-
         }
 
         protected void Update()
@@ -50,8 +50,8 @@ namespace Physics
 
         void UpdateScreenPosition()
         {
-            x = myCollider.position.x;
-            y = myCollider.position.y;
+            parent.x = myCollider.position.x;
+            parent.y = myCollider.position.y;
         }
 
         public override void ResolveCollision(CollisionInfo col)
@@ -67,12 +67,12 @@ namespace Physics
                 if (dot < 0) return;
 
                 Vec2 u = VelocityOfCenterOfMass(this, otherMover);
-                velocity -= (1 + bounciness) * (velocity - u).Dot(col.normal) * col.normal;
-                otherMover.velocity -= (1 + bounciness) * (otherMover.velocity - u).Dot(-col.normal) * -col.normal;
+                velocity -= (1 + bounciness * otherMover.bounciness) * (velocity - u).Dot(col.normal) * col.normal;
+                otherMover.velocity -= (1 + bounciness * otherMover.bounciness) * (otherMover.velocity - u).Dot(-col.normal) * -col.normal;
             }
             else
             {
-                Vec2 reflection = velocity.Reflect(col.normal, bounciness);
+                Vec2 reflection = velocity.Reflect(col.normal, (col.other as CollisionInteractor).bounciness);
                 velocity = reflection;
             }
         }

@@ -87,14 +87,19 @@
     <Compile Include="MyClasses\Animations\Animation.cs" />
     <Compile Include="MyClasses\Animations\AnimationManager.cs" />
     <Compile Include="MyClasses\Animations\AutoAnimatedSprite.cs" />
+    <Compile Include="MyClasses\Boundary.cs" />
     <Compile Include="MyClasses\Coroutines\Coroutine.cs" />
     <Compile Include="MyClasses\Coroutines\ICoroutineStepper.cs" />
     <Compile Include="MyClasses\Coroutines\WaitForSeconds.cs" />
     <Compile Include="MyClasses\Coroutines\WaitUntill.cs" />
     <Compile Include="MyClasses\EaseFunc.cs" />
+    <Compile Include="MyClasses\Environment\Player.cs" />
+    <Compile Include="MyClasses\Environment\Table.cs" />
     <Compile Include="MyClasses\IHealthHolder.cs" />
     <Compile Include="MyClasses\INonDestroyable.cs" />
     <Compile Include="MyClasses\MyUtils.cs" />
+    <Compile Include="MyClasses\ParticleSystem\Emitter.cs" />
+    <Compile Include="MyClasses\ParticleSystem\Particle.cs" />
     <Compile Include="MyClasses\PhysicsEngine\ColliderManager.cs" />
     <Compile Include="MyClasses\PhysicsEngine\Colliders\AngledLine.cs" />
     <Compile Include="MyClasses\PhysicsEngine\Colliders\Circle.cs" />
@@ -111,9 +116,11 @@
     <Compile Include="MyClasses\PickUps\ITrigger.cs" />
     <Compile Include="MyClasses\PickUps\PickUp.cs" />
     <Compile Include="MyClasses\PickUps\PickUper.cs" />
+    <Compile Include="MyClasses\SceneHandling\Gizmos.cs" />
     <Compile Include="MyClasses\SceneHandling\IPrefab.cs" />
     <Compile Include="MyClasses\SceneHandling\Level.cs" />
     <Compile Include="MyClasses\SceneHandling\MyGame.cs" />
+    <Compile Include="MyClasses\SceneHandling\SceneConfigs\PlaySceneConfigs.cs" />
     <Compile Include="MyClasses\SceneHandling\SceneConfigs\SceneConfigs.cs" />
     <Compile Include="MyClasses\SoundData.cs" />
     <Compile Include="MyClasses\SpriteData.cs" />
@@ -124,8 +131,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MyClasses\Environment\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

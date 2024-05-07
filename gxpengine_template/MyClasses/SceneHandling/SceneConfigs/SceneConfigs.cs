@@ -2,7 +2,7 @@
 using System.Linq;
 using TiledMapParser;
 
-namespace gxpengine_template
+namespace gxpengine_template.MyClasses.SceneHandling
 {
     public readonly struct LayerConfig
     {
@@ -27,10 +27,10 @@ namespace gxpengine_template
         protected Level level;
         public LayerConfig[] ObjectLayers;
 
-        public SceneConfigs(TiledObject data) : base("square.png", 1,1,-1,true,false)
+        public SceneConfigs(TiledObject data) : base("Assets/square.png", 1,1,-1,true,false)
         {
             visible = false;
-            ObjectLayers = data.GetStringProperty("ObjectLayersCSV").Split(',').Select(x => new LayerConfig(x.Split('.'))).ToArray();
+            ObjectLayers = data.GetStringProperty("ObjectLayersCSV").Split(',').Select(x => new LayerConfig(x.Split(':'))).ToArray();
         }
 
         public void Init(Level level)

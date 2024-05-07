@@ -28,7 +28,7 @@ public class MyGame : Game
         //to show how fast you've beat the game at the end
         StartTime = DateTime.Now;
         
-        //LoadLevel("StartMenu.tmx");
+        LoadLevel("Assets/Test.tmx");
 
         OnAfterStep += LoadSceneIfNotNull;
 	}
@@ -44,7 +44,7 @@ public class MyGame : Game
     Dictionary<string, IPrefab> LoadPrefabs()
     {
         var prefabsDictionary = new Dictionary<string, IPrefab>();
-        var loader = new TiledLoader("Prefabs.tmx", MyGame.main, false, autoInstance: true);
+        var loader = new TiledLoader("Assets/Prefabs.tmx", MyGame.main, false, autoInstance: true);
         loader.LoadObjectGroups();
         foreach (var obj in FindObjectsOfType<GameObject>())
             if (obj is IPrefab prefab)
