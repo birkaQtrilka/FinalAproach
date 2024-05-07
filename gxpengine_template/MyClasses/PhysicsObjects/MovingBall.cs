@@ -1,4 +1,5 @@
 ﻿using GXPEngine;
+using GXPEngine.Core;
 using Physics;
 using System.Drawing;
 
@@ -31,5 +32,14 @@ namespace gxpengine_template.MyClasses.TankGame
 
         }
 
+        protected override void AfterPhysicsStep()
+        {
+            //add friction
+        }
+
+        public void ApplyImulse(Vec2 force)
+        {
+            velocity = force;
+        }
     }
 }
