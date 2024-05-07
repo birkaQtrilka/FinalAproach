@@ -36,7 +36,7 @@
     <property name="PickUpSound" value="Sound/coin.mp3"/>
     <property name="SpawnVel" type="float" value="-10"/>
     <property name="TerminalVel" type="float" value="5"/>
-    <property name="Volume" type="float" value="0.3"/>
+    <property name="Volume" type="float" value="0.1"/>
    </properties>
   </object>
   <object id="53" name="PortalRange_3" type="gxpengine_template.Portal" gid="260" x="0" y="96" width="32" height="32">

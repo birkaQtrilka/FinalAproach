@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="48">
+ <tileset firstgid="1" name="Completed" tilewidth="110" tileheight="30" tilecount="3" columns="3">
+  <image source="Completed.png" width="330" height="30"/>
+ </tileset>
+ <tileset firstgid="4" name="money" tilewidth="14" tileheight="16" tilecount="1" columns="1">
+  <image source="CoinSprite.png" width="14" height="16"/>
+ </tileset>
+ <tileset firstgid="5" name="Clock" tilewidth="622" tileheight="643" tilecount="1" columns="1">
+  <image source="clock.png" width="622" height="643"/>
+ </tileset>
+ <tileset firstgid="6" name="Completed2" tilewidth="110" tileheight="30" tilecount="2" columns="2">
+  <image source="Completed2.png" width="220" height="30"/>
+ </tileset>
+ <imagelayer id="3" name="Backgrounds" offsetx="-449.667" offsety="-440.667">
+  <image source="8666420.jpg" width="2000" height="2000"/>
+ </imagelayer>
+ <objectgroup id="6" name="UI">
+  <object id="44" type="gxpengine_template.TotalTimeDisplayer" gid="5" x="448" y="384" width="90.6034" height="93.6624"/>
+  <object id="45" type="gxpengine_template.TotalMoneyDisplayer" gid="4" x="256" y="384" width="83.125" height="95"/>
+  <object id="47" type="gxpengine_template.AutoAnimatedSprite" gid="7" x="225" y="269" width="330" height="90">
+   <properties>
+    <property name="Delay" type="int" value="40"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="7" name="SceneConfig">
+  <object id="46" name="Configs" type="gxpengine_template.EndMenuConfigs" x="527.5" y="536" width="61" height="62"/>
+ </objectgroup>
+</map>
