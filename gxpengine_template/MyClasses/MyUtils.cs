@@ -15,6 +15,11 @@ namespace gxpengine_template
             obj.x += vec.x;
             obj.y += vec.y;
         }
+        public static void SetVec(this Transformable obj, Vec2 vec)
+        {
+            obj.x = vec.x;
+            obj.y = vec.y;
+        }
 
         public static void SetCenterOrigin(this Sprite sprite)
         {

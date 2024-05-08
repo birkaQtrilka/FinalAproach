@@ -13,6 +13,11 @@ namespace gxpengine_template.MyClasses
             Size = size;
             Position = position;
         }
+        public Boundary(float x, float y, float w, float h)
+        {
+            Size = new Vec2(w,h);
+            Position = new Vec2(x,y);
+        }
 
         public bool Contains(Vec2 point)
         {

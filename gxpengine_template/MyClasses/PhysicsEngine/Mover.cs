@@ -26,16 +26,31 @@ namespace Physics
 
         protected void Update()
         {
-            velocity += acceleration;
-            var earliestCollision = ColliderManager.main.MoveUntilCollision(myCollider, velocity);
+            velocity += acceleration * (Time.deltaTime * 0.001f);
 
-            if (earliestCollision != null)
+            if(!isTrigger)
             {
-                OnCollision(earliestCollision);
-                ResolveCollision(earliestCollision);
+                var earliestCollision = ColliderManager.main.MoveUntilCollision(myCollider, velocity);
+
+                if (earliestCollision != null)
+                {
+                    OnCollision(earliestCollision);
+                    ResolveCollision(earliestCollision);
+                }
+                else
+                    myCollider.position += velocity;
+
+            } else
+            {
+                foreach (var overlap in engine.GetOverlaps(myCollider))
+                {
+                    OnTrigger(overlap);
+                }
+
+                myCollider.position += velocity * (Time.deltaTime * 0.001f);
+
             }
-            else
-                myCollider.position += velocity;
+
             UpdateScreenPosition();
             
             acceleration = Vec2.zero;
