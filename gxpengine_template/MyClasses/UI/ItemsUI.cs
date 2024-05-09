@@ -64,6 +64,7 @@ namespace gxpengine_template.MyClasses.UI
                 newMenuImg.SetPosInVec2(head + head2);
 
                 MyUtils.MyGame.CurrentLevel.AddChild(placeableClone);
+                placeableClone.visible = false;
                 Vector2 clonePos = TransformPoint(head.x, head.y);
                 placeableClone.SetXY(clonePos.x, clonePos.y);
                 (placeableClone as IPlaceable).Placed += OnItemPlaced;
@@ -93,6 +94,7 @@ namespace gxpengine_template.MyClasses.UI
             }
 
             GameObject goClone = item.Clone();
+            goClone.visible = false;
             IPlaceable clone = goClone as IPlaceable;
             MyUtils.MyGame.CurrentLevel.AddChild(goClone);
             Vector2 clonePos = TransformPoint(itemData.Image.x + itemData.Image.width * .5f, itemData.Image.y + itemData.Image.height * .5f);

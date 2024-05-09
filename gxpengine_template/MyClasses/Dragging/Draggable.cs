@@ -16,6 +16,8 @@ namespace gxpengine_template.MyClasses.Dragging
         public Vec2 OrigPosition { get; set; }
 
         protected StaticObj trigger;
+        
+        bool _wasPlaced;
 
         public Draggable(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
@@ -37,6 +39,7 @@ namespace gxpengine_template.MyClasses.Dragging
         public void Place()
         {
             OrigPosition = this.GetPosInVec2();
+            _wasPlaced = true;
             Placed?.Invoke(this);
         }
 
@@ -64,6 +67,9 @@ namespace gxpengine_template.MyClasses.Dragging
                 Place();
             else
             {
+                //for inventory UI
+                if (!_wasPlaced)
+                    visible = false;
                 this.SetPosInVec2(OrigPosition);
                 trigger.UpdateColliderPosition(x, y);
 
@@ -72,6 +78,7 @@ namespace gxpengine_template.MyClasses.Dragging
 
         public void OnStartDrag(Vec2 mousePos)
         {
+            visible = true;
         }
 
         public void OnStayDrag(Vec2 mousePos)

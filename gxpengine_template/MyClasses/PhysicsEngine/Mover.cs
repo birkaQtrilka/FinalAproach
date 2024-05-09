@@ -70,6 +70,7 @@ namespace Physics
 
         void UpdateScreenPosition()
         {
+            if (parent == null) return;
             parent.x = myCollider.position.x;
             parent.y = myCollider.position.y;
         }

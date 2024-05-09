@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="57">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="62">
  <tileset firstgid="1" name="Booster" tilewidth="50" tileheight="50" tilecount="1" columns="1">
   <image source="booster.png" width="50" height="50"/>
  </tileset>
@@ -13,7 +13,27 @@
     <property name="MenuImage" value="Assets/boosterMenuImg.png"/>
    </properties>
   </object>
-  <object id="56" name="Ramp" type="gxpengine_template.MyClasses.Environment.DraggableRamp" gid="2" x="106.852" y="46.1731" width="50" height="50" rotation="51.2139">
+  <object id="56" name="Ramp" type="gxpengine_template.MyClasses.Environment.DraggableRamp" gid="2" x="106.852" y="46.1731" width="50" height="50" rotation="45">
+   <properties>
+    <property name="MenuImage" value="Assets/rampMenuImg.png"/>
+   </properties>
+  </object>
+  <object id="57" name="Ramp2" type="gxpengine_template.MyClasses.Environment.DraggableRamp" gid="2" x="364.919" y="64.7219" width="50" height="50" rotation="270">
+   <properties>
+    <property name="MenuImage" value="Assets/rampMenuImg.png"/>
+   </properties>
+  </object>
+  <object id="59" name="Ramp1" type="gxpengine_template.MyClasses.Environment.DraggableRamp" gid="2" x="221.667" y="17.6667" width="50" height="50" rotation="90">
+   <properties>
+    <property name="MenuImage" value="Assets/rampMenuImg.png"/>
+   </properties>
+  </object>
+  <object id="60" name="Ramp3" type="gxpengine_template.MyClasses.Environment.DraggableRamp" gid="2" x="464.497" y="26.5403" width="50" height="50" rotation="180">
+   <properties>
+    <property name="MenuImage" value="Assets/rampMenuImg.png"/>
+   </properties>
+  </object>
+  <object id="61" name="Ramp4" type="gxpengine_template.MyClasses.Environment.DraggableRamp" gid="2" x="523" y="87" width="50" height="50">
    <properties>
     <property name="MenuImage" value="Assets/rampMenuImg.png"/>
    </properties>

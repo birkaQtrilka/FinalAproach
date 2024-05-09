@@ -98,6 +98,7 @@
     <Compile Include="MyClasses\EaseFunc.cs" />
     <Compile Include="MyClasses\Environment\Booster.cs" />
     <Compile Include="MyClasses\Environment\DraggableRamp.cs" />
+    <Compile Include="MyClasses\Environment\Hole.cs" />
     <Compile Include="MyClasses\Environment\IPlaceable.cs" />
     <Compile Include="MyClasses\Environment\Player.cs" />
     <Compile Include="MyClasses\Environment\Table.cs" />
