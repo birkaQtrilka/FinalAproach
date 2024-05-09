@@ -101,6 +101,7 @@
     <Compile Include="MyClasses\Environment\Hole.cs" />
     <Compile Include="MyClasses\Environment\IPlaceable.cs" />
     <Compile Include="MyClasses\Environment\Player.cs" />
+    <Compile Include="MyClasses\Environment\Star.cs" />
     <Compile Include="MyClasses\Environment\Table.cs" />
     <Compile Include="MyClasses\IHealthHolder.cs" />
     <Compile Include="MyClasses\INonDestroyable.cs" />
@@ -139,6 +140,7 @@
     <Compile Include="MyClasses\UI\Buttons\ResetSceneBtn.cs" />
     <Compile Include="MyClasses\UI\ItemsUI.cs" />
     <Compile Include="MyClasses\UI\IUserInterface.cs" />
+    <Compile Include="MyClasses\UI\StarsUI.cs" />
     <Compile Include="MyClasses\UI\TextMesh.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

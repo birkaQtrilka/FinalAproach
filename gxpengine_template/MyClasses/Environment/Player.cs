@@ -1,17 +1,25 @@
 ﻿using GXPEngine;
+using GXPEngine.Core;
+using gxpengine_template.MyClasses.PickUps;
 using gxpengine_template.MyClasses.TankGame;
+using System;
 using System.Collections;
 using TiledMapParser;
 
 namespace gxpengine_template.MyClasses.Environment
 {
-    public class Player : AnimationSprite
+    public class Player : AnimationSprite, ITrigger
     {
         MovingBall _rigidBody;
+        PickUper _pickUper;
 
+        public event Action<GameObject> TriggerStay;
+        bool shot;
         public Player(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, -1,true, false)
         {
+            _pickUper = new PickUper(this);
 
+            AddChild(_pickUper);
             AddChild(new Coroutine(Start(data)));
         }
 
@@ -24,9 +32,16 @@ namespace gxpengine_template.MyClasses.Environment
             _rigidBody.Drag = data.GetFloatProperty("Drag", .98f);
         }
 
+        void Update()
+        {
+            if (shot) foreach (Physics.Collider col in _rigidBody.GetOverlaps()) TriggerStay?.Invoke(col.owner);
+        }
+
         public void Shoot(Vec2 velocity)
         {
             _rigidBody.velocity = velocity;
+            shot = true;
         }
+
     }
 }

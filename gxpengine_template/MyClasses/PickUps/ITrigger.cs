@@ -9,6 +9,6 @@ namespace gxpengine_template.MyClasses.PickUps
 {
     public interface ITrigger
     {
-        event Action<GameObject> TriggerEnter;
+        event Action<GameObject> TriggerStay;
     }
 }

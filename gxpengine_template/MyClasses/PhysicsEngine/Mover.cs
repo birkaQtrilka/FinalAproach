@@ -47,10 +47,7 @@ namespace Physics
 
             } else
             {
-                foreach (var overlap in engine.GetOverlaps(myCollider))
-                {
-                    OnTrigger(overlap);
-                }
+                CheckForTriggers();
 
                 myCollider.position += velocity;
 
@@ -75,7 +72,7 @@ namespace Physics
             parent.y = myCollider.position.y;
         }
 
-        public override void ResolveCollision(CollisionInfo col)
+        protected override void ResolveCollision(CollisionInfo col)
         {
             myCollider.position = col.pointOfImpact;
 
@@ -88,12 +85,12 @@ namespace Physics
                 if (dot < 0) return;
 
                 Vec2 u = VelocityOfCenterOfMass(this, otherMover);
-                velocity -= (1 + bounciness * otherMover.bounciness) * (velocity - u).Dot(col.normal) * col.normal;
-                otherMover.velocity -= (1 + bounciness * otherMover.bounciness) * (otherMover.velocity - u).Dot(-col.normal) * -col.normal;
+                velocity -= (1 + Bounciness * otherMover.Bounciness) * (velocity - u).Dot(col.normal) * col.normal;
+                otherMover.velocity -= (1 + Bounciness * otherMover.Bounciness) * (otherMover.velocity - u).Dot(-col.normal) * -col.normal;
             }
             else
             {
-                Vec2 reflection = velocity.Reflect(col.normal, (col.other as CollisionInteractor).bounciness);
+                Vec2 reflection = velocity.Reflect(col.normal, (col.other as CollisionInteractor).Bounciness);
                 velocity = reflection;
             }
         }

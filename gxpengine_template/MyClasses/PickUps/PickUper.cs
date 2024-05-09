@@ -10,7 +10,7 @@ namespace gxpengine_template
         public PickUper(ITrigger owner) 
         {
             _owner = owner;
-            _owner.TriggerEnter += OnTrigger;
+            _owner.TriggerStay += OnTrigger;
         }
 
         private void OnTrigger(GameObject obj)
@@ -23,7 +23,7 @@ namespace gxpengine_template
 
         protected override void OnDestroy()
         {
-            _owner.TriggerEnter -= OnTrigger;
+            _owner.TriggerStay -= OnTrigger;
         }
 
     }

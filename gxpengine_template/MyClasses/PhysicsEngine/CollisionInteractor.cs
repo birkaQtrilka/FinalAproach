@@ -1,11 +1,14 @@
 ﻿using GXPEngine;
+using System;
+using System.Collections.Generic;
 
 namespace Physics
 {
     public abstract class CollisionInteractor : GameObject
     {
-        public float bounciness = 1f;
+        public event Action<Collider> OnTriggerStay;
 
+        public float Bounciness { get; set; } = 1f;
         public Collider Collider => myCollider;
         public bool IsTrigger => isTrigger;
 
@@ -17,7 +20,7 @@ namespace Physics
         {
             this.isTrigger = isTrigger;
             engine = ColliderManager.main;
-            this.bounciness = bounciness;
+            Bounciness = bounciness;
             owner.AddChild(this);
         }
 
@@ -29,15 +32,23 @@ namespace Physics
             else
                 engine.AddSolidCollider(myCollider);
 
-            //parent.x = myCollider.position.x;
-            //parent.y = myCollider.position.y;
         }
 
-        public virtual void OnCollision(CollisionInfo info) { }
+        protected virtual void OnCollision(CollisionInfo info) { }
 
-        public virtual void OnTrigger(Collider collider) { }
+        protected virtual void OnTrigger(Collider collider) { }
 
-		public abstract void ResolveCollision(CollisionInfo colInfo);
+        protected abstract void ResolveCollision(CollisionInfo colInfo);
+
+
+        protected void CheckForTriggers()
+        {
+            foreach (Collider overlap in engine.GetOverlaps(myCollider))
+            {
+                OnTrigger(overlap);
+                OnTriggerStay?.Invoke(overlap);
+            }
+        }
 
         protected override void OnDestroy()
         {
@@ -47,6 +58,9 @@ namespace Physics
                 engine.RemoveSolidCollider(myCollider);
         }
 
-
+        public List<Collider> GetOverlaps()
+        {
+            return engine.GetOverlaps(myCollider);
+        }
     }
 }

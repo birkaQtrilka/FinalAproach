@@ -14,7 +14,7 @@ namespace Physics
 
         }
 
-        public override void ResolveCollision(CollisionInfo colInfo)
+        protected override void ResolveCollision(CollisionInfo colInfo)
         {
 
         }
@@ -23,10 +23,7 @@ namespace Physics
         {
             if (isTrigger && Enabled)
             {
-                foreach (Collider overlap in engine.GetOverlaps(myCollider))
-                {
-                    OnTrigger(overlap);
-                }
+                CheckForTriggers();
 
             }
         }

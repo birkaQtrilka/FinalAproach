@@ -1,17 +1,17 @@
 ﻿using GXPEngine;
+using gxpengine_template.MyClasses;
 using gxpengine_template.MyClasses.PickUps;
 using TiledMapParser;
 
 namespace gxpengine_template
 {
-    public abstract class PickUp : AnimationSprite
+    public abstract class PickUp : TiledGameObject
     {
         protected Sound pickUpSound;
         readonly SoundData _pickUpSoundData;
 
-        public PickUp(string fileName, int c, int r, TiledObject data) : base(fileName, c, r,addCollider: true)
+        public PickUp(string fileName, int c, int r, TiledObject data) : base(fileName, c, r, data)
         {
-            collider.isTrigger = true;
 
             if (data == null) return;
 
