@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using GXPEngine;
 using gxpengine_template;
 using TiledMapParser;
-using GXPEngine.Core;
 
 public class MyGame : Game 
 {

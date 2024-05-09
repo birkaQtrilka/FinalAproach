@@ -10,15 +10,21 @@ namespace gxpengine_template
     {
         public static MyGame MyGame => (MyGame)MyGame.main;
 
-        public static void AddVec(this Transformable obj, Vec2 vec)
+        public static void AddToPos(this Transformable obj, Vec2 vec)
         {
             obj.x += vec.x;
             obj.y += vec.y;
         }
-        public static void SetVec(this Transformable obj, Vec2 vec)
+
+        public static void SetPosInVec2(this Transformable obj, Vec2 vec)
         {
             obj.x = vec.x;
             obj.y = vec.y;
+        }
+
+        public static Vec2 GetPosInVec2(this Transformable obj)
+        {
+            return new Vec2(obj.x,obj.y);
         }
 
         public static void SetCenterOrigin(this Sprite sprite)

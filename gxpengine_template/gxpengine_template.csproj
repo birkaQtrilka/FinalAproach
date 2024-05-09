@@ -92,10 +92,12 @@
     <Compile Include="MyClasses\Coroutines\ICoroutineStepper.cs" />
     <Compile Include="MyClasses\Coroutines\WaitForSeconds.cs" />
     <Compile Include="MyClasses\Coroutines\WaitUntill.cs" />
+    <Compile Include="MyClasses\Dragging\Draggable.cs" />
     <Compile Include="MyClasses\Dragging\Dragger.cs" />
     <Compile Include="MyClasses\Dragging\IDraggable.cs" />
     <Compile Include="MyClasses\EaseFunc.cs" />
     <Compile Include="MyClasses\Environment\Booster.cs" />
+    <Compile Include="MyClasses\Environment\DraggableRamp.cs" />
     <Compile Include="MyClasses\Environment\IPlaceable.cs" />
     <Compile Include="MyClasses\Environment\Player.cs" />
     <Compile Include="MyClasses\Environment\Table.cs" />
@@ -116,6 +118,7 @@
     <Compile Include="MyClasses\PhysicsEngine\Vec2.cs" />
     <Compile Include="MyClasses\PhysicsObjects\Edge.cs" />
     <Compile Include="MyClasses\PhysicsObjects\MovingBall.cs" />
+    <Compile Include="MyClasses\PhysicsObjects\Ramp.cs" />
     <Compile Include="MyClasses\PickUps\Coin.cs" />
     <Compile Include="MyClasses\PickUps\ITrigger.cs" />
     <Compile Include="MyClasses\PickUps\PickUp.cs" />
@@ -128,8 +131,14 @@
     <Compile Include="MyClasses\SceneHandling\SceneConfigs\SceneConfigs.cs" />
     <Compile Include="MyClasses\SoundData.cs" />
     <Compile Include="MyClasses\SpriteData.cs" />
+    <Compile Include="MyClasses\TiledGameObject.cs" />
     <Compile Include="MyClasses\Tweens\Tween.cs" />
+    <Compile Include="MyClasses\UI\Button.cs" />
+    <Compile Include="MyClasses\UI\Buttons\ChangePlayModeBtn.cs" />
+    <Compile Include="MyClasses\UI\Buttons\ResetSceneBtn.cs" />
+    <Compile Include="MyClasses\UI\ItemsUI.cs" />
     <Compile Include="MyClasses\UI\IUserInterface.cs" />
+    <Compile Include="MyClasses\UI\TextMesh.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

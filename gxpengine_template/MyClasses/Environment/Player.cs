@@ -7,12 +7,11 @@ namespace gxpengine_template.MyClasses.Environment
 {
     public class Player : AnimationSprite
     {
-        readonly Table _table;
         MovingBall _rigidBody;
 
         public Player(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, -1,true, false)
         {
-            _table = FindObjectOfType<Table>();
+
             AddChild(new Coroutine(Start(data)));
         }
 
@@ -22,18 +21,12 @@ namespace gxpengine_template.MyClasses.Environment
             float vx = data.GetFloatProperty("StartX", 1);
             float vy = data.GetFloatProperty("StartY", 1);
             _rigidBody = new MovingBall(this, new Vec2(vx,vy), new Vec2(x, y), width / 2);
-
+            _rigidBody.Drag = data.GetFloatProperty("Drag", .98f);
         }
 
-        void Update()
+        public void Shoot(Vec2 velocity)
         {
-            //if(_table.OnTable(new Vec2(x,y)))
-            //{
-            //    Destroy();
-            //}
-
+            _rigidBody.velocity = velocity;
         }
-
-
     }
 }

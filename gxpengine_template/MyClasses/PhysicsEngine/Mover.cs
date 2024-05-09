@@ -8,7 +8,12 @@ namespace Physics
         public Vec2 velocity;
         public Vec2 acceleration;
         public float density = 1.1f;
-
+        public float Drag 
+        { 
+            get=> _drag; 
+            set=> _drag = Mathf.Clamp(value,0,1); 
+        }
+        float _drag;
         public virtual float Mass
         {
             get
@@ -26,7 +31,7 @@ namespace Physics
 
         protected void Update()
         {
-            velocity += acceleration * (Time.deltaTime * 0.001f);
+            velocity += acceleration ;
 
             if(!isTrigger)
             {
@@ -47,14 +52,14 @@ namespace Physics
                     OnTrigger(overlap);
                 }
 
-                myCollider.position += velocity * (Time.deltaTime * 0.001f);
+                myCollider.position += velocity;
 
             }
 
             UpdateScreenPosition();
             
             acceleration = Vec2.zero;
-
+            velocity *= _drag;
             AfterPhysicsStep();
         }
 

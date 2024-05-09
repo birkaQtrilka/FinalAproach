@@ -16,7 +16,7 @@ namespace gxpengine_template.MyClasses.ParticleSystem
         {
             Velocity += Acceleration;
             
-            this.AddVec(Velocity);
+            this.AddToPos(Velocity);
 
         }
     }

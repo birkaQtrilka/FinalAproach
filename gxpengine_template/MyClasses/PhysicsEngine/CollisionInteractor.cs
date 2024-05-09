@@ -7,6 +7,7 @@ namespace Physics
         public float bounciness = 1f;
 
         public Collider Collider => myCollider;
+        public bool IsTrigger => isTrigger;
 
         protected Collider myCollider { get; private set; }
         protected readonly ColliderManager engine;
@@ -28,8 +29,8 @@ namespace Physics
             else
                 engine.AddSolidCollider(myCollider);
 
-            parent.x = myCollider.position.x;
-            parent.y = myCollider.position.y;
+            //parent.x = myCollider.position.x;
+            //parent.y = myCollider.position.y;
         }
 
         public virtual void OnCollision(CollisionInfo info) { }

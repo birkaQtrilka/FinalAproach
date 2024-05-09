@@ -7,6 +7,7 @@ namespace Physics
 {
     public class StaticObj : CollisionInteractor
     {
+        public bool Enabled { get; set; } = true;
 
         public StaticObj(GameObject owner, bool isTrigger = false, float bounciness = 1) : base(owner, isTrigger, bounciness)
         {
@@ -20,7 +21,7 @@ namespace Physics
 
         protected void Update()
         {
-            if (isTrigger)
+            if (isTrigger && Enabled)
             {
                 foreach (Collider overlap in engine.GetOverlaps(myCollider))
                 {
@@ -35,9 +36,15 @@ namespace Physics
             myCollider.position = new Vec2(x, y);
         }
 
-        public List<Collider> GetTriggerOverlaps()
+        public List<Collider> GetOverlaps()
         {
             return engine.GetOverlaps(myCollider);
         }
+
+        public List<Collider> GetSolidOverlaps()
+        {
+            return engine.GetSolidOverlaps(myCollider);
+        }
+
     }
 }

@@ -10,6 +10,7 @@ namespace gxpengine_template.MyClasses.Dragging
         public List<IDraggable> Draggables { get; } = new List<IDraggable>();
 
         public IDraggable CurrentDrag { get; private set; }
+        public bool CanDrag { get; set; } = true;
 
         public Dragger(TiledObject data) : base("Assets/square.png", true, false)
         {
@@ -24,6 +25,8 @@ namespace gxpengine_template.MyClasses.Dragging
 
         void Update()
         {
+            if (!CanDrag) return;
+
             Vec2 mousePos = new Vec2(Input.mouseX, Input.mouseY);
             if (Input.GetMouseButtonDown(0))
             {

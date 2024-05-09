@@ -70,20 +70,20 @@ namespace Physics {
 		//	return overlaps;
 		//}
 
-  //      public List<Collider> GetSolidOverlaps(Collider col)
-  //      {
-  //          List<Collider> overlaps = new List<Collider>();
-  //          foreach (Collider other in solidColliders)
-  //          {
-  //              if (other != col && col.Overlaps(other))
-  //              {
-  //                  overlaps.Add(other);
-  //              }
-  //          }
-  //          return overlaps;
-  //      }
+		public List<Collider> GetSolidOverlaps(Collider col)
+		{
+			List<Collider> overlaps = new List<Collider>();
+			foreach (Collider other in solidColliders)
+			{
+				if (other != col && col.Overlaps(other))
+				{
+					overlaps.Add(other);
+				}
+			}
+			return overlaps;
+		}
 
-        public List<Collider> GetOverlaps(Collider col)
+		public List<Collider> GetOverlaps(Collider col)
         {
             List<Collider> overlaps = new List<Collider>();
             foreach (Collider other in triggerColliders)

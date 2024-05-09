@@ -1,86 +1,45 @@
 ﻿using GXPEngine;
 using gxpengine_template.MyClasses.Dragging;
 using Physics;
+using System.Linq;
 using TiledMapParser;
 
 namespace gxpengine_template.MyClasses.Environment
 {
-    public class Booster : AnimationSprite, IDraggable, IPlaceable
+    public class Booster : Draggable, IPrefab
     {
-        StaticObj _trigger;
-        bool _canDrag ;
-        Vec2 _origPosition;
 
-        public Booster(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, -1, true, false)
+        readonly TiledObject _data;
+        float _boostPower;
+        public Booster(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
-            _trigger = new StaticObj(this, true);
-
-            _trigger.SetCollider(new Circle(this, new Vec2(data.X, data.Y), width / 2));
-            _origPosition.SetXY(data.X, data.Y);
-            Dragger.Instance.Draggables.Add(this);
+            _data = data;
+            _boostPower = data.GetFloatProperty("BoostPower", 3);
         }
 
-        public void Place()
+        void Update()
         {
-            _canDrag = false;
-            
-        }
+            var col = trigger?.GetSolidOverlaps().FirstOrDefault(x => x.owner is Mover);
 
-        public bool ContainsPoint(Vec2 p)
-        {
-            return new Boundary(x,y,width,height).Contains(p);
-        }
-
-        public void OnEndDrag(Vec2 mousePos)
-        {
-            bool canPlace = false;
-            Table table;
-            foreach (Collider col in _trigger.GetTriggerOverlaps())
+            if (col != null)
             {
-                if(col.owner is Table t)
-                {
-                    canPlace = true;
-                    table = t;
-                }
-                else if(col.owner is IPlaceable)
-                {
-                    canPlace = false;
-                    break;
-                }
-            }
-
-            if(canPlace)
-            {
-                Place();
-            }
-            else
-            {
-                this.SetVec(_origPosition);
-                _trigger.UpdateColliderPosition(x, y);
-
+                var mover = col.owner as Mover;
+                //if (mover.velocity.Length < 5)
+                    mover.acceleration += -Vec2.right * _boostPower / mover.Mass ;
             }
         }
 
-        public void OnStartDrag(Vec2 mousePos)
+        public override GameObject Clone()
         {
-            _canDrag = true;
+            var clone = new Booster(texture.filename, _cols, _rows, _data);
+            clone.name = name;
+            parent?.AddChild(clone);
+            clone.SetPosInVec2(this.GetPosInVec2());
+            clone.width = width;
+            clone.height = height;
+            clone.SetOrigin(width/2,height/2);
+            return clone;
         }
 
-        public void OnStayDrag(Vec2 mousePos)
-        {
-
-            if(_canDrag)
-            {
-                this.SetVec(mousePos);
-                _trigger.UpdateColliderPosition(x,y);
-
-            }
-        }
-
-        protected override void OnDestroy()
-        {
-            Dragger.Instance.Draggables.Remove(this);
-
-        }
     }
 }
