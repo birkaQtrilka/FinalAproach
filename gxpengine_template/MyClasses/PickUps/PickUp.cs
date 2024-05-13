@@ -29,6 +29,11 @@ namespace gxpengine_template
         {
             Grab(taker);
             pickUpSound.Play(volume: _pickUpSoundData.volume);
+            RemoveSelf();
+        }
+        
+        protected virtual void RemoveSelf()
+        {
             LateDestroy();
         }
 

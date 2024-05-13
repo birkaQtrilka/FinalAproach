@@ -1,5 +1,6 @@
 ﻿using GXPEngine;
 using System;
+using System.Drawing;
 using System.Linq.Expressions;
 
 namespace Physics
@@ -8,8 +9,9 @@ namespace Physics
     public class Rectangle : Collider
     {
         public float Radius { get; set; }
+        public Vec2 Size { get; set; }
 
-        public Rectangle(GameObject pOwner, Vec2 startPosition, float radius) : base(pOwner, startPosition)
+        public Rectangle(CollisionInteractor pOwner, Vec2 startPosition, float radius) : base(pOwner, startPosition)
         {
             Radius = radius;
         }
@@ -22,7 +24,7 @@ namespace Physics
             }
             else if (other is Circle circle)
             {
-                return null;//DiscreteCircleCol(circle, velocity);
+                return DiscreteCircleCol(circle, velocity);
             }
             else
             {
@@ -63,7 +65,7 @@ namespace Physics
                 Vec2 normal = (position - nearPoint).Normalized();
                 Vec2 poi = potentialPos - normal * overlap;
                 float t = (position - poi).Length / velocity.Length;
-                return new CollisionInfo(normal, circle.owner, t, poi);
+                return new CollisionInfo(normal, circle.rbOwner, t, poi);
             }
             return null;
         }
@@ -117,7 +119,7 @@ namespace Physics
 
             }
 
-            return new CollisionInfo(normal,target.owner,t,contactPoint);
+            return new CollisionInfo(normal,target.rbOwner,t,contactPoint);
         }
 
         public void DrawSelf()
@@ -125,6 +127,10 @@ namespace Physics
             Gizmos.DrawRectangle(position.x, position.y, Radius * 2, Radius * 2);
         }
 
-        
+        public override bool ContainsPoint(Vec2 p)
+        {
+            return p.x >= position.x - Radius * .5f && p.x <= position.x + Radius * .5f
+                            && p.y >= position.y - Radius * .5f && p.y <= position.y + Radius * .5f;
+        }
     }
 }

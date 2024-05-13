@@ -6,7 +6,7 @@ namespace Physics
     {
         public float Radius { get; set; }
 
-        public Circle(GameObject pOwner, Vec2 startPosition, float radius) : base(pOwner, startPosition)
+        public Circle(CollisionInteractor pOwner, Vec2 startPosition, float radius) : base(pOwner, startPosition)
         {
             Radius = radius;
         }
@@ -43,7 +43,7 @@ namespace Physics
                 Vec2 normal = (position - nearPoint).Normalized();
                 Vec2 poi = potentialPos + normal * overlap;
                 float t = (position - poi).Length / velocity.Length;
-                return new CollisionInfo(normal, rect.owner, t, poi);
+                return new CollisionInfo(normal, rect.rbOwner, t, poi);
             }
             return null;
         }
@@ -76,7 +76,7 @@ namespace Physics
 
             if (projectionFromPOI < 0 || projectionFromPOI > lineDir.Length ) return null;
 
-            return new CollisionInfo(lineNormal, line.owner, timeOfImpact, pointOfImpact);
+            return new CollisionInfo(lineNormal, line.rbOwner, timeOfImpact, pointOfImpact);
         }
 
         CollisionInfo CircleCollision(Circle other, Vec2 velocity)
@@ -91,7 +91,7 @@ namespace Physics
                 if (b >= 0) return null;
 
                 Vec2 normalOfCol = (position - other.position).Normalized();
-                return new CollisionInfo(normalOfCol, other.owner, 0, position);
+                return new CollisionInfo(normalOfCol, other.rbOwner, 0, position);
             }
 
             float a = Mathf.Pow(velocity.Length, 2);
@@ -109,7 +109,7 @@ namespace Physics
 
             Vec2 poi = position + velocity * timeOfImpact; // oldPos
             Vec2 normal = (poi - other.position).Normalized();
-            return new CollisionInfo(normal, other.owner, timeOfImpact, poi);
+            return new CollisionInfo(normal, other.rbOwner, timeOfImpact, poi);
         }
 
         public override bool Overlaps(Collider other)
@@ -132,6 +132,9 @@ namespace Physics
             }
         }
 
-        
+        public override bool ContainsPoint(Vec2 p)
+        {
+            return p.DistanceTo(position) <= Radius;
+        }
     }
 }

@@ -26,11 +26,6 @@ namespace Physics
             }
         }
 
-        public void UpdateColliderPosition(float x, float y)
-        {
-            myCollider.position = new Vec2(x, y);
-        }
-
         public List<Collider> GetSolidOverlaps()
         {
             return engine.GetSolidOverlaps(myCollider);

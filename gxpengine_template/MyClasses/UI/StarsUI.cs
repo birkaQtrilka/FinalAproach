@@ -7,20 +7,20 @@ namespace gxpengine_template.MyClasses.UI
 {
     public class StarsUI : TiledGameObject
     {
-        Star[] _stars;
+        public Star[] Stars { get; private set; }
         public static int Score {  get; private set; }
 
         public StarsUI(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
             AddChild(new Coroutine(Init()));
-            Score = 0;
+            ResetScore();
         }
 
         IEnumerator Init()
         {
             yield return null;
-            _stars = MyGame.main.FindObjectsOfType<Star>();
-            foreach (Star star in _stars) {
+            Stars = MyGame.main.FindObjectsOfType<Star>();
+            foreach (Star star in Stars) {
                 star.Grabbed += OnStarGrabbed;
             }
         }
@@ -31,10 +31,16 @@ namespace gxpengine_template.MyClasses.UI
             SetFrame(currentFrame + 1);
             Score++;
         }
+        
+        public void ResetScore()
+        {
+            SetFrame(0);
+            Score = 0;
+        }
 
         protected override void OnDestroy()
         {
-            foreach (Star star in _stars)
+            foreach (Star star in Stars)
                 if(star != null)
                     star.Grabbed -= OnStarGrabbed;
         }

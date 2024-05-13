@@ -30,7 +30,7 @@ namespace gxpengine_template.MyClasses.Dragging
         {
             yield return null;
             trigger = new StaticObj(this, true);
-            trigger.SetCollider(new Rectangle(this, new Vec2(x, y), width / 2));//make rect collider
+            trigger.SetCollider(new Rectangle(trigger, new Vec2(x, y), width / 2));//make rect collider
 
             Dragger.Instance?.Draggables.Add(this);
             OrigPosition = this.GetPosInVec2();
@@ -56,7 +56,7 @@ namespace gxpengine_template.MyClasses.Dragging
                 canPlace = true;
 
                 foreach (Collider col in trigger.GetOverlaps())
-                    if (col.owner is IPlaceable || (col.owner is CollisionInteractor rb && !rb.IsTrigger))
+                    if (col.rbOwner is IPlaceable || (col.rbOwner is CollisionInteractor rb && !rb.IsTrigger))
                     {
                         canPlace = false;
                         break;
@@ -71,7 +71,7 @@ namespace gxpengine_template.MyClasses.Dragging
                 if (!_wasPlaced)
                     visible = false;
                 this.SetPosInVec2(OrigPosition);
-                trigger.UpdateColliderPosition(x, y);
+                trigger.UpdateColliderPosition();
 
             }
         }
@@ -84,7 +84,7 @@ namespace gxpengine_template.MyClasses.Dragging
         public void OnStayDrag(Vec2 mousePos)
         {
             this.SetPosInVec2(mousePos);
-            trigger.UpdateColliderPosition(x, y);
+            trigger.UpdateColliderPosition();
         }
 
         protected override void OnDestroy()
