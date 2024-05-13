@@ -25,7 +25,6 @@ namespace gxpengine_template.MyClasses.Environment
             yield return null;
             _trigger = new StaticObj(this, true);
             _trigger.SetCollider(new Circle(this, new Vec2(x, y), width / 2));//make rect collider
-            _trigger.Enabled = false;
         }
 
 
