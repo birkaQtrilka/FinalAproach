@@ -245,7 +245,6 @@ namespace GXPEngine.Core {
 			_owner.Render(this);
 
 			GL.glfwSwapBuffers();
-			if (GetKey(Key.ESCAPE)) this.Close();
 		}
 		
 		//------------------------------------------------------------------------------------------------------------------------

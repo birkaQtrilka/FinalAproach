@@ -98,6 +98,7 @@
     <Compile Include="MyClasses\EaseFunc.cs" />
     <Compile Include="MyClasses\Environment\Booster.cs" />
     <Compile Include="MyClasses\Environment\DraggableRamp.cs" />
+    <Compile Include="MyClasses\Environment\Fan.cs" />
     <Compile Include="MyClasses\Environment\Hole.cs" />
     <Compile Include="MyClasses\Environment\IPlaceable.cs" />
     <Compile Include="MyClasses\Environment\Player.cs" />
@@ -121,6 +122,7 @@
     <Compile Include="MyClasses\PhysicsObjects\Edge.cs" />
     <Compile Include="MyClasses\PhysicsObjects\MovingBall.cs" />
     <Compile Include="MyClasses\PhysicsObjects\Ramp.cs" />
+    <Compile Include="MyClasses\PhysicsObjects\TriggerBox.cs" />
     <Compile Include="MyClasses\PickUps\Coin.cs" />
     <Compile Include="MyClasses\PickUps\ITrigger.cs" />
     <Compile Include="MyClasses\PickUps\PickUp.cs" />
@@ -137,9 +139,14 @@
     <Compile Include="MyClasses\Tweens\Tween.cs" />
     <Compile Include="MyClasses\UI\Button.cs" />
     <Compile Include="MyClasses\UI\Buttons\ChangePlayModeBtn.cs" />
+    <Compile Include="MyClasses\UI\Buttons\DisableObjectButton.cs" />
+    <Compile Include="MyClasses\UI\Buttons\ExitGameBtn.cs" />
+    <Compile Include="MyClasses\UI\Buttons\NextLevelButton.cs" />
     <Compile Include="MyClasses\UI\Buttons\ResetSceneBtn.cs" />
     <Compile Include="MyClasses\UI\ItemsUI.cs" />
-    <Compile Include="MyClasses\UI\IUserInterface.cs" />
+    <Compile Include="MyClasses\UI\MenuStarsUI.cs" />
+    <Compile Include="MyClasses\UI\NextLevelUI.cs" />
+    <Compile Include="MyClasses\UI\PauseMenu.cs" />
     <Compile Include="MyClasses\UI\StarsUI.cs" />
     <Compile Include="MyClasses\UI\TextMesh.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

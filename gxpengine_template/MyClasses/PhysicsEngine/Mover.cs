@@ -31,6 +31,8 @@ namespace Physics
 
         protected void Update()
         {
+            if (!Enabled) return;
+
             velocity += acceleration ;
 
             if(!isTrigger)

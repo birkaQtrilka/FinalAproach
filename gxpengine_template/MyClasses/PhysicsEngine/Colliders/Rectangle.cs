@@ -1,5 +1,6 @@
 ﻿using GXPEngine;
 using System;
+using System.Linq.Expressions;
 
 namespace Physics
 {
@@ -21,7 +22,7 @@ namespace Physics
             }
             else if (other is Circle circle)
             {
-                return DiscreteCircleCol(circle, velocity);
+                return null;//DiscreteCircleCol(circle, velocity);
             }
             else
             {
@@ -32,12 +33,20 @@ namespace Physics
 
         public override bool Overlaps(Collider other)
         {
-            if(other is Rectangle rect)
-            return
-                rect.position.x - rect.Radius < position.x + Radius &&
-                rect.position.x + rect.Radius > position.x - Radius &&
-                rect.position.y - rect.Radius < position.y + Radius &&
-                rect.position.y + rect.Radius > position.y - Radius ;
+            if (other is Rectangle rect)
+                return
+                    rect.position.x - rect.Radius < position.x + Radius &&
+                    rect.position.x + rect.Radius > position.x - Radius &&
+                    rect.position.y - rect.Radius < position.y + Radius &&
+                    rect.position.y + rect.Radius > position.y - Radius;
+            else if (other is Circle circle)
+            {
+                return ColliderManager.RectCircleOverlap(this, circle);
+            }
+            else if (other is AngledLine line)
+            {
+                return ColliderManager.RectLineOverlap(this, line);
+            }
             else
                 throw new NotImplementedException();
         }
@@ -110,5 +119,12 @@ namespace Physics
 
             return new CollisionInfo(normal,target.owner,t,contactPoint);
         }
+
+        public void DrawSelf()
+        {
+            Gizmos.DrawRectangle(position.x, position.y, Radius * 2, Radius * 2);
+        }
+
+        
     }
 }

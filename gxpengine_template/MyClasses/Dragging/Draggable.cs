@@ -30,7 +30,7 @@ namespace gxpengine_template.MyClasses.Dragging
         {
             yield return null;
             trigger = new StaticObj(this, true);
-            trigger.SetCollider(new Circle(this, new Vec2(x, y), width / 2));//make rect collider
+            trigger.SetCollider(new Rectangle(this, new Vec2(x, y), width / 2));//make rect collider
 
             Dragger.Instance?.Draggables.Add(this);
             OrigPosition = this.GetPosInVec2();
@@ -76,7 +76,7 @@ namespace gxpengine_template.MyClasses.Dragging
             }
         }
 
-        public void OnStartDrag(Vec2 mousePos)
+        public virtual void OnStartDrag(Vec2 mousePos)
         {
             visible = true;
         }
