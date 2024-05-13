@@ -9,7 +9,7 @@
  <objectgroup id="2" name="Object Layer 1">
   <object id="55" name="Booster" type="gxpengine_template.MyClasses.Environment.Booster" gid="1" x="27" y="73" width="50" height="50">
    <properties>
-    <property name="BoostPower" type="float" value="100"/>
+    <property name="BoostPower" type="float" value="75"/>
     <property name="MenuImage" value="Assets/boosterMenuImg.png"/>
    </properties>
   </object>
@@ -20,22 +20,22 @@
   </object>
   <object id="57" name="Ramp2" type="gxpengine_template.MyClasses.Environment.DraggableRamp" gid="2" x="364.919" y="64.7219" width="50" height="50" rotation="270">
    <properties>
-    <property name="MenuImage" value="Assets/rampMenuImg.png"/>
+    <property name="MenuImage" value="Assets/Ramp2.png"/>
    </properties>
   </object>
   <object id="59" name="Ramp1" type="gxpengine_template.MyClasses.Environment.DraggableRamp" gid="2" x="221.667" y="17.6667" width="50" height="50" rotation="90">
    <properties>
-    <property name="MenuImage" value="Assets/rampMenuImg.png"/>
+    <property name="MenuImage" value="Assets/Ramp1.png"/>
    </properties>
   </object>
   <object id="60" name="Ramp3" type="gxpengine_template.MyClasses.Environment.DraggableRamp" gid="2" x="464.497" y="26.5403" width="50" height="50" rotation="180">
    <properties>
-    <property name="MenuImage" value="Assets/rampMenuImg.png"/>
+    <property name="MenuImage" value="Assets/Ramp3.png"/>
    </properties>
   </object>
   <object id="61" name="Ramp4" type="gxpengine_template.MyClasses.Environment.DraggableRamp" gid="2" x="523" y="87" width="50" height="50">
    <properties>
-    <property name="MenuImage" value="Assets/rampMenuImg.png"/>
+    <property name="MenuImage" value="Assets/Ramp4.png"/>
    </properties>
   </object>
  </objectgroup>
