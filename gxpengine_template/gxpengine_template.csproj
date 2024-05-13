@@ -102,6 +102,7 @@
     <Compile Include="MyClasses\Environment\Hole.cs" />
     <Compile Include="MyClasses\Environment\IPlaceable.cs" />
     <Compile Include="MyClasses\Environment\Player.cs" />
+    <Compile Include="MyClasses\Environment\PlayerLauncher.cs" />
     <Compile Include="MyClasses\Environment\Star.cs" />
     <Compile Include="MyClasses\Environment\Table.cs" />
     <Compile Include="MyClasses\IHealthHolder.cs" />

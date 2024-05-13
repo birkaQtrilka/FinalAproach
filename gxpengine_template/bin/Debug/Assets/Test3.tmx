@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="99">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="103">
  <tileset firstgid="1" name="Player" tilewidth="432" tileheight="432" tilecount="1" columns="1">
   <image source="PortalSprite.png" width="432" height="432"/>
  </tileset>
@@ -33,12 +33,7 @@
     <property name="PrefabNameAndCountCSV" value="Booster:3,Ramp:2,Ramp1:2,Ramp2:5,Ramp3:1"/>
    </properties>
   </object>
-  <object id="84" name="PlayBtn" type=" gxpengine_template.MyClasses.UI.ChangePlayModeBtn" gid="4" x="468.333" y="221" width="50" height="50">
-   <properties>
-    <property name="testX" type="float" value="0"/>
-    <property name="testY" type="float" value="10"/>
-   </properties>
-  </object>
+  <object id="84" name="PlayBtn" type=" gxpengine_template.MyClasses.UI.ChangePlayModeBtn" gid="4" x="521.333" y="222" width="50" height="50"/>
   <object id="85" name="ResetSceneBtn" type="gxpengine_template.MyClasses.UI.ResetSceneBtn" gid="4" x="479" y="303.667" width="50" height="50"/>
   <object id="97" name="NextLevelUI" type="gxpengine_template.MyClasses.UI.NextLevelUI" gid="14" x="-1.83333" y="407.333" width="689" height="308" visible="0">
    <properties>
@@ -62,7 +57,7 @@
     <property name="StartY" type="float" value="0"/>
    </properties>
   </object>
-  <object id="68" type="gxpengine_template.MyClasses.Edge" gid="2" x="432.344" y="509.211" width="451.036" height="63.7076" rotation="275.646">
+  <object id="68" type="gxpengine_template.MyClasses.Edge" gid="2" x="429.344" y="510.211" width="451.036" height="63.7076" rotation="275.646">
    <properties>
     <property name="Bounciness" type="float" value="0.99"/>
    </properties>
@@ -95,6 +90,16 @@
  </objectgroup>
  <objectgroup id="10" name="Managers">
   <object id="77" name="Draggerss" type="gxpengine_template.MyClasses.Dragging.Dragger" x="-246.667" y="25.3333" width="93.3333" height="77.3333"/>
+  <object id="101" name="PlayerLauncher" type="gxpengine_template.MyClasses.Environment.PlayerLauncher" gid="4" x="41.6667" y="234.333" width="50" height="50">
+   <properties>
+    <property name="SpeedCap" type="float" value="10"/>
+   </properties>
+  </object>
+  <object id="102" name="Fan" type="gxpengine_template.MyClasses.Environment.Fan" gid="4" x="291" y="399" width="50" height="50">
+   <properties>
+    <property name="WindPower" type="float" value="10"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="9" name="SceneConfig">
   <object id="55" name="Configs" type="gxpengine_template.MyClasses.SceneHandling.PlaySceneConfigs" x="-246.606" y="-100.303" width="112.121" height="109.091">

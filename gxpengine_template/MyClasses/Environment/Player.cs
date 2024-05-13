@@ -11,7 +11,7 @@ namespace gxpengine_template.MyClasses.Environment
     public class Player : AnimationSprite, ITrigger
     {
         public Vec2 StartPos { get; set; }
-        MovingBall _rigidBody;
+        public MovingBall RigidBody { get; private set; }
         PickUper _pickUper;
 
         public event Action<GameObject> TriggerStay;
@@ -30,34 +30,37 @@ namespace gxpengine_template.MyClasses.Environment
             yield return null;
             float vx = data.GetFloatProperty("StartX", 1);
             float vy = data.GetFloatProperty("StartY", 1);
-            _rigidBody = new MovingBall(this, new Vec2(vx,vy), new Vec2(x, y), width / 2);
-            _rigidBody.Drag = data.GetFloatProperty("Drag", .98f);
+            RigidBody = new MovingBall(this, new Vec2(vx,vy), new Vec2(x, y), width / 2);
+            RigidBody.Drag = data.GetFloatProperty("Drag", .98f);
             StartPos = this.GetPosInVec2();
             SetIdleMode();
         }
 
         void Update()
         {
-            if (shot) foreach (Physics.Collider col in _rigidBody.GetOverlaps()) TriggerStay?.Invoke(col.owner);
+            if (shot) foreach (Physics.Collider col in RigidBody.GetOverlaps()) TriggerStay?.Invoke(col.rbOwner.parent);
+                    
+                
         }
 
         public void Shoot(Vec2 velocity)
         {
-            _rigidBody.velocity = velocity;
-            _rigidBody.Collider.position = StartPos;
+            RigidBody.Collider.position = StartPos;
+            RigidBody.velocity = velocity;
             shot = true;
         }
 
         public void SetIdleMode()
         {
-            _rigidBody.Enabled = false;
+            RigidBody.Enabled = false;
             shot = false;
         }
 
         public void SetPlayMode()
         {
-            _rigidBody.Enabled = true;
+            RigidBody.Enabled = true;
 
         }
+
     }
 }

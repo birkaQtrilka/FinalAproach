@@ -16,15 +16,15 @@ namespace Physics
         public bool Enabled
         {
             get { return _enabled; }
-            set 
+            set
             {
-                if(value)
+                if (value)
                     SetCollider(myCollider);
                 else
                     DisableCollider();
-                _enabled = value; 
+                _enabled = value;
             }
-        }
+        } 
 
 
         protected Collider myCollider { get; private set; }
@@ -67,6 +67,7 @@ namespace Physics
 
         protected override void OnDestroy()
         {
+            OnTriggerStay = null;
             DisableCollider();
         }
 
@@ -81,6 +82,11 @@ namespace Physics
         public List<Collider> GetOverlaps()
         {
             return engine.GetOverlaps(myCollider);
+        }
+
+        public void UpdateColliderPosition()
+        {
+            myCollider.position = new Vec2(parent.x, parent.y);
         }
     }
 }

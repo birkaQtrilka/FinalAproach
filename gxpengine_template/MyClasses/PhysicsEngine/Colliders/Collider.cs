@@ -6,17 +6,18 @@ namespace Physics {
 	/// </summary>
 	public abstract class Collider 
 	{
-		public GameObject owner { get; }
+		public GameObject rbOwner { get; }
 		public Vec2 position { get; set; }
 
-		public Collider(GameObject pOwner, Vec2 startPosition)
+		public Collider(CollisionInteractor pOwner, Vec2 startPosition)
 		{
-			owner=pOwner;
+			rbOwner=pOwner;
 			position=startPosition;
 		}
 		public abstract CollisionInfo GetEarliestCollision(Collider other, Vec2 velocity);
 
 		public abstract bool Overlaps(Collider other);
-		
+
+		public abstract bool ContainsPoint(Vec2 p);
 	}
 }

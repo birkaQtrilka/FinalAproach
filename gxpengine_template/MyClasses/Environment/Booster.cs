@@ -19,11 +19,11 @@ namespace gxpengine_template.MyClasses.Environment
 
         void Update()
         {
-            var col = trigger?.GetSolidOverlaps().FirstOrDefault(x => x.owner is Mover);
+            var col = trigger?.GetSolidOverlaps().FirstOrDefault(x => x.rbOwner is Mover);
 
             if (col != null)
             {
-                var mover = col.owner as Mover;
+                var mover = col.rbOwner as Mover;
                 //if (mover.velocity.Length < 5)
                     mover.acceleration += -Vec2.right * _boostPower / mover.Mass ;
             }

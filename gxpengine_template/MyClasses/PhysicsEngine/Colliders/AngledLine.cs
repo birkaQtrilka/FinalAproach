@@ -8,7 +8,7 @@ namespace Physics
         public Vec2 Start { get; }
         public Vec2 End { get; }
 
-        public AngledLine(GameObject pOwner, Vec2 start, Vec2 end) : base(pOwner, Vec2.Lerp(start, end, .5f))
+        public AngledLine(CollisionInteractor pOwner, Vec2 start, Vec2 end) : base(pOwner, Vec2.Lerp(start, end, .5f))
         {
             Start = start;
             End = end;
@@ -37,5 +37,9 @@ namespace Physics
                 throw new NotImplementedException();
         }
 
+        public override bool ContainsPoint(Vec2 p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

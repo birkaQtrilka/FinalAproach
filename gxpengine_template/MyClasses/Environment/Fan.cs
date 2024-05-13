@@ -1,4 +1,5 @@
-﻿using Physics;
+﻿using GXPEngine;
+using Physics;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,40 +13,42 @@ namespace gxpengine_template.MyClasses.Environment
     public class Fan : TiledGameObject
     {
         StaticObj _trigger;
+        float _windPower;
+
         public Fan(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
             alpha = .3f;
+            _windPower = data.GetFloatProperty("WindPower");
             AddChild(new Coroutine(Init()));   
         }
 
         IEnumerator Init()
         {
             yield return null;
-            _trigger = new StaticObj(this);
+            _trigger = new StaticObj(this, true);
             _trigger.SetCollider(new Rectangle(_trigger, this.GetPosInVec2(), width / 2));
+            _trigger.Enabled = true;
             _trigger.OnTriggerStay += OnTriggerStay;
         }
 
-        bool t;
-        private void OnTriggerStay(Collider obj)
+        private void OnTriggerStay(Collider col)
         {
-            t = true;
+            if (col.rbOwner.parent is Player player)
+            {
+                player.RigidBody.acceleration = -Vec2.right * _windPower;
+            }
         }
 
         void Update()
         {
-             //if( _trigger != null ) 
-          //  (_trigger.Collider as Rectangle).DrawSelf();
+            if(_trigger != null) 
+            (_trigger.Collider as Rectangle).DrawSelf();
+        }
 
-            if(t)
-            {
-                SetColor(1, 0, 0);
-                t = false;
-            }
-            else
-            {
-                SetColor(0, 1, 0);
-            }
+        protected override void OnDestroy()
+        {
+            _trigger.OnTriggerStay -= OnTriggerStay;
+
         }
     }
 }
