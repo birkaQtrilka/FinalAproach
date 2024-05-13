@@ -1,4 +1,5 @@
 ﻿using GXPEngine;
+using System;
 
 namespace Physics
 {
@@ -20,8 +21,20 @@ namespace Physics
 
         public override bool Overlaps(Collider other)
         {
-            //do circle overlap?
-            return false;
+            if(other is Rectangle rect)
+            {
+                return ColliderManager.RectLineOverlap(rect, this);
+            }
+            else if(other is Circle circle)
+            {
+                return ColliderManager.CircleLineOverlap(circle, this);
+            }
+            else if(other is AngledLine line)
+            {
+                return ColliderManager.LineLineOverlap(this, line);
+            }
+            else
+                throw new NotImplementedException();
         }
 
     }

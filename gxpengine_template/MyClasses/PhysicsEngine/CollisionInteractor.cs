@@ -11,6 +11,21 @@ namespace Physics
         public float Bounciness { get; set; } = 1f;
         public Collider Collider => myCollider;
         public bool IsTrigger => isTrigger;
+        private bool _enabled;
+
+        public bool Enabled
+        {
+            get { return _enabled; }
+            set 
+            {
+                if(value)
+                    SetCollider(myCollider);
+                else
+                    DisableCollider();
+                _enabled = value; 
+            }
+        }
+
 
         protected Collider myCollider { get; private set; }
         protected readonly ColliderManager engine;
@@ -51,6 +66,11 @@ namespace Physics
         }
 
         protected override void OnDestroy()
+        {
+            DisableCollider();
+        }
+
+        void DisableCollider()
         {
             if (isTrigger)
                 engine.RemoveTriggerCollider(myCollider);

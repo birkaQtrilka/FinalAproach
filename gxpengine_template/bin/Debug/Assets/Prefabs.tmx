@@ -1,42 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="62">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="68">
  <tileset firstgid="1" name="Booster" tilewidth="50" tileheight="50" tilecount="1" columns="1">
   <image source="booster.png" width="50" height="50"/>
  </tileset>
  <tileset firstgid="2" name="Ramp" tilewidth="50" tileheight="50" tilecount="1" columns="1">
   <image source="ramp.png" width="50" height="50"/>
  </tileset>
+ <tileset firstgid="3" name="Continue" tilewidth="50" tileheight="50" tilecount="1" columns="1">
+  <image source="ContinueBtn.png" width="50" height="50"/>
+ </tileset>
+ <tileset firstgid="4" name="Reset" tilewidth="50" tileheight="50" tilecount="1" columns="1">
+  <image source="ResetBtn.png" width="50" height="50"/>
+ </tileset>
+ <tileset firstgid="5" name="StarsUI" tilewidth="150" tileheight="50" tilecount="4" columns="1">
+  <image source="Stars.png" width="150" height="200"/>
+ </tileset>
+ <tileset firstgid="9" name="Exit" tilewidth="50" tileheight="50" tilecount="1" columns="1">
+  <image source="Exit.png" width="50" height="50"/>
+ </tileset>
  <objectgroup id="2" name="Object Layer 1">
   <object id="55" name="Booster" type="gxpengine_template.MyClasses.Environment.Booster" gid="1" x="27" y="73" width="50" height="50">
    <properties>
-    <property name="BoostPower" type="float" value="75"/>
+    <property name="BoostPower" type="float" value="500"/>
     <property name="MenuImage" value="Assets/boosterMenuImg.png"/>
    </properties>
   </object>
-  <object id="56" name="Ramp" type="gxpengine_template.MyClasses.Environment.DraggableRamp" gid="2" x="106.852" y="46.1731" width="50" height="50" rotation="45">
+  <object id="56" name="Ramp" type="gxpengine_template.MyClasses.Environment.DraggableRamp" gid="2" x="177.563" y="46.1063" width="50" height="50" rotation="225">
    <properties>
-    <property name="MenuImage" value="Assets/rampMenuImg.png"/>
+    <property name="MenuImage" value="Assets/secondMenuImg.png"/>
    </properties>
   </object>
   <object id="57" name="Ramp2" type="gxpengine_template.MyClasses.Environment.DraggableRamp" gid="2" x="364.919" y="64.7219" width="50" height="50" rotation="270">
    <properties>
-    <property name="MenuImage" value="Assets/Ramp2.png"/>
+    <property name="MenuImage" value="Assets/rampMenuImg.png"/>
    </properties>
   </object>
   <object id="59" name="Ramp1" type="gxpengine_template.MyClasses.Environment.DraggableRamp" gid="2" x="221.667" y="17.6667" width="50" height="50" rotation="90">
    <properties>
-    <property name="MenuImage" value="Assets/Ramp1.png"/>
+    <property name="MenuImage" value="Assets/rampMenuImg.png"/>
    </properties>
   </object>
   <object id="60" name="Ramp3" type="gxpengine_template.MyClasses.Environment.DraggableRamp" gid="2" x="464.497" y="26.5403" width="50" height="50" rotation="180">
    <properties>
-    <property name="MenuImage" value="Assets/Ramp3.png"/>
+    <property name="MenuImage" value="Assets/rampMenuImg.png"/>
    </properties>
   </object>
   <object id="61" name="Ramp4" type="gxpengine_template.MyClasses.Environment.DraggableRamp" gid="2" x="523" y="87" width="50" height="50">
    <properties>
-    <property name="MenuImage" value="Assets/Ramp4.png"/>
+    <property name="MenuImage" value="Assets/rampMenuImg.png"/>
    </properties>
   </object>
+  <object id="62" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="3" x="48.3333" y="223.667" width="50" height="50"/>
+  <object id="63" name="Reset" type="gxpengine_template.MyClasses.UI.ResetSceneBtn" gid="4" x="157.667" y="215.667" width="50" height="50"/>
+  <object id="65" name="StarsUIMenu" type="gxpengine_template.MyClasses.UI.MenuStarsUI" gid="5" x="286.333" y="207" width="150" height="50"/>
+  <object id="66" name="EmptyBtn" type="gxpengine_template.MyClasses.UI.DisableObjectButton" gid="3" x="67" y="352.333" width="50" height="50"/>
+  <object id="67" name="Exit" type="gxpengine_template.MyClasses.UI.ExitGameBtn" gid="9" x="180.333" y="343.667" width="50" height="50"/>
  </objectgroup>
 </map>

@@ -1,4 +1,5 @@
 ﻿using gxpengine_template.MyClasses.Dragging;
+using gxpengine_template.MyClasses.UI;
 using System.Collections;
 using TiledMapParser;
 
@@ -29,8 +30,10 @@ namespace gxpengine_template.MyClasses.Environment
             if (width * .5f > dist + player.width * .5f)
             {
                 player.Destroy();
+                player = null;
+                var ui = MyGame.main.FindObjectOfType<NextLevelUI>();
+                ui.Pop();
                 Dragger.Instance.CanDrag = false;
-                MyUtils.MyGame.LoadLevel(_nextLevelName);
             }
         }
     }

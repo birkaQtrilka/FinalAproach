@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="102">
+ <tileset firstgid="1" name="Player" tilewidth="432" tileheight="432" tilecount="1" columns="1">
+  <image source="PortalSprite.png" width="432" height="432"/>
+ </tileset>
+ <tileset firstgid="2" name="Line" tilewidth="50" tileheight="50" tilecount="1" columns="1">
+  <image source="line.png" width="50" height="50"/>
+ </tileset>
+ <tileset firstgid="3" name="Booster" tilewidth="50" tileheight="50" tilecount="1" columns="1">
+  <image source="booster.png" width="50" height="50"/>
+ </tileset>
+ <tileset firstgid="4" name="Square" tilewidth="50" tileheight="50" tilecount="4" columns="2">
+  <image source="square.png" width="100" height="100"/>
+ </tileset>
+ <tileset firstgid="8" name="Ramp" tilewidth="50" tileheight="50" tilecount="1" columns="1">
+  <image source="ramp.png" width="50" height="50"/>
+ </tileset>
+ <tileset firstgid="9" name="StarsUI" tilewidth="150" tileheight="50" tilecount="4" columns="1">
+  <image source="Stars.png" width="150" height="200"/>
+ </tileset>
+ <tileset firstgid="13" name="Star" tilewidth="50" tileheight="50" tilecount="1" columns="1">
+  <image source="Star.png" width="50" height="50"/>
+ </tileset>
+ <objectgroup id="6" name="UI"/>
+ <objectgroup id="2" name="Object Layer 1">
+  <object id="96" name="Fan" type="gxpengine_template.MyClasses.Environment.Fan" gid="3" x="375" y="406" width="50" height="50"/>
+  <object id="97" type="gxpengine_template.MyClasses.Edge" gid="2" x="294.146" y="277.083" width="219.56" height="39.7782" rotation="104.052">
+   <properties>
+    <property name="Bounciness" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="98" type="gxpengine_template.MyClasses.Edge" gid="2" x="513.22" y="274.111" width="219.56" height="39.7782" rotation="104.052">
+   <properties>
+    <property name="Bounciness" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="99" type="gxpengine_template.MyClasses.Edge" gid="2" x="514.398" y="274.907" width="219.56" height="39.7782" rotation="188.971">
+   <properties>
+    <property name="Bounciness" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="100" type="gxpengine_template.MyClasses.Edge" gid="2" x="501.22" y="489.111" width="219.56" height="39.7782" rotation="188.971">
+   <properties>
+    <property name="Bounciness" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="101" name="Player" type="gxpengine_template.MyClasses.Environment.Player" gid="1" x="309.151" y="476.151" width="39.6977" height="39.6977">
+   <properties>
+    <property name="Drag" type="float" value="1"/>
+    <property name="StartX" type="float" value="1"/>
+    <property name="StartY" type="float" value="-2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="10" name="Managers"/>
+ <objectgroup id="9" name="SceneConfig">
+  <object id="55" name="Configs" type="gxpengine_template.MyClasses.SceneHandling.PlaySceneConfigs" x="-246.606" y="-100.303" width="112.121" height="109.091">
+   <properties>
+    <property name="ObjectLayersCSV" value="Assets/RectTest.tmx:Managers,Main:UI,Assets/RectTest.tmx:Object Layer 1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

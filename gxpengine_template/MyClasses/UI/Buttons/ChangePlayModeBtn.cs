@@ -30,13 +30,15 @@ namespace gxpengine_template.MyClasses.UI
             playMode = !playMode;
             if(playMode)
             {
+                player.SetPlayMode();
                 Dragger.Instance.CanDrag = false;
                 player.Shoot(testShoot);
-
             }
             else
             {
-                //disable player physics?
+                player.SetIdleMode();
+                player.SetPosInVec2(player.StartPos);
+                
                 Dragger.Instance.CanDrag = true;
 
             }

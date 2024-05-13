@@ -40,8 +40,8 @@ namespace Physics
             float overlap = Radius - rayToNearest.Length;
             if(overlap > 0)
             {
-                Vec2 normal = (nearPoint - rect.position).Normalized();
-                Vec2 poi = potentialPos - normal * overlap;
+                Vec2 normal = (position - nearPoint).Normalized();
+                Vec2 poi = potentialPos + normal * overlap;
                 float t = (position - poi).Length / velocity.Length;
                 return new CollisionInfo(normal, rect.owner, t, poi);
             }
@@ -120,18 +120,11 @@ namespace Physics
             }
             else if(other is AngledLine line)
             {
-                Vec2 startToCircle = position - line.Start;
-                Vec2 lineDir = (line.End - line.Start);
-                Vec2 lineNormal = lineDir.Normal();
-                float distanceToLine = Mathf.Abs(startToCircle.Dot(lineNormal));
-
-                float lineProjection = startToCircle.Dot(lineDir.Normalized());
-                return distanceToLine < Radius && lineProjection >= 0 && lineProjection <= lineDir.Length;
+                return ColliderManager.CircleLineOverlap(this, line);
             }
             else if(other is Rectangle rect)
             {
-                var nearPoint = new Vec2(Mathf.Clamp(position.x,rect.position.x - rect.Radius, rect.position.x + rect.Radius), Mathf.Clamp(position.y,rect.position.y - rect.Radius, rect.position.y + rect.Radius));
-                return nearPoint.Length <= Radius;
+                return ColliderManager.RectCircleOverlap(rect, this);
             }
             else
             {

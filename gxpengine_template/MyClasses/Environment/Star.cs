@@ -11,6 +11,8 @@ namespace gxpengine_template.MyClasses.Environment
 {
     public class Star : PickUp
     {
+        public event Action<Star> Grabbed;
+
         StaticObj _trigger;
 
         public Star(string fileName, int c, int r, TiledObject data) : base(fileName, c, r, data)
@@ -29,7 +31,12 @@ namespace gxpengine_template.MyClasses.Environment
 
         protected override void Grab(ITrigger taker)
         {
-            StarsUI.Instance.Fill();
+            Grabbed?.Invoke(this);
+        }
+
+        protected override void OnDestroy()
+        {
+            Grabbed = null;
         }
     }
 }

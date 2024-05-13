@@ -11,7 +11,7 @@ namespace gxpengine_template.MyClasses.Tweens
         // parameters:
         TweenProperty target;
         int totalTimeMs;
-        int delta;
+        float delta;
 
         // Values that change over the life time:
         float lastCurveValue = 0;
@@ -36,7 +36,7 @@ namespace gxpengine_template.MyClasses.Tweens
         /// with a value change of [delta].
         /// After tweening is done, this Tween destroys itself.
         /// </summary>
-        public Tween(TweenProperty target, int timeMs, int delta, Func<float, float> easeFunc)
+        public Tween(TweenProperty target, int timeMs, float delta, Func<float, float> easeFunc)
         {
             GetCurveValue = easeFunc;
             this.target = target;

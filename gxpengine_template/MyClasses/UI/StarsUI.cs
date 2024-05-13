@@ -1,33 +1,42 @@
 ﻿
+using gxpengine_template.MyClasses.Environment;
+using System.Collections;
 using TiledMapParser;
 
 namespace gxpengine_template.MyClasses.UI
 {
     public class StarsUI : TiledGameObject
     {
-        public static StarsUI Instance;
+        Star[] _stars;
+        public static int Score {  get; private set; }
 
         public StarsUI(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
-            if(Instance != null && Instance == this)
-            {
-                Destroy();
-                return;
-            }
-            else
-            {
-                Instance = this;
+            AddChild(new Coroutine(Init()));
+            Score = 0;
+        }
+
+        IEnumerator Init()
+        {
+            yield return null;
+            _stars = MyGame.main.FindObjectsOfType<Star>();
+            foreach (Star star in _stars) {
+                star.Grabbed += OnStarGrabbed;
             }
         }
 
-        public void Fill()
+        private void OnStarGrabbed(Star star)
         {
-            SetFrame(++currentFrame);
+            star.Grabbed -= OnStarGrabbed;
+            SetFrame(currentFrame + 1);
+            Score++;
         }
 
         protected override void OnDestroy()
         {
-            Instance = null;
+            foreach (Star star in _stars)
+                if(star != null)
+                    star.Grabbed -= OnStarGrabbed;
         }
     }
 }

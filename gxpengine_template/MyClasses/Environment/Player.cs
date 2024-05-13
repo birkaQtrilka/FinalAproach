@@ -10,11 +10,13 @@ namespace gxpengine_template.MyClasses.Environment
 {
     public class Player : AnimationSprite, ITrigger
     {
+        public Vec2 StartPos { get; set; }
         MovingBall _rigidBody;
         PickUper _pickUper;
 
         public event Action<GameObject> TriggerStay;
         bool shot;
+
         public Player(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, -1,true, false)
         {
             _pickUper = new PickUper(this);
@@ -30,6 +32,8 @@ namespace gxpengine_template.MyClasses.Environment
             float vy = data.GetFloatProperty("StartY", 1);
             _rigidBody = new MovingBall(this, new Vec2(vx,vy), new Vec2(x, y), width / 2);
             _rigidBody.Drag = data.GetFloatProperty("Drag", .98f);
+            StartPos = this.GetPosInVec2();
+            SetIdleMode();
         }
 
         void Update()
@@ -40,8 +44,20 @@ namespace gxpengine_template.MyClasses.Environment
         public void Shoot(Vec2 velocity)
         {
             _rigidBody.velocity = velocity;
+            _rigidBody.Collider.position = StartPos;
             shot = true;
         }
 
+        public void SetIdleMode()
+        {
+            _rigidBody.Enabled = false;
+            shot = false;
+        }
+
+        public void SetPlayMode()
+        {
+            _rigidBody.Enabled = true;
+
+        }
     }
 }
