@@ -16,7 +16,7 @@ namespace gxpengine_template.MyClasses.Environment
         {
             _data = data;
             name = _data.Name;
-            alpha = 0;
+            visible = false;
             Placed += OnPlace;
             FailPlace += OnFailPlaced; 
             AddChild(new Coroutine(Init()));
@@ -49,7 +49,8 @@ namespace gxpengine_template.MyClasses.Environment
         
         void UpdateRamp()
         {
-            ramp = new Ramp("Assets/ramp.png", 1, 1, _data.GetFloatProperty("Bounciness", .98f));
+            ramp = new Ramp(texture.filename, 1, 1, _data.GetFloatProperty("Bounciness", .98f));
+            ramp.alpha = 0;
             MyUtils.MyGame.CurrentLevel.AddChild(ramp);
             ramp.SetOrigin(ramp.width / 2, ramp.height / 2);
             ramp.rotation = rotation;

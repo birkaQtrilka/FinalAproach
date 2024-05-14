@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="103">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="112">
  <tileset firstgid="1" name="Player" tilewidth="432" tileheight="432" tilecount="1" columns="1">
   <image source="PortalSprite.png" width="432" height="432"/>
  </tileset>
@@ -13,7 +13,7 @@
   <image source="square.png" width="100" height="100"/>
  </tileset>
  <tileset firstgid="8" name="Ramp" tilewidth="50" tileheight="50" tilecount="1" columns="1">
-  <image source="ramp.png" width="50" height="50"/>
+  <image source="ramp.png" width="78" height="78"/>
  </tileset>
  <tileset firstgid="9" name="StarsUI" tilewidth="150" tileheight="50" tilecount="4" columns="1">
   <image source="Stars.png" width="150" height="200"/>
@@ -27,16 +27,33 @@
  <tileset firstgid="15" name="Continue" tilewidth="50" tileheight="50" tilecount="1" columns="1">
   <image source="ContinueBtn.png" width="50" height="50"/>
  </tileset>
- <objectgroup id="6" name="UI"/>
- <objectgroup id="2" name="Object Layer 1">
-  <object id="98" gid="14" x="9.5" y="519.972" width="1141" height="510.055" visible="0"/>
-  <object id="100" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="15" x="351" y="221" width="50" height="50">
+ <tileset firstgid="16" name="Quit Button Menu" tilewidth="488" tileheight="194" tilecount="1" columns="1">
+  <image source="quit.png" width="488" height="194"/>
+ </tileset>
+ <tileset firstgid="17" name="Title Name" tilewidth="809" tileheight="547" tilecount="1" columns="1">
+  <image source="title.png" width="809" height="547"/>
+ </tileset>
+ <tileset firstgid="18" name="Options Menu" tilewidth="488" tileheight="196" tilecount="1" columns="1">
+  <image source="Options.png" width="488" height="196"/>
+ </tileset>
+ <tileset firstgid="19" name="Play" tilewidth="488" tileheight="195" tilecount="1" columns="1">
+  <image source="play.png" width="488" height="195"/>
+ </tileset>
+ <tileset firstgid="20" name="Menu BG" tilewidth="1080" tileheight="1920" tilecount="1" columns="1">
+  <image source="mainmenubg.png" width="1080" height="1920"/>
+ </tileset>
+ <objectgroup id="6" name="UI">
+  <object id="108" name="Quite Menu Button" type="gxpengine_template.MyClasses.UI.ExitGameBtn" gid="16" x="725.833" y="1085.5" width="488" height="194"/>
+  <object id="109" name="Menu_Name" gid="17" x="567.5" y="548.5" width="809" height="547"/>
+  <object id="110" name="Menu_Options" gid="18" x="725.833" y="889.833" width="488" height="196"/>
+  <object id="111" name="Menu_Play" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="19" x="725.833" y="700.5" width="488" height="195">
    <properties>
     <property name="LevelName" value="Assets/Test2.tmx"/>
    </properties>
   </object>
-  <object id="101" name="options" gid="15" x="351" y="300" width="50" height="50"/>
-  <object id="102" name="Exit" type="gxpengine_template.MyClasses.UI.ExitGameBtn" gid="15" x="352" y="371" width="50" height="50"/>
+ </objectgroup>
+ <objectgroup id="2" name="Object Layer 1">
+  <object id="107" name="Menu_Background" gid="20" x="663.03" y="1081.21" width="607.5" height="1080"/>
  </objectgroup>
  <objectgroup id="10" name="Managers"/>
  <objectgroup id="9" name="SceneConfig">

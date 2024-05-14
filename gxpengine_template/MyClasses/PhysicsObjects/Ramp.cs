@@ -17,16 +17,12 @@ namespace gxpengine_template.MyClasses.PhysicsObjects
         {
             this.bounciness = data.GetFloatProperty("Bounciness", .98f);
             AddChild(new Coroutine(Init()));
-            alpha = 0;
-            SetColor(1, 0, 0);
         }
 
         public Ramp(string filename, int cols, int rows, float bounciness) : base(filename, cols, rows, null)
         {
             this.bounciness = bounciness;
             AddChild(new Coroutine(Init()));
-            alpha = 0;
-            SetColor(1, 0, 0);
         }
 
         IEnumerator Init()

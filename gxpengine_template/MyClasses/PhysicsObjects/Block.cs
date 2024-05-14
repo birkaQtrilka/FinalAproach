@@ -13,16 +13,14 @@ namespace gxpengine_template.MyClasses.PhysicsObjects
         {
             this.bounciness = data.GetFloatProperty("Bounciness", .98f);
             AddChild(new Coroutine(Init()));
-            alpha = 0;
-            SetColor(1, 0, 0);
         }
 
-        public Block(string filename, int cols, int rows, float bounciness) : base(filename, cols, rows, null)
+        public Block(string filename, int cols, int rows, float bounciness, int w, int h) : base(filename, cols, rows, null)
         {
             this.bounciness = bounciness;
+            width = w; 
+            height = h;  
             AddChild(new Coroutine(Init()));
-            alpha = 0;
-            SetColor(1, 0, 0);
         }
 
         IEnumerator Init()
