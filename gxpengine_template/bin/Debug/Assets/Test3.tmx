@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="107">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="109">
  <tileset firstgid="1" name="Player" tilewidth="432" tileheight="432" tilecount="1" columns="1">
   <image source="PortalSprite.png" width="432" height="432"/>
  </tileset>
@@ -93,14 +93,15 @@
    </properties>
   </object>
   <object id="80" name="Table" type="gxpengine_template.MyClasses.Environment.Table" gid="4" x="206.334" y="514.333" width="235.333" height="440.667" visible="0"/>
-  <object id="91" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="293" y="212" width="50" height="50"/>
+  <object id="91" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="279" y="255" width="50" height="50"/>
   <object id="92" name="Hole" type="gxpengine_template.MyClasses.Environment.Hole" gid="1" x="263" y="140" width="66" height="66">
    <properties>
     <property name="NextLevelName" value="Assets/Test.tmx"/>
     <property name="PersentageOfBall" type="float" value="0.5"/>
    </properties>
   </object>
-  <object id="93" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="227" y="236.667" width="50" height="50"/>
+  <object id="93" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="277" y="330.667" width="50" height="50"/>
+  <object id="107" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="276" y="204" width="50" height="50"/>
  </objectgroup>
  <objectgroup id="10" name="Managers">
   <object id="77" name="Draggerss" type="gxpengine_template.MyClasses.Dragging.Dragger" x="-246.667" y="25.3333" width="93.3333" height="77.3333"/>
@@ -121,6 +122,10 @@
     <property name="ObjectLayersCSV" value="Assets/Test3.tmx:Managers,Main:UI,Assets/Test3.tmx:Object Layer 1"/>
    </properties>
   </object>
-  <object id="90" name="StarsUI" type="gxpengine_template.MyClasses.UI.StarsUI" gid="9" x="429" y="63" width="150" height="50"/>
+  <object id="90" name="StarsUI" type="gxpengine_template.MyClasses.UI.StarsUI" gid="9" x="429" y="63" width="150" height="50">
+   <properties>
+    <property name="StarName" value="Assets/StarC.png"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

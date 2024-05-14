@@ -93,13 +93,9 @@ namespace gxpengine_template.MyClasses.Environment
 
             if (Input.GetMouseButtonUp(0) && _canDrag)
             {
-                //put this in GameManager?
 
-                //start playMode
-                _player.SetPlayMode();
-                Dragger.Instance.CanDrag = false;
+                GameManager.Instance.StartPlayMode();
                 _player.Shoot(_shootVelocity);
-                CanLaunch = false;
                 _canDrag = false;
             }
 

@@ -1,4 +1,5 @@
-﻿using gxpengine_template.MyClasses.Dragging;
+﻿using GXPEngine;
+using gxpengine_template.MyClasses.Dragging;
 using gxpengine_template.MyClasses.Environment;
 using gxpengine_template.MyClasses.UI;
 using System.Collections;
@@ -6,7 +7,7 @@ using TiledMapParser;
 
 namespace gxpengine_template.MyClasses
 {
-    public class GameManager : TiledGameObject
+    public class GameManager : Sprite
     {
         public static GameManager Instance { get; private set; }
 
@@ -14,8 +15,9 @@ namespace gxpengine_template.MyClasses
         PlayerLauncher _launcher;
         StarsUI _starsUI;
 
-        public GameManager(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
+        public GameManager(TiledObject data) : base("Assets/square.png",true, false)
         {
+
             if(Instance != null && Instance == this)
             {
                 Destroy();
@@ -23,6 +25,7 @@ namespace gxpengine_template.MyClasses
             }
             else 
                 Instance = this;
+            visible = false;
             AddChild(new Coroutine(Init()));
         }
 
@@ -38,11 +41,18 @@ namespace gxpengine_template.MyClasses
         {
             _player.SetIdleMode();
             _player.SetPosInVec2(_player.StartPos);
-            foreach (var star in _starsUI.Stars)
+            foreach (var star in _starsUI.CollectibleStars)
                 star.ReEnable();
             _starsUI.ResetScore();
             Dragger.Instance.CanDrag = true;
             _launcher.CanLaunch = true;
+        }
+
+        public void StartPlayMode()
+        {
+            _player.SetPlayMode();
+            Dragger.Instance.CanDrag = false;
+            _launcher.CanLaunch = false;
         }
 
         protected override void OnDestroy()
