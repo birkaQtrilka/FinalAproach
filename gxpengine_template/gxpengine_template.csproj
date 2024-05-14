@@ -98,6 +98,7 @@
     <Compile Include="MyClasses\EaseFunc.cs" />
     <Compile Include="MyClasses\Environment\Booster.cs" />
     <Compile Include="MyClasses\Environment\DraggableRamp.cs" />
+    <Compile Include="MyClasses\Environment\DraggableRect.cs" />
     <Compile Include="MyClasses\Environment\Fan.cs" />
     <Compile Include="MyClasses\Environment\Hole.cs" />
     <Compile Include="MyClasses\Environment\IPlaceable.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="MyClasses\PhysicsEngine\Mover.cs" />
     <Compile Include="MyClasses\PhysicsEngine\StaticObj.cs" />
     <Compile Include="MyClasses\PhysicsEngine\Vec2.cs" />
+    <Compile Include="MyClasses\PhysicsObjects\Block.cs" />
     <Compile Include="MyClasses\PhysicsObjects\Edge.cs" />
     <Compile Include="MyClasses\PhysicsObjects\MovingBall.cs" />
     <Compile Include="MyClasses\PhysicsObjects\Ramp.cs" />
