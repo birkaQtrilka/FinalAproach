@@ -11,9 +11,24 @@ namespace gxpengine_template.MyClasses.Environment
         Player _player;
         readonly float _speedCap;
 
+        // Sounds
+        Sound _aimingSound;
+        Sound _launchingSound;
+        SoundChannel _soundChannel;
+        bool _isAimingPlayed;
+        float _volumeAiming;
+        float _volumeLaunching;
+
         public PlayerLauncher(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
+            // Sounds
             _speedCap = data.GetFloatProperty("SpeedCap");
+            _aimingSound = new Sound(data.GetStringProperty("SoundFileName1", "Assets/Sounds/BallAiming.wav"));
+            _launchingSound = new Sound(data.GetStringProperty("SoundFileName2", "Assets/Sounds/BallLaunch.wav"));
+            _volumeAiming = data.GetFloatProperty("VolumeAiming");
+            _volumeLaunching = data.GetFloatProperty("VolumeLaunching");
+            _isAimingPlayed = false;
+
             visible = false;
             AddChild(new Coroutine(Init()));
         }
@@ -39,7 +54,6 @@ namespace gxpengine_template.MyClasses.Environment
 
             if (Input.GetMouseButton(0))
             {
-
                 if (!_mousePressed)
                 {
                     _player.RigidBody.UpdateColliderPosition();
@@ -57,6 +71,14 @@ namespace gxpengine_template.MyClasses.Environment
                     }
                     _player.SetColor(1, 1, 0);
                     Gizmos.DrawArrow(_player.x, _player.y, _releaseVelocity.x, _releaseVelocity.y);
+
+
+                    // Play aiming sound only once, if player is aiming
+                    if (!_isAimingPlayed)
+                    {
+                        _aimingSound.Play(volume: _volumeLaunching);
+                        _isAimingPlayed = true;
+                    }
                 }
             }
             else
@@ -74,6 +96,7 @@ namespace gxpengine_template.MyClasses.Environment
                 _player.Shoot(_releaseVelocity);
                 CanLaunch = false;
                 _canDrag = false;
+                _launchingSound.Play(volume: _volumeLaunching);
             }
 
         }

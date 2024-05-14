@@ -11,11 +11,20 @@ namespace gxpengine_template.MyClasses.Environment
     {
         public event Action<Star> Grabbed;
 
+        // Sounds
+        Sound _pickUpSound;
+        SoundChannel _soundChannel;
+        float _volume;
+
         StaticObj _trigger;
 
         public Star(string fileName, int c, int r, TiledObject data) : base(fileName, c, r, data)
         {
             AddChild(new Coroutine(Init()));
+            
+            // Sounds
+            _pickUpSound = new Sound(data.GetStringProperty("SoundFileName", "Assets/Sounds/Collectibale sound.mp3"));
+            _volume = data.GetFloatProperty("Volume");
         }
 
         IEnumerator Init()
@@ -40,6 +49,7 @@ namespace gxpengine_template.MyClasses.Environment
         protected override void Grab(ITrigger taker)
         {
             Grabbed?.Invoke(this);
+            _soundChannel = _pickUpSound.Play(volume: _volume);
         }
 
         protected override void OnDestroy()

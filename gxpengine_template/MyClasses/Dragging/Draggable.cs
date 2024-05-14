@@ -21,11 +21,18 @@ namespace gxpengine_template.MyClasses.Dragging
         
         bool _wasPlaced;
 
+        // Sound
+        Sound _placingItems;
+        SoundChannel _soundChannel;
+        float _volume;
+
         public Draggable(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
             MenuImg = data.GetStringProperty("MenuImage", "Assets/square.png");
-
             AddChild(new Coroutine(Init()));
+
+            _placingItems = new Sound(data.GetStringProperty("SoundFileName", "Assets/Sounds/PlacingItems.wav"));
+            _volume = data.GetFloatProperty("Volume");
         }
 
         IEnumerator Init()
@@ -66,7 +73,11 @@ namespace gxpengine_template.MyClasses.Dragging
             }
 
             if (canPlace)
+            {
                 Place();
+                _soundChannel = _placingItems.Play(volume: _volume);
+            }
+                
             else
             {
                 //for inventory UI
