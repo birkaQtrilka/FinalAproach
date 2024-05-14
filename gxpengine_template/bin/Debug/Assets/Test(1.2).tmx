@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="101">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="119">
  <tileset firstgid="1" name="Player" tilewidth="432" tileheight="432" tilecount="1" columns="1">
   <image source="PortalSprite.png" width="432" height="432"/>
  </tileset>
@@ -33,16 +33,16 @@
     <property name="PrefabNameAndCountCSV" value=""/>
    </properties>
   </object>
-  <object id="84" name="PlayBtn" type=" gxpengine_template.MyClasses.UI.ChangePlayModeBtn" gid="4" x="468.333" y="221" width="50" height="50">
+  <object id="84" name="PlayBtn" type=" gxpengine_template.MyClasses.UI.ChangePlayModeBtn" gid="4" x="488.333" y="221" width="50" height="50">
    <properties>
     <property name="testX" type="float" value="0"/>
     <property name="testY" type="float" value="7"/>
    </properties>
   </object>
-  <object id="85" name="ResetSceneBtn" type="gxpengine_template.MyClasses.UI.ResetSceneBtn" gid="4" x="479" y="303.667" width="50" height="50"/>
+  <object id="85" name="ResetSceneBtn" type="gxpengine_template.MyClasses.UI.ResetSceneBtn" gid="4" x="494" y="314.667" width="50" height="50"/>
   <object id="93" name="NextLevelUI" type="gxpengine_template.MyClasses.UI.NextLevelUI" gid="14" x="6.83333" y="453.242" width="655.667" height="414.061" visible="0">
    <properties>
-    <property name="NextLevelName" value="Assets/Test(2).tmx"/>
+    <property name="NextLevelName" value="Assets/Test(1.3).tmx"/>
    </properties>
   </object>
   <object id="94" name="PauseMenu" type="gxpengine_template.MyClasses.UI.PauseMenu" gid="15" x="109.273" y="430.848" width="417.818" height="341.333" visible="0">
@@ -55,16 +55,11 @@
   </object>
  </objectgroup>
  <objectgroup id="2" name="Object Layer 1">
-  <object id="60" name="Player" type="gxpengine_template.MyClasses.Environment.Player" gid="1" x="284.365" y="486.725" width="39.6977" height="39.6977">
+  <object id="60" name="Player" type="gxpengine_template.MyClasses.Environment.Player" gid="1" x="284.032" y="485.725" width="39.6977" height="39.6977">
    <properties>
     <property name="Drag" type="float" value="0.99"/>
     <property name="StartX" type="float" value="0"/>
     <property name="StartY" type="float" value="0"/>
-   </properties>
-  </object>
-  <object id="68" type="gxpengine_template.MyClasses.Edge" gid="2" x="415" y="60" width="450" height="65" rotation="98">
-   <properties>
-    <property name="Bounciness" type="float" value="0.99"/>
    </properties>
   </object>
   <object id="71" type="gxpengine_template.MyClasses.Edge" gid="2" x="188.376" y="509.148" width="226.458" height="39.5759" rotation="9.90739">
@@ -72,35 +67,45 @@
     <property name="Bounciness" type="float" value="0.99"/>
    </properties>
   </object>
-  <object id="72" type="gxpengine_template.MyClasses.Edge" gid="2" x="193.144" y="63.9841" width="219.56" height="39.7782" rotation="9.90739">
+  <object id="72" type="gxpengine_template.MyClasses.Edge" gid="2" x="193.144" y="63.9841" width="222.61" height="39.7571" rotation="9.90739">
    <properties>
     <property name="Bounciness" type="float" value="0.99"/>
    </properties>
   </object>
-  <object id="73" type="gxpengine_template.MyClasses.Edge" gid="2" x="346.583" y="286.267" width="36.7679" height="56.4875" rotation="56.8901">
+  <object id="80" name="Table" type="gxpengine_template.MyClasses.Environment.Table" gid="4" x="186.334" y="512.333" width="251.333" height="451.667" visible="0"/>
+  <object id="91" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="332.333" y="403.334" width="40" height="40"/>
+  <object id="92" name="Hole" type="gxpengine_template.MyClasses.Environment.Hole" gid="1" x="257.667" y="143.667" width="66" height="66">
+   <properties>
+    <property name="NextLevelName" value="Assets/Test(1.3).tmx"/>
+   </properties>
+  </object>
+  <object id="95" type="gxpengine_template.MyClasses.Edge" gid="2" x="190.333" y="60" width="444.809" height="67.8049" rotation="98">
    <properties>
     <property name="Bounciness" type="float" value="0.99"/>
    </properties>
   </object>
-  <object id="80" name="Table" type="gxpengine_template.MyClasses.Environment.Table" gid="4" x="186.334" y="512.333" width="233.333" height="451.667" visible="0"/>
-  <object id="91" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="274.333" y="306.667" width="50" height="50"/>
-  <object id="92" name="Hole" type="gxpengine_template.MyClasses.Environment.Hole" gid="1" x="267.667" y="145" width="66" height="66">
-   <properties>
-    <property name="NextLevelName" value="Assets/Test(2).tmx"/>
-   </properties>
-  </object>
-  <object id="95" type="gxpengine_template.MyClasses.Edge" gid="2" x="190.333" y="60" width="450" height="65" rotation="98">
+  <object id="98" type="gxpengine_template.MyClasses.Edge" gid="2" x="191.719" y="318.906" width="74.8171" height="110.866" rotation="56.8901">
    <properties>
     <property name="Bounciness" type="float" value="0.99"/>
    </properties>
   </object>
-  <object id="98" type="gxpengine_template.MyClasses.Edge" gid="2" x="189.719" y="288.239" width="39.918" height="60.4025" rotation="56.8901">
+  <object id="105" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="205" y="211.333" width="40" height="40"/>
+  <object id="106" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="332" y="305.333" width="40" height="40"/>
+  <object id="114" type="gxpengine_template.MyClasses.Edge" gid="2" x="415.515" y="62.5606" width="445.296" height="66.4485" rotation="98">
    <properties>
     <property name="Bounciness" type="float" value="0.99"/>
    </properties>
   </object>
-  <object id="99" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="276.333" y="223.667" width="50" height="50"/>
-  <object id="100" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="275.333" y="391.333" width="50" height="50"/>
+  <object id="117" type="gxpengine_template.MyClasses.Edge" gid="2" x="316.848" y="154.571" width="50" height="35" rotation="90">
+   <properties>
+    <property name="Bounciness" type="float" value="0.99"/>
+   </properties>
+  </object>
+  <object id="118" type="gxpengine_template.MyClasses.Edge" gid="2" x="358.333" y="164.18" width="50" height="35" rotation="180">
+   <properties>
+    <property name="Bounciness" type="float" value="0.99"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="10" name="Managers">
   <object id="77" name="Draggerss" type="gxpengine_template.MyClasses.Dragging.Dragger" x="-246.667" y="25.3333" width="93.3333" height="77.3333"/>
@@ -113,7 +118,7 @@
  <objectgroup id="9" name="SceneConfig">
   <object id="55" name="Configs" type="gxpengine_template.MyClasses.SceneHandling.PlaySceneConfigs" x="-246.606" y="-100.303" width="112.121" height="109.091">
    <properties>
-    <property name="ObjectLayersCSV" value="Assets/Test(1).tmx:Managers,Main:UI,Assets/Test(1).tmx:Object Layer 1"/>
+    <property name="ObjectLayersCSV" value="Assets/Test(1.2).tmx:Managers,Main:UI,Assets/Test(1.2).tmx:Object Layer 1"/>
    </properties>
   </object>
   <object id="90" name="StarsUI" type="gxpengine_template.MyClasses.UI.StarsUI" gid="9" x="429" y="63" width="120" height="40"/>

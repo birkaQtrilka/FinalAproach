@@ -43,7 +43,7 @@
   <object id="92" name="StarsUI" type="gxpengine_template.MyClasses.UI.StarsUI" gid="9" x="465" y="67" width="120" height="40"/>
   <object id="97" name="NextLevelUI" type="gxpengine_template.MyClasses.UI.NextLevelUI" gid="14" x="67.5589" y="433.432" width="518.216" height="327.259" visible="0">
    <properties>
-    <property name="NextLevelName" value="Assets/Test(4).tmx"/>
+    <property name="NextLevelName" value="Assets/Test(3.3).tmx"/>
    </properties>
   </object>
   <object id="98" name="PauseMenu" type="gxpengine_template.MyClasses.UI.PauseMenu" gid="15" x="148.524" y="415.733" width="330.228" height="269.777" visible="0">
@@ -91,18 +91,12 @@
   <object id="80" name="Table" type="gxpengine_template.MyClasses.Environment.Table" gid="4" x="199.334" y="509.333" width="231.333" height="448.667" visible="0"/>
   <object id="93" name="Hole" type="gxpengine_template.MyClasses.Environment.Hole" gid="1" x="285" y="151" width="66" height="66">
    <properties>
-    <property name="NextLevelName" value="Assets/Test(4).tmx"/>
+    <property name="NextLevelName" value="Assets/Test(3.3).tmx"/>
    </properties>
   </object>
   <object id="95" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="293" y="318" width="40" height="40"/>
   <object id="108" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="215" y="275.667" width="40" height="40"/>
   <object id="109" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="215.333" y="140.667" width="40" height="40"/>
-  <object id="110" name="Hole" type="gxpengine_template.MyClasses.Environment.Hole" gid="1" x="493" y="408" width="66" height="66">
-   <properties>
-    <property name="NextLevelName" value="Assets/Test(4).tmx"/>
-    <property name="Visible" type="bool" value="false"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup id="10" name="Managers">
   <object id="77" name="Draggerss" type="gxpengine_template.MyClasses.Dragging.Dragger" x="-246.667" y="25.3333" width="93.3333" height="77.3333"/>
@@ -115,7 +109,7 @@
  <objectgroup id="9" name="SceneConfig">
   <object id="55" name="Configs" type="gxpengine_template.MyClasses.SceneHandling.PlaySceneConfigs" x="-247.939" y="-97.6363" width="112.121" height="109.091">
    <properties>
-    <property name="ObjectLayersCSV" value="Assets/Test(3).tmx:Managers,Main:UI,Assets/Test(3).tmx:Object Layer 1"/>
+    <property name="ObjectLayersCSV" value="Assets/Test(3.2).tmx:Managers,Main:UI,Assets/Test(3.2).tmx:Object Layer 1"/>
    </properties>
   </object>
  </objectgroup>

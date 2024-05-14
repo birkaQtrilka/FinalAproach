@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="113">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="119">
  <tileset firstgid="1" name="Player" tilewidth="432" tileheight="432" tilecount="1" columns="1">
   <image source="PortalSprite.png" width="432" height="432"/>
  </tileset>
@@ -35,34 +35,64 @@
   </object>
  </objectgroup>
  <objectgroup id="2" name="Object Layer 1">
-  <object id="107" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="15" x="194" y="210.5" width="50" height="50">
+  <object id="107" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="15" x="192.667" y="146.833" width="50" height="50">
    <properties>
-    <property name="LevelName" value="Assets/Test(1).tmx"/>
+    <property name="LevelName" value="Assets/Test(1.1).tmx"/>
    </properties>
   </object>
-  <object id="108" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="15" x="273" y="210.5" width="50" height="50">
+  <object id="108" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="15" x="256.333" y="146.5" width="50" height="50">
    <properties>
-    <property name="LevelName" value="Assets/Test(2).tmx"/>
+    <property name="LevelName" value="Assets/Test(1.2).tmx"/>
    </properties>
   </object>
-  <object id="109" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="15" x="196" y="292.5" width="50" height="50">
+  <object id="109" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="15" x="256.333" y="273.833" width="50" height="50">
    <properties>
-    <property name="LevelName" value="Assets/Test(4).tmx"/>
+    <property name="LevelName" value="Assets/Test(3.2).tmx"/>
    </properties>
   </object>
-  <object id="110" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="15" x="270" y="294.5" width="50" height="50">
+  <object id="110" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="15" x="255.667" y="338.5" width="50" height="50">
    <properties>
-    <property name="LevelName" value="Assets/Test(5).tmx"/>
+    <property name="LevelName" value="Assets/Test(4.2).tmx"/>
    </properties>
   </object>
-  <object id="111" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="15" x="337" y="207.5" width="50" height="50">
+  <object id="111" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="15" x="320.333" y="146.5" width="50" height="50">
    <properties>
-    <property name="LevelName" value="Assets/Test(3).tmx"/>
+    <property name="LevelName" value="Assets/Test(1.3).tmx"/>
    </properties>
   </object>
-  <object id="112" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="15" x="342" y="294.5" width="50" height="50">
+  <object id="112" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="15" x="320.333" y="338.167" width="50" height="50">
    <properties>
-    <property name="LevelName" value="Assets/Test3.tmx"/>
+    <property name="LevelName" value="Assets/Test(4.3).tmx"/>
+   </properties>
+  </object>
+  <object id="113" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="15" x="192.333" y="338.333" width="50" height="50">
+   <properties>
+    <property name="LevelName" value="Assets/Test(4.1).tmx"/>
+   </properties>
+  </object>
+  <object id="114" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="15" x="192.333" y="274.667" width="50" height="50">
+   <properties>
+    <property name="LevelName" value="Assets/Test(3.1).tmx"/>
+   </properties>
+  </object>
+  <object id="115" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="15" x="192.333" y="210.333" width="50" height="50">
+   <properties>
+    <property name="LevelName" value="Assets/Test(2.1).tmx"/>
+   </properties>
+  </object>
+  <object id="116" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="15" x="320.333" y="210.333" width="50" height="50">
+   <properties>
+    <property name="LevelName" value="Assets/Test(2.3).tmx"/>
+   </properties>
+  </object>
+  <object id="117" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="15" x="256.333" y="210" width="50" height="50">
+   <properties>
+    <property name="LevelName" value="Assets/Test(2.2).tmx"/>
+   </properties>
+  </object>
+  <object id="118" name="NxtLvl" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="15" x="320.667" y="274.333" width="50" height="50">
+   <properties>
+    <property name="LevelName" value="Assets/Test(3.3).tmx"/>
    </properties>
   </object>
  </objectgroup>
