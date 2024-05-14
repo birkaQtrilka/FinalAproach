@@ -123,7 +123,6 @@
     <Compile Include="MyClasses\PhysicsObjects\Edge.cs" />
     <Compile Include="MyClasses\PhysicsObjects\MovingBall.cs" />
     <Compile Include="MyClasses\PhysicsObjects\Ramp.cs" />
-    <Compile Include="MyClasses\PhysicsObjects\TriggerBox.cs" />
     <Compile Include="MyClasses\PickUps\Coin.cs" />
     <Compile Include="MyClasses\PickUps\ITrigger.cs" />
     <Compile Include="MyClasses\PickUps\PickUp.cs" />

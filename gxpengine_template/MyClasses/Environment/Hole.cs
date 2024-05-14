@@ -8,11 +8,10 @@ namespace gxpengine_template.MyClasses.Environment
     public class Hole : TiledGameObject
     {
         Player player;
-        string _nextLevelName;
-
+        float _persentageOfBall;
         public Hole(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
-            _nextLevelName = data.GetStringProperty("NextLevelName");
+            _persentageOfBall = data.GetFloatProperty("PersentageOfBall");
             AddChild(new Coroutine(Init()));
         }
 
@@ -27,13 +26,14 @@ namespace gxpengine_template.MyClasses.Environment
             if (player == null) return;
 
             float dist = this.GetPosInVec2().DistanceTo(player.GetPosInVec2());
-            if (width * .5f > dist + player.width * .5f)
+            if (width * .5f > dist + player.width * .5f * _persentageOfBall)
             {
                 player.Destroy();
                 player = null;
                 var ui = MyGame.main.FindObjectOfType<NextLevelUI>();
                 ui.Pop();
                 Dragger.Instance.CanDrag = false;
+
             }
         }
     }

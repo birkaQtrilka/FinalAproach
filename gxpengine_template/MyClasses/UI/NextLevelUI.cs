@@ -1,4 +1,5 @@
-﻿using gxpengine_template.MyClasses.Tweens;
+﻿using GXPEngine;
+using gxpengine_template.MyClasses.Tweens;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,20 +11,30 @@ namespace gxpengine_template.MyClasses.UI
     {
         ResetSceneBtn _resetSceneBtn;
         NextLevelButton _nextLevelButton;
-        MenuStarsUI _starsUI;
-
+        MenuStarsUI _menuStarsUI;
+        StarsUI _starsUI;
+        Vec2 _resetBtnPos;
+        Vec2 _nextLvlBtnPos;
+        Vec2 _menuStarsPos;
         public NextLevelUI(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
             Dictionary<string, IPrefab> prefabs = MyUtils.MyGame.Prefabs;
             _resetSceneBtn = prefabs[data.GetStringProperty("ResetBtnName", "Reset")].Clone() as ResetSceneBtn;
+            _resetSceneBtn.SetOrigin(_resetSceneBtn.width/2,_resetSceneBtn.height/2);
             _nextLevelButton = prefabs[data.GetStringProperty("NextLvlBtnName", "NxtLvl")].Clone() as NextLevelButton;
+            _nextLevelButton.SetOrigin(_nextLevelButton.width / 2, _nextLevelButton.height / 2);
             _nextLevelButton.NextLevelName = data.GetStringProperty("NextLevelName");
-            _starsUI = prefabs[data.GetStringProperty("StarsUIName", "StarsUIMenu")].Clone() as MenuStarsUI;
+            _menuStarsUI = prefabs[data.GetStringProperty("StarsUIName", "StarsUIMenu")].Clone() as MenuStarsUI;
+            _menuStarsUI.SetOrigin(_menuStarsUI.width / 2, _resetSceneBtn.height / 2);
 
+
+
+            _menuStarsPos = new Vec2(data.GetFloatProperty("MenuStarsPosX"), data.GetFloatProperty("MenuStarsPosY"));
+            _nextLvlBtnPos = new Vec2(data.GetFloatProperty("NextLvlBtnPosX"), data.GetFloatProperty("NextLvlBtnPosY"));
+            _resetBtnPos = new Vec2(data.GetFloatProperty("ResetBtnPosX"), data.GetFloatProperty("ResetBtnPosY"));
             //completion time?
-            
+
             visible = false;
-            _nextLevelButton.SetXY(50, 50);
             AddChild(new Coroutine(Init()));
         }
 
@@ -31,18 +42,22 @@ namespace gxpengine_template.MyClasses.UI
         {
             yield return null;
             scale = 0;
-
+            _starsUI = MyGame.main.FindObjectOfType<StarsUI>();
         }
 
         public void Pop()
         {
             AddChild(_resetSceneBtn);
             AddChild(_nextLevelButton);
-            AddChild(_starsUI);
-            visible = true;
-            _starsUI.Score = StarsUI.Score;
+            AddChild(_menuStarsUI);
 
-            AddChild(new Tween(TweenProperty.scale, 500, 1, EaseFunc.Factory("EaseOutSin")).OnCompleted(()=> _starsUI.PlayAnim()));
+            _resetSceneBtn.SetPosInVec2(_resetBtnPos);
+            _nextLevelButton.SetPosInVec2(_nextLvlBtnPos);
+            _menuStarsUI.SetPosInVec2 (_menuStarsPos);
+            visible = true;
+            _menuStarsUI.Score = _starsUI.Score;
+
+            AddChild(new Tween(TweenProperty.scale, 500, 1, EaseFunc.Factory("EaseOutSin")).OnCompleted(()=> _menuStarsUI.PlayAnim()));
         }
 
         

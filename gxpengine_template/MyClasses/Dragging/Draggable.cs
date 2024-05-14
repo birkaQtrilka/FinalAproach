@@ -12,6 +12,8 @@ namespace gxpengine_template.MyClasses.Dragging
     {
 
         public event Action<IPlaceable> Placed;
+        public event Action<IPlaceable> FailPlace;
+
         public string MenuImg { get; private set; }
         public Vec2 OrigPosition { get; set; }
 
@@ -30,7 +32,7 @@ namespace gxpengine_template.MyClasses.Dragging
         {
             yield return null;
             trigger = new StaticObj(this, true);
-            trigger.SetCollider(new Rectangle(trigger, new Vec2(x, y), width / 2));//make rect collider
+            trigger.SetCollider(new Rectangle(trigger, new Vec2(x, y), new Vec2(width / 2, height / 2)));//make rect collider
 
             Dragger.Instance?.Draggables.Add(this);
             OrigPosition = this.GetPosInVec2();
@@ -72,6 +74,7 @@ namespace gxpengine_template.MyClasses.Dragging
                     visible = false;
                 this.SetPosInVec2(OrigPosition);
                 trigger.UpdateColliderPosition();
+                FailPlace?.Invoke(this);
 
             }
         }
@@ -91,6 +94,7 @@ namespace gxpengine_template.MyClasses.Dragging
         {
             Dragger.Instance?.Draggables.Remove(this);
             Placed = null;
+            FailPlace = null;
         }
 
         public abstract GameObject Clone();

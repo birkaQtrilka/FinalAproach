@@ -33,7 +33,7 @@ namespace Physics
 
         CollisionInfo DiscreteRectCollision(Rectangle rect, Vec2 velocity)
         {
-            var nearPoint = new Vec2(Mathf.Clamp(position.x, rect.position.x - rect.Radius, rect.position.x + rect.Radius), Mathf.Clamp(position.y, rect.position.y - rect.Radius, rect.position.y + rect.Radius));
+            var nearPoint = new Vec2(Mathf.Clamp(position.x, rect.position.x - rect.Size.x, rect.position.x + rect.Size.x), Mathf.Clamp(position.y, rect.position.y - rect.Size.y, rect.position.y + rect.Size.y));
             Vec2 potentialPos = position + velocity;
 
             Vec2 rayToNearest = nearPoint - potentialPos;

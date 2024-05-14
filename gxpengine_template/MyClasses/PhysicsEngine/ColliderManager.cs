@@ -42,10 +42,10 @@ namespace Physics {
 
             triggerColliders.Remove(col);
 		}
+		public bool TriggerColliderExists(Collider col) => triggerColliders.Contains(col);
+		public bool SolidColliderExists(Collider col) => solidColliders.Contains(col);
 
-		// Note: feel free to do something smart here like space partitioning, to improve efficiency:
-
-		public CollisionInfo MoveUntilCollision(Collider col, Vec2 velocity) {
+        public CollisionInfo MoveUntilCollision(Collider col, Vec2 velocity) {
 			CollisionInfo firstCollision = null;
 			foreach (Collider other in solidColliders) {
 				if (other!=col) {
@@ -105,7 +105,7 @@ namespace Physics {
 
 		public static bool RectCircleOverlap(Rectangle r, Circle c)
 		{
-            var nearPoint = new Vec2(Mathf.Clamp(c.position.x, r.position.x - r.Radius, r.position.x + r.Radius), Mathf.Clamp(c.position.y, r.position.y - r.Radius, r.position.y + r.Radius));
+            var nearPoint = new Vec2(Mathf.Clamp(c.position.x, r.position.x - r.Size.x, r.position.x + r.Size.x), Mathf.Clamp(c.position.y, r.position.y - r.Size.y, r.position.y + r.Size.y));
 
             Vec2 rayToNearest = nearPoint - c.position;
             float overlap = c.Radius - rayToNearest.Length;
@@ -118,10 +118,10 @@ namespace Physics {
             float y1 = l.Start.y;
             float x2 = l.End.x;
             float y2 = l.End.y;
-            float rx = r.position.x - r.Radius;
-            float ry = r.position.y - r.Radius;
-            float rh = r.Radius * 2;
-            float rw = r.Radius * 2;
+            float rx = r.position.x - r.Size.x;
+            float ry = r.position.y - r.Size.y;
+            float rh = r.Size.y * 2;
+            float rw = r.Size.x * 2;
 
             return LineLineOverlap(x1, y1, x2, y2, rx, ry, rx, ry + rh)
                 || LineLineOverlap(x1, y1, x2, y2, rx + rw, ry, rx + rw, ry + rh)
