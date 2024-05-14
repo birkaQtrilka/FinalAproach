@@ -28,9 +28,7 @@ namespace gxpengine_template.MyClasses.Environment
         IEnumerator Start(TiledObject data)
         {
             yield return null;
-            float vx = data.GetFloatProperty("StartX", 1);
-            float vy = data.GetFloatProperty("StartY", 1);
-            RigidBody = new MovingBall(this, new Vec2(vx,vy), new Vec2(x, y), width / 2);
+            RigidBody = new MovingBall(this, Vec2.zero, new Vec2(x, y), width / 2);
             RigidBody.Drag = data.GetFloatProperty("Drag", .98f);
             StartPos = this.GetPosInVec2();
             SetIdleMode();
