@@ -13,13 +13,14 @@ namespace gxpengine_template.MyClasses.Environment
         public Hole(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
             _nextLevelName = data.GetStringProperty("NextLevelName");
-            AddChild(new Coroutine(Init()));
+            AddChild(new Coroutine(Init(data)));
         }
 
-        IEnumerator Init()
+        IEnumerator Init(TiledObject data)
         {
             yield return null;
             player = MyUtils.MyGame.FindObjectOfType<Player>();
+            visible = data.GetBoolProperty("Visible", true);
 
         }
         void Update()

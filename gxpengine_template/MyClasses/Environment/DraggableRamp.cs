@@ -28,18 +28,13 @@ namespace gxpengine_template.MyClasses.Environment
 
         private void OnPlace(IPlaceable obj)
         {
-            //ramp.Destroy();
             UpdateRamp();
         }
         
-        public override void OnStartDrag(Vec2 mousePos)
-        {
-            base.OnStartDrag(mousePos);
-            ramp.Destroy();
-        }
 
         void UpdateRamp()
         {
+            ramp?.Destroy();
             ramp = new Ramp("Assets/ramp.png", 1, 1, _data.GetFloatProperty("Bounciness", .98f));
             MyUtils.MyGame.CurrentLevel.AddChild(ramp);
             ramp.SetOrigin(ramp.width / 2, ramp.height / 2);

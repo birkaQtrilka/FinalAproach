@@ -17,7 +17,7 @@ namespace gxpengine_template.MyClasses.UI
         public void PlayAnim()
         {
             //can be for individual stars
-            if (++currScore > Score-1) return;
+            if (++currScore > Score) return;
             SetFrame(currentFrame + 1);
 
             AddChild

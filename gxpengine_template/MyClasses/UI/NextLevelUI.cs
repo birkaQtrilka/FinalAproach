@@ -10,15 +10,15 @@ namespace gxpengine_template.MyClasses.UI
     {
         ResetSceneBtn _resetSceneBtn;
         NextLevelButton _nextLevelButton;
-        MenuStarsUI _starsUI;
-
+        MenuStarsUI _menuStarsUI;
+        StarsUI _starsUI;
         public NextLevelUI(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
             Dictionary<string, IPrefab> prefabs = MyUtils.MyGame.Prefabs;
             _resetSceneBtn = prefabs[data.GetStringProperty("ResetBtnName", "Reset")].Clone() as ResetSceneBtn;
             _nextLevelButton = prefabs[data.GetStringProperty("NextLvlBtnName", "NxtLvl")].Clone() as NextLevelButton;
             _nextLevelButton.NextLevelName = data.GetStringProperty("NextLevelName");
-            _starsUI = prefabs[data.GetStringProperty("StarsUIName", "StarsUIMenu")].Clone() as MenuStarsUI;
+            _menuStarsUI = prefabs[data.GetStringProperty("StarsUIName", "StarsUIMenu")].Clone() as MenuStarsUI;
 
             //completion time?
             
@@ -31,18 +31,18 @@ namespace gxpengine_template.MyClasses.UI
         {
             yield return null;
             scale = 0;
-
+            _starsUI = MyGame.main.FindObjectOfType<StarsUI>();
         }
 
         public void Pop()
         {
             AddChild(_resetSceneBtn);
             AddChild(_nextLevelButton);
-            AddChild(_starsUI);
+            AddChild(_menuStarsUI);
             visible = true;
-            _starsUI.Score = StarsUI.Score;
+            _menuStarsUI.Score = _starsUI.Score;
 
-            AddChild(new Tween(TweenProperty.scale, 500, 1, EaseFunc.Factory("EaseOutSin")).OnCompleted(()=> _starsUI.PlayAnim()));
+            AddChild(new Tween(TweenProperty.scale, 500, 1, EaseFunc.Factory("EaseOutSin")).OnCompleted(()=> _menuStarsUI.PlayAnim()));
         }
 
         

@@ -50,6 +50,7 @@ namespace gxpengine_template.MyClasses.UI
 
             foreach (string pair in data.GetStringProperty("PrefabNameAndCountCSV").Split(','))
             {
+                if(string.IsNullOrEmpty(pair)) continue;
                 Placeables.Add(new PlaceableData(pair.Split(':')));
                 var newMenuImg = new Sprite(Placeables[i].PlaceablePrefab.MenuImg);
                 var newTextMesh = new TextMesh(Placeables[i].Count.ToString(), newMenuImg.width, newMenuImg.width);
