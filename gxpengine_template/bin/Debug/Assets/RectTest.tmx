@@ -23,18 +23,17 @@
  </tileset>
  <objectgroup id="6" name="UI"/>
  <objectgroup id="2" name="Object Layer 1">
-  <object id="96" name="Fan" type="gxpengine_template.MyClasses.Environment.Fan" gid="3" x="375" y="406" width="50" height="50"/>
-  <object id="97" type="gxpengine_template.MyClasses.Edge" gid="2" x="294.146" y="277.083" width="219.56" height="39.7782" rotation="104.052">
+  <object id="97" type="gxpengine_template.MyClasses.Edge" gid="2" x="306.146" y="54.083" width="438.801" height="82.2822" rotation="104.052">
    <properties>
     <property name="Bounciness" type="float" value="1"/>
    </properties>
   </object>
-  <object id="98" type="gxpengine_template.MyClasses.Edge" gid="2" x="513.22" y="274.111" width="219.56" height="39.7782" rotation="104.052">
+  <object id="98" type="gxpengine_template.MyClasses.Edge" gid="2" x="527.22" y="53.111" width="437.346" height="79.8565" rotation="104.052">
    <properties>
     <property name="Bounciness" type="float" value="1"/>
    </properties>
   </object>
-  <object id="99" type="gxpengine_template.MyClasses.Edge" gid="2" x="514.398" y="274.907" width="219.56" height="39.7782" rotation="188.971">
+  <object id="99" type="gxpengine_template.MyClasses.Edge" gid="2" x="529.398" y="52.907" width="219.56" height="39.7782" rotation="188.971">
    <properties>
     <property name="Bounciness" type="float" value="1"/>
    </properties>
@@ -44,7 +43,7 @@
     <property name="Bounciness" type="float" value="1"/>
    </properties>
   </object>
-  <object id="101" name="Player" type="gxpengine_template.MyClasses.Environment.Player" gid="1" x="309.151" y="476.151" width="39.6977" height="39.6977">
+  <object id="101" name="Player" type="gxpengine_template.MyClasses.Environment.Player" gid="1" x="354.151" y="478.151" width="39.6977" height="39.6977">
    <properties>
     <property name="Drag" type="float" value="1"/>
     <property name="StartX" type="float" value="1"/>

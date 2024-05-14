@@ -7,18 +7,18 @@ using TiledMapParser;
 
 namespace gxpengine_template.MyClasses.Environment
 {
-    public class DraggableRamp : Draggable, IPrefab
+    public class DraggableRect : Draggable, IPrefab
     {
-        Ramp ramp;
+        Block block;
         readonly TiledObject _data;
 
-        public DraggableRamp(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
+        public DraggableRect(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
             _data = data;
             name = _data.Name;
-            alpha = 0;
+
             Placed += OnPlace;
-            FailPlace += OnFailPlaced; 
+            FailPlace += OnFailPlaced;
             AddChild(new Coroutine(Init()));
         }
 
@@ -33,11 +33,10 @@ namespace gxpengine_template.MyClasses.Environment
             yield return null;
             UpdateRamp();
         }
-
         public override void OnStartDrag(Vec2 mousePos)
         {
             base.OnStartDrag(mousePos);
-            ramp.Destroy();
+            block.Destroy();
 
         }
 
@@ -46,24 +45,21 @@ namespace gxpengine_template.MyClasses.Environment
 
             UpdateRamp();
         }
-        
+
         void UpdateRamp()
         {
-            ramp = new Ramp("Assets/ramp.png", 1, 1, _data.GetFloatProperty("Bounciness", .98f));
-            MyUtils.MyGame.CurrentLevel.AddChild(ramp);
-            ramp.SetOrigin(ramp.width / 2, ramp.height / 2);
-            ramp.rotation = rotation;
-            ramp.SetXY(x, y );
+            block = new Block("Assets/square.png", 1, 1, _data.GetFloatProperty("Bounciness", .98f));
+            MyUtils.MyGame.CurrentLevel.AddChild(block);
+            block.SetOrigin(block.width / 2, block.height / 2);
+            block.SetXY(x, y);
 
-            ramp.rotation = rotation;
         }
 
         public override GameObject Clone()
         {
-            var clone = new DraggableRamp(texture.filename,_cols,_rows, _data);
+            var clone = new DraggableRect(texture.filename, _cols, _rows, _data);
             clone.SetOrigin(clone.width / 2, clone.width / 2);
             name = _data.Name;
-            clone.rotation = _data.Rotation;
             return clone;
         }
 
@@ -76,3 +72,4 @@ namespace gxpengine_template.MyClasses.Environment
         }
     }
 }
+
