@@ -15,7 +15,7 @@ namespace gxpengine_template.MyClasses.UI
         public StarsUI(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
             _scoreVisual = new AnimationSprite[3];
-            string starName = data.GetStringProperty("StarName");
+            string starName = data.GetStringProperty("StarName","Assets/StarC.png");
             for (int i = 0; i < 3; i++)
             {
                 var star = new AnimationSprite(starName, 2, 1, -1, true, false);

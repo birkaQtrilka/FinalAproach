@@ -20,7 +20,6 @@ namespace gxpengine_template.MyClasses.Environment
             }
             else
                 Instance = this;
-            alpha = .3f;
             SetOrigin(width / 2, height / 2) ;
             AddChild(new Coroutine(Start()));
         }
