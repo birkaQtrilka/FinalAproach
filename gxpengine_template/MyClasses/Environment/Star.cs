@@ -15,6 +15,8 @@ namespace gxpengine_template.MyClasses.Environment
 
         public Star(string fileName, int c, int r, TiledObject data) : base(fileName, c, r, data)
         {
+            AddChild(new AnimationCycler(this, data.GetIntProperty("AnimationDelayMs", 500)));
+
             AddChild(new Coroutine(Init()));
         }
 

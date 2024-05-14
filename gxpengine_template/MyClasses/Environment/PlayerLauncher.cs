@@ -55,7 +55,7 @@ namespace gxpengine_template.MyClasses.Environment
 
         void Update()
         {
-            if (_player == null || !CanLaunch) return;
+            if (_player == null || !CanLaunch || Dragger.Instance.CurrentDrag != null) return;
 
             Vec2 mousePos = new Vec2(Input.mouseX, Input.mouseY);
             _player.SetColor(1, 1, 1);

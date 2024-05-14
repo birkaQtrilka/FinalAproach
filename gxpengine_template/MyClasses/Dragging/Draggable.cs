@@ -24,7 +24,7 @@ namespace gxpengine_template.MyClasses.Dragging
         public Draggable(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
             MenuImg = data.GetStringProperty("MenuImage", "Assets/square.png");
-
+            AddChild(new AnimationCycler(this, data.GetIntProperty("AnimationDelayMs", 500)));
             AddChild(new Coroutine(Init()));
         }
 

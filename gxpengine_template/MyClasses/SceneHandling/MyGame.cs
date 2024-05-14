@@ -19,7 +19,7 @@ public class MyGame : Game
         new MyGame().Start();
     }
 
-    public MyGame() : base(1920, 1080, false, pPixelArt:true)
+    public MyGame() : base(1920, 1080, false, pPixelArt:false)
 	{
         name = "Main";
         Prefabs = LoadPrefabs();

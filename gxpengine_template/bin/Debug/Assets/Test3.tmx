@@ -13,7 +13,7 @@
   <image source="square.png" width="100" height="100"/>
  </tileset>
  <tileset firstgid="8" name="Ramp" tilewidth="50" tileheight="50" tilecount="1" columns="1">
-  <image source="ramp.png" width="50" height="50"/>
+  <image source="ramp.png" width="78" height="78"/>
  </tileset>
  <tileset firstgid="9" name="StarsUI" tilewidth="150" tileheight="50" tilecount="4" columns="1">
   <image source="Stars.png" width="150" height="200"/>
@@ -36,8 +36,16 @@
     <property name="PrefabNameAndCountCSV" value="Booster:3,Ramp:2,Ramp1:2,Ramp2:5,Ramp3:1,Block:2"/>
    </properties>
   </object>
-  <object id="84" name="PlayBtn" type=" gxpengine_template.MyClasses.UI.ChangePlayModeBtn" gid="4" x="479.333" y="226" width="50" height="50"/>
-  <object id="85" name="ResetSceneBtn" type="gxpengine_template.MyClasses.UI.ResetSceneBtn" gid="4" x="492" y="308.667" width="50" height="50"/>
+  <object id="84" name="PlayBtn" type=" gxpengine_template.MyClasses.UI.ChangePlayModeBtn" gid="4" x="479.333" y="226" width="50" height="50">
+   <properties>
+    <property name="Disapear" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="85" name="ResetSceneBtn" type="gxpengine_template.MyClasses.UI.ResetSceneBtn" gid="4" x="492" y="308.667" width="50" height="50">
+   <properties>
+    <property name="Disapear" type="bool" value="true"/>
+   </properties>
+  </object>
   <object id="97" name="NextLevelUI" type="gxpengine_template.MyClasses.UI.NextLevelUI" gid="14" x="-1.83333" y="407.333" width="689" height="308" visible="0">
    <properties>
     <property name="MenuStarsPosX" type="float" value="0"/>

@@ -84,6 +84,7 @@
     <Compile Include="GXPEngine\Utils\Mathf.cs" />
     <Compile Include="GXPEngine\Utils\Time.cs" />
     <Compile Include="GXPEngine\Utils\Utils.cs" />
+    <Compile Include="MyClasses\AnimationCycler.cs" />
     <Compile Include="MyClasses\Animations\Animation.cs" />
     <Compile Include="MyClasses\Animations\AnimationManager.cs" />
     <Compile Include="MyClasses\Animations\AutoAnimatedSprite.cs" />

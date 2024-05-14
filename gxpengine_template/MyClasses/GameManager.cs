@@ -2,6 +2,7 @@
 using gxpengine_template.MyClasses.Dragging;
 using gxpengine_template.MyClasses.Environment;
 using gxpengine_template.MyClasses.UI;
+using System;
 using System.Collections;
 using TiledMapParser;
 
@@ -9,11 +10,13 @@ namespace gxpengine_template.MyClasses
 {
     public class GameManager : Sprite
     {
+        public event Action OnWinScreen;
         public static GameManager Instance { get; private set; }
 
         Player _player;
         PlayerLauncher _launcher;
         StarsUI _starsUI;
+        NextLevelUI _nextLevelUI;
 
         public GameManager(TiledObject data) : base("Assets/square.png",true, false)
         {
@@ -35,6 +38,7 @@ namespace gxpengine_template.MyClasses
             _player = MyUtils.MyGame.CurrentLevel.FindObjectOfType<Player>();
             _launcher = MyGame.main.FindObjectOfType<PlayerLauncher>();
             _starsUI = MyGame.main.FindObjectOfType<StarsUI>();
+            _nextLevelUI = MyGame.main.FindObjectOfType<NextLevelUI>();
         }
 
         public void StartIdleMode()
@@ -55,8 +59,16 @@ namespace gxpengine_template.MyClasses
             _launcher.CanLaunch = false;
         }
 
+        public void SpawnWinScreen()
+        {
+            OnWinScreen?.Invoke();
+            _nextLevelUI.Pop();
+            Dragger.Instance.CanDrag = false;
+        }
+
         protected override void OnDestroy()
         {
+            OnWinScreen = null;
             Instance = null;
         }
     }

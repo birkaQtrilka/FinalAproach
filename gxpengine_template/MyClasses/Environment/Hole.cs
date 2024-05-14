@@ -30,9 +30,7 @@ namespace gxpengine_template.MyClasses.Environment
             {
                 player.Destroy();
                 player = null;
-                var ui = MyGame.main.FindObjectOfType<NextLevelUI>();
-                ui.Pop();
-                Dragger.Instance.CanDrag = false;
+                GameManager.Instance.SpawnWinScreen();
 
             }
         }
