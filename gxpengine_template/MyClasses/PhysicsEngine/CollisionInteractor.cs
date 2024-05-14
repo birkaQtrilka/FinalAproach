@@ -43,9 +43,16 @@ namespace Physics
         {
             myCollider = col;
             if (isTrigger)
-                engine.AddTriggerCollider(myCollider);
+            {
+                if(!engine.TriggerColliderExists(myCollider))
+                    engine.AddTriggerCollider(myCollider);
+            }
             else
-                engine.AddSolidCollider(myCollider);
+            {
+                if (!engine.SolidColliderExists(myCollider))
+                    engine.AddSolidCollider(myCollider);
+
+            }
 
         }
 

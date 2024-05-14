@@ -1,10 +1,8 @@
 ﻿using GXPEngine;
 using gxpengine_template.MyClasses.PickUps;
-using gxpengine_template.MyClasses.UI;
 using Physics;
 using System;
 using System.Collections;
-using System.Security.AccessControl;
 using TiledMapParser;
 
 namespace gxpengine_template.MyClasses.Environment

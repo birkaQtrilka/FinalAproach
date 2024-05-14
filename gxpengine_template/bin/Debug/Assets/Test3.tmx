@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="103">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="105">
  <tileset firstgid="1" name="Player" tilewidth="432" tileheight="432" tilecount="1" columns="1">
   <image source="PortalSprite.png" width="432" height="432"/>
  </tileset>
@@ -27,24 +27,39 @@
  <tileset firstgid="15" name="Pause" tilewidth="436" tileheight="308" tilecount="1" columns="1">
   <image source="PauseTab.png" width="436" height="308"/>
  </tileset>
+ <tileset firstgid="16" name="Rect" tilewidth="124" tileheight="22" tilecount="1" columns="1">
+  <image source="rect.png" width="124" height="22"/>
+ </tileset>
  <objectgroup id="6" name="UI">
   <object id="83" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="4" x="59" y="121" width="50" height="50">
    <properties>
     <property name="PrefabNameAndCountCSV" value="Booster:3,Ramp:2,Ramp1:2,Ramp2:5,Ramp3:1"/>
    </properties>
   </object>
-  <object id="84" name="PlayBtn" type=" gxpengine_template.MyClasses.UI.ChangePlayModeBtn" gid="4" x="521.333" y="222" width="50" height="50"/>
-  <object id="85" name="ResetSceneBtn" type="gxpengine_template.MyClasses.UI.ResetSceneBtn" gid="4" x="479" y="303.667" width="50" height="50"/>
+  <object id="84" name="PlayBtn" type=" gxpengine_template.MyClasses.UI.ChangePlayModeBtn" gid="4" x="479.333" y="226" width="50" height="50"/>
+  <object id="85" name="ResetSceneBtn" type="gxpengine_template.MyClasses.UI.ResetSceneBtn" gid="4" x="492" y="308.667" width="50" height="50"/>
   <object id="97" name="NextLevelUI" type="gxpengine_template.MyClasses.UI.NextLevelUI" gid="14" x="-1.83333" y="407.333" width="689" height="308" visible="0">
    <properties>
+    <property name="MenuStarsPosX" type="float" value="0"/>
+    <property name="MenuStarsPosY" type="float" value="-10"/>
     <property name="NextLevelName" value="Assets/Test.tmx"/>
+    <property name="NextLvlBtnPosX" type="float" value="30"/>
+    <property name="NextLvlBtnPosY" type="float" value="80"/>
+    <property name="ResetBtnPosX" type="float" value="-20"/>
+    <property name="ResetBtnPosY" type="float" value="80"/>
    </properties>
   </object>
   <object id="98" name="PauseMenu" type="gxpengine_template.MyClasses.UI.PauseMenu" gid="15" x="102" y="366" width="436" height="308" visible="0">
    <properties>
     <property name="ExitBtnName" value="Exit"/>
+    <property name="ExitBtnPosX" type="float" value="-80"/>
+    <property name="ExitBtnPosY" type="float" value="50"/>
     <property name="GoToMainScreenBtnName" value="NxtLvl"/>
+    <property name="MainScreenBtnPosX" type="float" value="0"/>
+    <property name="MainScreenBtnPosY" type="float" value="30"/>
     <property name="ResumeBtnName" value="EmptyBtn"/>
+    <property name="ResumeBtnPosX" type="float" value="80"/>
+    <property name="ResumeBtnPosY" type="float" value="50"/>
     <property name="StartScreenName" value="Assets/Test.tmx"/>
    </properties>
   </object>
@@ -62,7 +77,7 @@
     <property name="Bounciness" type="float" value="0.99"/>
    </properties>
   </object>
-  <object id="70" type="gxpengine_template.MyClasses.Edge" gid="2" x="197.861" y="501.127" width="432.97" height="73.5756" rotation="278.817">
+  <object id="70" type="gxpengine_template.MyClasses.Edge" gid="2" x="198.861" y="501.127" width="432.97" height="73.5756" rotation="278.817">
    <properties>
     <property name="Bounciness" type="float" value="0.99"/>
    </properties>
@@ -78,26 +93,21 @@
    </properties>
   </object>
   <object id="80" name="Table" type="gxpengine_template.MyClasses.Environment.Table" gid="4" x="206.334" y="514.333" width="235.333" height="440.667" visible="0"/>
-  <object id="91" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="261" y="386" width="50" height="50"/>
-  <object id="92" name="Hole" type="gxpengine_template.MyClasses.Environment.Hole" gid="1" x="285" y="151" width="66" height="66">
+  <object id="91" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="293" y="212" width="50" height="50"/>
+  <object id="92" name="Hole" type="gxpengine_template.MyClasses.Environment.Hole" gid="1" x="263" y="140" width="66" height="66">
    <properties>
     <property name="NextLevelName" value="Assets/Test.tmx"/>
+    <property name="PersentageOfBall" type="float" value="0.5"/>
    </properties>
   </object>
-  <object id="93" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="303" y="381.667" width="50" height="50"/>
-  <object id="94" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="271" y="320.333" width="50" height="50"/>
-  <object id="95" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="301.667" y="312.333" width="50" height="50"/>
+  <object id="93" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="227" y="236.667" width="50" height="50"/>
+  <object id="95" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="344.667" y="372.333" width="50" height="50"/>
  </objectgroup>
  <objectgroup id="10" name="Managers">
   <object id="77" name="Draggerss" type="gxpengine_template.MyClasses.Dragging.Dragger" x="-246.667" y="25.3333" width="93.3333" height="77.3333"/>
   <object id="101" name="PlayerLauncher" type="gxpengine_template.MyClasses.Environment.PlayerLauncher" gid="4" x="41.6667" y="234.333" width="50" height="50">
    <properties>
     <property name="SpeedCap" type="float" value="10"/>
-   </properties>
-  </object>
-  <object id="102" name="Fan" type="gxpengine_template.MyClasses.Environment.Fan" gid="4" x="291" y="399" width="50" height="50">
-   <properties>
-    <property name="WindPower" type="float" value="10"/>
    </properties>
   </object>
  </objectgroup>

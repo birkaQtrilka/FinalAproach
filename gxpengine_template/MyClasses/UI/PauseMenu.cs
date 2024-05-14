@@ -9,7 +9,9 @@ namespace gxpengine_template.MyClasses.UI
         readonly NextLevelButton _startScreenBtn;
         readonly DisableObjectButton _resumeBtn;
         readonly ExitGameBtn _exitGameBtn;
-
+        readonly Vec2 _mainScreenBtnPos;
+        readonly Vec2 _resumeBtnPos;
+        readonly Vec2 _exitBtnPos;
         bool _opened;
 
         public PauseMenu(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
@@ -19,6 +21,11 @@ namespace gxpengine_template.MyClasses.UI
             _startScreenBtn.NextLevelName = data.GetStringProperty("StartScreenName");
             _resumeBtn = prefabs[data.GetStringProperty("ResumeBtnName", "Resume")].Clone() as DisableObjectButton;
             _exitGameBtn = prefabs[data.GetStringProperty("ExitBtnName", "Exit")].Clone() as ExitGameBtn;
+
+            _mainScreenBtnPos = new Vec2(data.GetFloatProperty("MainScreenBtnPosX"), data.GetFloatProperty("MainScreenBtnPosY"));
+            _resumeBtnPos = new Vec2(data.GetFloatProperty("ResumeBtnPosX"), data.GetFloatProperty("ResumeBtnPosY"));
+            _exitBtnPos = new Vec2(data.GetFloatProperty("ExitBtnPosX"), data.GetFloatProperty("ExitBtnPosY"));
+
             _resumeBtn.OnClick += OnResumeBtnPress;
             visible = false;
             //options
@@ -37,8 +44,9 @@ namespace gxpengine_template.MyClasses.UI
                 AddChild(_startScreenBtn);
                 AddChild(_resumeBtn);
                 AddChild(_exitGameBtn);
-                _resumeBtn.SetXY(55, 0);
-                _exitGameBtn.SetXY(110, 0);
+                _resumeBtn.SetPosInVec2(_resumeBtnPos);
+                _exitGameBtn.SetPosInVec2 (_exitBtnPos);
+                _startScreenBtn.SetPosInVec2(_mainScreenBtnPos);
                 visible = true;
 
             }

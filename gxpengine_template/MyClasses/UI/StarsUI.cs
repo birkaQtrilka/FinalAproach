@@ -28,7 +28,7 @@ namespace gxpengine_template.MyClasses.UI
 
         private void OnStarGrabbed(Star star)
         {
-            Score++;
+            ++Score;
             Score = (int)Mathf.Clamp(Score, 0, 3);
             SetFrame(Score);
         }

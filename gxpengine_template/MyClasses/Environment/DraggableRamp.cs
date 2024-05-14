@@ -17,7 +17,14 @@ namespace gxpengine_template.MyClasses.Environment
             name = _data.Name;
 
             Placed += OnPlace;
+            FailPlace += OnFailPlaced; 
             AddChild(new Coroutine(Init()));
+        }
+
+        void OnFailPlaced(IPlaceable obj)
+        {
+            UpdateRamp();
+
         }
 
         IEnumerator Init()
@@ -26,15 +33,21 @@ namespace gxpengine_template.MyClasses.Environment
             UpdateRamp();
         }
 
+        public override void OnStartDrag(Vec2 mousePos)
+        {
+            base.OnStartDrag(mousePos);
+            ramp.Destroy();
+
+        }
+
         private void OnPlace(IPlaceable obj)
         {
+
             UpdateRamp();
         }
         
-
         void UpdateRamp()
         {
-            ramp?.Destroy();
             ramp = new Ramp("Assets/ramp.png", 1, 1, _data.GetFloatProperty("Bounciness", .98f));
             MyUtils.MyGame.CurrentLevel.AddChild(ramp);
             ramp.SetOrigin(ramp.width / 2, ramp.height / 2);
@@ -57,6 +70,7 @@ namespace gxpengine_template.MyClasses.Environment
         {
             base.OnDestroy();
             Placed -= OnPlace;
+            FailPlace -= OnFailPlaced;
 
         }
     }

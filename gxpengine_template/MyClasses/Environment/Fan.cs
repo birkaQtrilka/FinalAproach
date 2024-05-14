@@ -25,8 +25,8 @@ namespace gxpengine_template.MyClasses.Environment
         IEnumerator Init()
         {
             yield return null;
-            _trigger = new StaticObj(this, true);
-            _trigger.SetCollider(new Rectangle(_trigger, this.GetPosInVec2(), width / 2));
+            _trigger = new StaticObj(this, false);
+            _trigger.SetCollider(new Rectangle(_trigger, this.GetPosInVec2(), new Vec2(width/2,height/2)));
             _trigger.Enabled = true;
             _trigger.OnTriggerStay += OnTriggerStay;
         }
@@ -37,12 +37,6 @@ namespace gxpengine_template.MyClasses.Environment
             {
                 player.RigidBody.acceleration = -Vec2.right * _windPower;
             }
-        }
-
-        void Update()
-        {
-            if(_trigger != null) 
-            (_trigger.Collider as Rectangle).DrawSelf();
         }
 
         protected override void OnDestroy()

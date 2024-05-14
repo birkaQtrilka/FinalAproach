@@ -1,19 +1,15 @@
 ﻿using GXPEngine;
 using System;
-using System.Drawing;
-using System.Linq.Expressions;
 
 namespace Physics
 {
-    //origin point is in center
     public class Rectangle : Collider
     {
-        public float Radius { get; set; }
         public Vec2 Size { get; set; }
 
-        public Rectangle(CollisionInteractor pOwner, Vec2 startPosition, float radius) : base(pOwner, startPosition)
+        public Rectangle(CollisionInteractor pOwner, Vec2 startPosition, Vec2 size) : base(pOwner, startPosition)
         {
-            Radius = radius;
+            Size = size;
         }
 
         public override CollisionInfo GetEarliestCollision(Collider other, Vec2 velocity)
@@ -37,10 +33,10 @@ namespace Physics
         {
             if (other is Rectangle rect)
                 return
-                    rect.position.x - rect.Radius < position.x + Radius &&
-                    rect.position.x + rect.Radius > position.x - Radius &&
-                    rect.position.y - rect.Radius < position.y + Radius &&
-                    rect.position.y + rect.Radius > position.y - Radius;
+                    rect.position.x - rect.Size.x < position.x + Size.x &&
+                    rect.position.x + rect.Size.x > position.x - Size.x &&
+                    rect.position.y - rect.Size.y < position.y + Size.y &&
+                    rect.position.y + rect.Size.y > position.y - Size.y;
             else if (other is Circle circle)
             {
                 return ColliderManager.RectCircleOverlap(this, circle);
@@ -56,7 +52,7 @@ namespace Physics
         CollisionInfo DiscreteCircleCol(Circle circle, Vec2 velocity)
         {
             Vec2 potentialPos = position + velocity;
-            var nearPoint = new Vec2(Mathf.Clamp(circle.position.x, potentialPos.x - Radius, potentialPos.x + Radius), Mathf.Clamp(circle.position.y, potentialPos.y - Radius, potentialPos.y + Radius));
+            var nearPoint = new Vec2(Mathf.Clamp(circle.position.x, potentialPos.x - Size.x, potentialPos.x + Size.x), Mathf.Clamp(circle.position.y, potentialPos.y - Size.y, potentialPos.y + Size.y));
 
             Vec2 rayToNearest = nearPoint - circle.position;
             float overlap = circle.Radius - rayToNearest.Length;
@@ -77,13 +73,13 @@ namespace Physics
             float t;
 
             if (rayDir.x == 0 && rayDir.y == 0) return null;
-            Vec2 targtPos = target.position - new Vec2(1, 1) * Radius;
-            Vec2 targtRadius = new Vec2(target.Radius, target.Radius) + new Vec2(2, 2) * Radius;
+            Vec2 targtPos = target.position - Size;
+            Vec2 targtRadius = new Vec2(target.Size.x, target.Size.y) + Size * 2;
 
-            float nearX = (targtPos.x - rayOrigin.x - target.Radius) / rayDir.x;
+            float nearX = (targtPos.x - rayOrigin.x - target.Size.x) / rayDir.x;
             float farX = (targtPos.x + targtRadius.x - rayOrigin.x) / rayDir.x;
 
-            float nearY = (targtPos.y - rayOrigin.y - target.Radius) / rayDir.y;
+            float nearY = (targtPos.y - rayOrigin.y - target.Size.y) / rayDir.y;
             float farY = (targtPos.y + targtRadius.y - rayOrigin.y) / rayDir.y;
 
             if (double.IsNaN(nearX) || double.IsNaN(nearY) || double.IsNaN(farX) || double.IsNaN(farY))
@@ -124,13 +120,13 @@ namespace Physics
 
         public void DrawSelf()
         {
-            Gizmos.DrawRectangle(position.x, position.y, Radius * 2, Radius * 2);
+            Gizmos.DrawRectangle(position.x, position.y, Size.x * 2, Size.y * 2);
         }
 
         public override bool ContainsPoint(Vec2 p)
         {
-            return p.x >= position.x - Radius * .5f && p.x <= position.x + Radius * .5f
-                            && p.y >= position.y - Radius * .5f && p.y <= position.y + Radius * .5f;
+            return p.x >= position.x - Size.x * .5f && p.x <= position.x + Size.x * .5f
+                            && p.y >= position.y - Size.y * .5f && p.y <= position.y + Size.y * .5f;
         }
     }
 }
