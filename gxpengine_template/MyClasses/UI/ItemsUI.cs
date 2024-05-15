@@ -62,6 +62,8 @@ namespace gxpengine_template.MyClasses.UI
                 AddChild(newMenuImg);
                 newMenuImg.AddChild(newTextMesh);
                 newMenuImg.SetPosInVec2(head + head2);
+                newMenuImg.SetOrigin(newMenuImg.width / 2, newMenuImg.height / 2);
+                newMenuImg.rotation = Placeables[i].PlaceablePrefab.MenuImageRotation;
 
                 MyUtils.MyGame.CurrentLevel.AddChild(placeableClone);
                 placeableClone.visible = false;

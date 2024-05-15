@@ -16,7 +16,6 @@ namespace gxpengine_template.MyClasses.Environment
         {
             _data = data;
             name = _data.Name;
-            visible = false;
             Placed += OnPlace;
             FailPlace += OnFailPlaced; 
             AddChild(new Coroutine(Init()));

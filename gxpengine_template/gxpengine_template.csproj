@@ -101,6 +101,7 @@
     <Compile Include="MyClasses\Environment\DraggableRamp.cs" />
     <Compile Include="MyClasses\Environment\DraggableRect.cs" />
     <Compile Include="MyClasses\Environment\Fan.cs" />
+    <Compile Include="MyClasses\Environment\Hazard.cs" />
     <Compile Include="MyClasses\Environment\Hole.cs" />
     <Compile Include="MyClasses\Environment\IPlaceable.cs" />
     <Compile Include="MyClasses\Environment\Player.cs" />

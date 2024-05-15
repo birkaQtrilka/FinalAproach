@@ -30,16 +30,7 @@ namespace gxpengine_template.MyClasses.Environment
             _powerLevels = data.GetStringProperty("ArrowsSpritesCSV").Split(',').Select(x => new Sprite(x,true,false)).ToArray();
             _container = new Pivot();
             MyGame.main.AddChild(_container);
-
-            for (int i = 0; i < _powerLevels.Length; i++)
-            {
-                Sprite arrow = _powerLevels[i];
-                arrow.SetOrigin(arrow.width / 2, arrow.height / 2);
-                arrow.rotation = 180;
-
-                _container.AddChild(arrow);
-                arrow.SetXY(0,i * (arrow.height + _spacing) + arrow.height/2);
-            }
+            
 
 
             visible = false;
@@ -49,8 +40,17 @@ namespace gxpengine_template.MyClasses.Environment
         IEnumerator Init()
         {
             yield return null;
-
             _player = MyGame.main.FindObjectOfType<Player>();
+
+            for (int i = 0; i < _powerLevels.Length; i++)
+            {
+                Sprite arrow = _powerLevels[i];
+                arrow.SetOrigin(arrow.width / 2, arrow.height / 2);
+                arrow.rotation = 180;
+
+                _container.AddChild(arrow);
+                arrow.SetXY(0, i * (arrow.height + _spacing) + arrow.height / 2 + _spacing + _player.width / 2);
+            }
         }
 
         void Update()
