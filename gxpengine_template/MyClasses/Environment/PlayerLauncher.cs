@@ -1,5 +1,6 @@
 ﻿using GXPEngine;
 using gxpengine_template.MyClasses.Dragging;
+using System;
 using System.Collections;
 using System.Configuration;
 using System.Linq;
@@ -46,7 +47,6 @@ namespace gxpengine_template.MyClasses.Environment
             _launchingSound = new Sound(data.GetStringProperty("SoundFileName2", "Assets/Sounds/BallLaunch.wav"));
             _volumeAiming = data.GetFloatProperty("VolumeAiming");
             _volumeLaunching = data.GetFloatProperty("VolumeLaunching");
-            _isAimingPlayed = false;
 
             visible = false;
             AddChild(new Coroutine(Init()));
@@ -120,6 +120,7 @@ namespace gxpengine_template.MyClasses.Environment
                 GameManager.Instance.StartPlayMode();
                 _player.Shoot(_shootVelocity);
                 _canDrag = false;
+                _isAimingPlayed = false;
                 _launchingSound.Play(volume: _volumeLaunching);
             }
 

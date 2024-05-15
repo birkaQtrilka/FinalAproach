@@ -51,6 +51,7 @@ namespace gxpengine_template.MyClasses.Environment
         protected override void Grab(ITrigger taker)
         {
             Grabbed?.Invoke(this);
+            Console.WriteLine("playSound: " + _volume);
             _soundChannel = _pickUpSound.Play(volume: _volume);
         }
 
