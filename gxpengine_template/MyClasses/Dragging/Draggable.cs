@@ -15,17 +15,29 @@ namespace gxpengine_template.MyClasses.Dragging
         public event Action<IPlaceable> FailPlace;
 
         public string MenuImg { get; private set; }
+        public float MenuImageRotation { get; private set; }
         public Vec2 OrigPosition { get; set; }
 
         protected StaticObj trigger;
         
         bool _wasPlaced;
 
+        // Sound
+        Sound _placingItems;
+        SoundChannel _soundChannel;
+        float _volume;
+
         public Draggable(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
             MenuImg = data.GetStringProperty("MenuImage", "Assets/square.png");
-
+            MenuImageRotation = data.GetFloatProperty("MenuImageRotation", 0);
+            AddChild(new AnimationCycler(this, data.GetIntProperty("AnimationDelayMs", 500)));
+            visible = false;
             AddChild(new Coroutine(Init()));
+            
+
+            _placingItems = new Sound(data.GetStringProperty("SoundFileName", "Assets/Sounds/PlacingItems.wav"));
+            _volume = data.GetFloatProperty("Volume");
         }
 
         IEnumerator Init()
@@ -33,7 +45,7 @@ namespace gxpengine_template.MyClasses.Dragging
             yield return null;
             trigger = new StaticObj(this, true);
             trigger.SetCollider(new Rectangle(trigger, new Vec2(x, y), new Vec2(width / 2, height / 2)));//make rect collider
-
+            
             Dragger.Instance?.Draggables.Add(this);
             OrigPosition = this.GetPosInVec2();
         }
@@ -66,7 +78,11 @@ namespace gxpengine_template.MyClasses.Dragging
             }
 
             if (canPlace)
+            {
                 Place();
+                _soundChannel = _placingItems.Play(volume: _volume);
+            }
+                
             else
             {
                 //for inventory UI

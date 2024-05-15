@@ -11,10 +11,16 @@ namespace gxpengine_template.MyClasses.Environment
 
         readonly TiledObject _data;
         float _boostPower;
+        Vec2 _boostDir;
+
         public Booster(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
             _data = data;
             _boostPower = data.GetFloatProperty("BoostPower", 3);
+            _boostDir = new Vec2(data.GetFloatProperty("BoostDirX"), data.GetFloatProperty("BoostDirY"));
+            _boostDir.Normalize();
+            SetOrigin(width / 2, height / 2);
+            rotation = data.Rotation;
         }
 
         void Update()
@@ -24,8 +30,7 @@ namespace gxpengine_template.MyClasses.Environment
             if (col != null)
             {
                 var mover = col.rbOwner as Mover;
-                //if (mover.velocity.Length < 5)
-                    mover.acceleration += -Vec2.right * _boostPower / mover.Mass ;
+                mover.acceleration += _boostDir * _boostPower / mover.Mass ;
             }
         }
 
@@ -38,6 +43,7 @@ namespace gxpengine_template.MyClasses.Environment
             clone.width = width;
             clone.height = height;
             clone.SetOrigin(width/2,height/2);
+            clone.rotation = rotation;
             return clone;
         }
 

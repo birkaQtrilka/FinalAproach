@@ -37,7 +37,7 @@ namespace gxpengine_template.MyClasses.UI
         {
             AddChild(new Coroutine(Init(data)));
 
-            alpha = .3f;
+            alpha = 0;
         }
 
         IEnumerator Init(TiledObject data)
@@ -60,9 +60,10 @@ namespace gxpengine_template.MyClasses.UI
                 Placeables[i].CountText = newTextMesh;
 
                 AddChild(newMenuImg);
-                newMenuImg.alpha = 0.3f;
                 newMenuImg.AddChild(newTextMesh);
                 newMenuImg.SetPosInVec2(head + head2);
+                newMenuImg.SetOrigin(newMenuImg.width / 2, newMenuImg.height / 2);
+                newMenuImg.rotation = Placeables[i].PlaceablePrefab.MenuImageRotation;
 
                 MyUtils.MyGame.CurrentLevel.AddChild(placeableClone);
                 placeableClone.visible = false;

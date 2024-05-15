@@ -13,22 +13,28 @@ namespace gxpengine_template.MyClasses.Environment
 
         public Table(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, -1, true, false)
         {
-            if(Instance != null && Instance == this)
+            if (Instance != null && Instance == this)
             {
                 Destroy();
                 return;
             }
             else
                 Instance = this;
-            SetOrigin(width / 2, height / 2) ;
-            AddChild(new Coroutine(Start()));
+            SetOrigin(width / 2, height / 2);
+
+            AddChild(new Coroutine(Start(data)));
         }
 
-        IEnumerator Start()
+        IEnumerator Start(TiledObject data)
         {
             yield return null;
-            _boundary = new Boundary(new Vec2(width, height), new Vec2(x, y));
+            _boundary = new Boundary(new Vec2(width - data.GetFloatProperty("Padding", 10), height), new Vec2(x, y));
 
+        }
+
+        void Update()
+        {
+            Gizmos.DrawLine(_boundary.Position.x - _boundary.Size.x / 2, _boundary.Position.y - _boundary.Size.y / 2, _boundary.Position.x - _boundary.Size.x / 2, _boundary.Position.y + _boundary.Size.y / 2);
         }
 
         public bool OnTable(Vec2 point)

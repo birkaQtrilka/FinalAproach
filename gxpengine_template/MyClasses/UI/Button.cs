@@ -1,6 +1,7 @@
 ﻿using GXPEngine;
 using GXPEngine.Core;
 using System;
+using System.Collections;
 using TiledMapParser;
 
 namespace gxpengine_template.MyClasses.UI
@@ -20,17 +21,25 @@ namespace gxpengine_template.MyClasses.UI
             Vector2 worldPos = parent.TransformPoint(x, y);
             if (new Boundary(worldPos.x, worldPos.y, width, height).Contains(new Vec2(Input.mouseX, Input.mouseY)))
             {
-                SetColor(1, 0, 0);
+                //hover state
                 if (Input.GetMouseButtonDown(0))
                 {
-                    OnButtonPress();
-                    OnClick?.Invoke();
+                    //before state
+                    AddChild(new Coroutine(SlightPauseAfterClick()));
+                    
                 }
             }
-            else
-                SetColor(0, 1, 0);
+            //else
+            //    not hover state
 
 
+        }
+
+        IEnumerator SlightPauseAfterClick()
+        {
+            yield return new WaitForSeconds(0.06f);
+            OnButtonPress();
+            OnClick?.Invoke();
         }
 
         protected abstract void OnButtonPress();

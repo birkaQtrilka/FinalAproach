@@ -7,7 +7,7 @@ namespace Physics
     public abstract class CollisionInteractor : GameObject
     {
         public event Action<Collider> OnTriggerStay;
-
+        public event Action<CollisionInfo> Collided;
         public float Bounciness { get; set; } = 1f;
         public Collider Collider => myCollider;
         public bool IsTrigger => isTrigger;
@@ -56,7 +56,9 @@ namespace Physics
 
         }
 
-        protected virtual void OnCollision(CollisionInfo info) { }
+        protected virtual void OnCollision(CollisionInfo info) {
+            Collided?.Invoke(info);
+        }
 
         protected virtual void OnTrigger(Collider collider) { }
 

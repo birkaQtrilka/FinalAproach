@@ -1,5 +1,7 @@
 ﻿using GXPEngine;
+using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using TiledMapParser;
 
 namespace gxpengine_template.MyClasses.UI
@@ -27,8 +29,27 @@ namespace gxpengine_template.MyClasses.UI
             _exitBtnPos = new Vec2(data.GetFloatProperty("ExitBtnPosX"), data.GetFloatProperty("ExitBtnPosY"));
 
             _resumeBtn.OnClick += OnResumeBtnPress;
+            
             visible = false;
             //options
+            AddChild(new Coroutine(Init()));
+        }
+
+
+        IEnumerator Init()
+        {
+            yield return null;
+
+            if (GameManager.Instance != null)
+                GameManager.Instance.OnWinScreen += OnWinScreen;
+
+        }
+
+        void OnWinScreen()
+        {
+            if (_opened)
+                Toggle();
+
         }
 
         void OnResumeBtnPress()
@@ -71,6 +92,8 @@ namespace gxpengine_template.MyClasses.UI
         protected override void OnDestroy()
         {
             _exitGameBtn.OnClick -= OnResumeBtnPress;
+            if (GameManager.Instance != null)
+                GameManager.Instance.OnWinScreen -= OnWinScreen;
         }
     }
 }
