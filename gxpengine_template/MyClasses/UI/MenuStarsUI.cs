@@ -8,20 +8,22 @@ namespace gxpengine_template.MyClasses.UI
     {
         public int Score { get; set; }
         int currScore = 0;
-        readonly AnimationSprite[] _scoreVisual;
+        readonly UIStar[] _scoreVisual;
         readonly TiledObject _data;
 
         public MenuStarsUI(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
             _data = data;
-            _scoreVisual = new AnimationSprite[3];
-            string starName = data.GetStringProperty("StarName");
+            _scoreVisual = new UIStar[3];
+            string enmptyStarName = data.GetStringProperty("EmptyStarName", "Assets/StarC.png");
+            string fullStarName = data.GetStringProperty("FullStarName", "Assets/StarC.png");
+            float starScaling = data.GetFloatProperty("StarScaling",1);
             for (int i = 0; i < 3; i++)
             {
-                var star = new AnimationSprite(starName, 2, 1, -1, true, false);
+                var star = new UIStar(new AnimationSprite(enmptyStarName, 3, 1, -1, true, false), new AnimationSprite(fullStarName, 3, 1, -1, true, false), starScaling); ;
                 _scoreVisual[i] = star;
                 AddChild(star);
-                star.SetXY(star.width * i, 0);
+                star.SetXY(star.FullSprite.width * i, 0);
             }
             alpha = 0;
         }
@@ -30,8 +32,8 @@ namespace gxpengine_template.MyClasses.UI
         {
             //can be for individual stars
             if (++currScore > Score) return;
-            AnimationSprite star = _scoreVisual[currScore - 1];
-            star.SetFrame(1);
+            UIStar star = _scoreVisual[currScore - 1];
+            star.Fill();
 
             star.AddChild
                 (

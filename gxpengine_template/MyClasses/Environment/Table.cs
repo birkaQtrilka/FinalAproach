@@ -32,11 +32,6 @@ namespace gxpengine_template.MyClasses.Environment
 
         }
 
-        void Update()
-        {
-            Gizmos.DrawLine(_boundary.Position.x - _boundary.Size.x / 2, _boundary.Position.y - _boundary.Size.y / 2, _boundary.Position.x - _boundary.Size.x / 2, _boundary.Position.y + _boundary.Size.y / 2);
-        }
-
         public bool OnTable(Vec2 point)
         {
             return _boundary.Contains(point);

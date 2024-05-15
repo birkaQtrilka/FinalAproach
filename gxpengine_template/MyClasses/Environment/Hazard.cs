@@ -11,13 +11,16 @@ namespace gxpengine_template.MyClasses.Environment
     {
         StaticObj _trigger;
         float _waitForDeath;
-        
         bool _collided;
+        Sound _deathSound;
+        float _deathSoundVolume;
 
         public Hazard(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
             SetOrigin(width / 2, height / 2);
             _waitForDeath = data.GetFloatProperty("WaitForDeathS", 0.3f);
+            _deathSound = new Sound(data.GetStringProperty("DeathSoundName"));
+            _deathSoundVolume = data.GetFloatProperty("DeathSoundVolume", 1);
             AddChild(new AnimationCycler(this, data.GetIntProperty("AnimationTimerMs",500)));
             AddChild(new Coroutine(Init()));
         }
@@ -44,6 +47,7 @@ namespace gxpengine_template.MyClasses.Environment
         {
             yield return new WaitForSeconds(_waitForDeath);
             GameManager.Instance.StartIdleMode();
+            _deathSound.Play(volume:_deathSoundVolume);
             _collided = false;
         }
     }

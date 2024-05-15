@@ -11,9 +11,6 @@ namespace gxpengine_template.MyClasses.Environment
     {
         public event Action<Star> Grabbed;
 
-        // Sounds
-        Sound _pickUpSound;
-        SoundChannel _soundChannel;
         float _volume;
 
         StaticObj _trigger;
@@ -25,7 +22,6 @@ namespace gxpengine_template.MyClasses.Environment
             AddChild(new Coroutine(Init()));
             
             // Sounds
-            _pickUpSound = new Sound(data.GetStringProperty("SoundFileName", "Assets/Sounds/Collectibale sound.mp3"));
             _volume = data.GetFloatProperty("Volume");
         }
 
@@ -51,8 +47,6 @@ namespace gxpengine_template.MyClasses.Environment
         protected override void Grab(ITrigger taker)
         {
             Grabbed?.Invoke(this);
-            Console.WriteLine("playSound: " + _volume);
-            _soundChannel = _pickUpSound.Play(volume: _volume);
         }
 
         protected override void OnDestroy()

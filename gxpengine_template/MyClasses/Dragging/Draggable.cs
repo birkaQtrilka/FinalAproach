@@ -24,7 +24,6 @@ namespace gxpengine_template.MyClasses.Dragging
 
         // Sound
         Sound _placingItems;
-        SoundChannel _soundChannel;
         float _volume;
 
         public Draggable(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
@@ -80,7 +79,7 @@ namespace gxpengine_template.MyClasses.Dragging
             if (canPlace)
             {
                 Place();
-                _soundChannel = _placingItems.Play(volume: _volume);
+                _placingItems.Play(volume: _volume);
             }
                 
             else

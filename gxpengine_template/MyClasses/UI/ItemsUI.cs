@@ -3,6 +3,7 @@ using GXPEngine.Core;
 using gxpengine_template.MyClasses.Environment;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using TiledMapParser;
 
@@ -56,24 +57,27 @@ namespace gxpengine_template.MyClasses.UI
                 var newTextMesh = new TextMesh(Placeables[i].Count.ToString(), newMenuImg.width, newMenuImg.width);
                 var placeableClone = Placeables[i].PlaceablePrefab.Clone() ;
 
+                newTextMesh.TextSize = data.GetIntProperty("TextSize");
+                newTextMesh.TextColor = Color.White;
                 Placeables[i].Image = newMenuImg;
                 Placeables[i].CountText = newTextMesh;
 
                 AddChild(newMenuImg);
-                newMenuImg.AddChild(newTextMesh);
+                AddChild(newTextMesh);
+                newTextMesh.SetPosInVec2(head + head2);
                 newMenuImg.SetPosInVec2(head + head2);
                 newMenuImg.SetOrigin(newMenuImg.width / 2, newMenuImg.height / 2);
                 newMenuImg.rotation = Placeables[i].PlaceablePrefab.MenuImageRotation;
 
                 MyUtils.MyGame.CurrentLevel.AddChild(placeableClone);
                 placeableClone.visible = false;
-                Vector2 clonePos = TransformPoint(head.x, head.y);
+                Vector2 clonePos = TransformPoint(newMenuImg.x, newMenuImg.y);
                 placeableClone.SetXY(clonePos.x, clonePos.y);
                 (placeableClone as IPlaceable).Placed += OnItemPlaced;
 
                 newTextMesh.HorizontalAlign = CenterMode.Max;
                 newTextMesh.VerticalAlign = CenterMode.Max;
-                newTextMesh.SetXY(newMenuImg.width / 2, newMenuImg.height / 2);
+                //newTextMesh.SetXY(newMenuImg.width / 2, newMenuImg.height / 2);
                 head += Vec2.up * newMenuImg.height;
                 i++;
             }
@@ -91,6 +95,7 @@ namespace gxpengine_template.MyClasses.UI
             if(itemData.Count == 0)
             {
                 itemData.Image.Destroy();
+                itemData.CountText.Destroy();
                 Placeables.Remove(itemData);
                 return;
             }
