@@ -2,6 +2,7 @@
 using GXPEngine.Core;
 using gxpengine_template.MyClasses.PickUps;
 using gxpengine_template.MyClasses.TankGame;
+using gxpengine_template.MyClasses.Tweens;
 using System;
 using System.Collections;
 using TiledMapParser;
@@ -21,10 +22,12 @@ namespace gxpengine_template.MyClasses.Environment
 
         public event Action<GameObject> TriggerStay;
         bool shot;
+        bool fallen;
 
         public Player(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, -1,true, false)
         {
             _pickUper = new PickUper(this);
+            AddChild(new AnimationCycler(this, data.GetIntProperty("AnimationDelayMs", 500)));
 
             // Sounds
             _collisionSound = new Sound(data.GetStringProperty("SoundFileName", "Assets/Sounds/BUmp in to da wall.wav"));
@@ -37,9 +40,8 @@ namespace gxpengine_template.MyClasses.Environment
         IEnumerator Start(TiledObject data)
         {
             yield return null;
-            float vx = data.GetFloatProperty("StartX", 1);
-            float vy = data.GetFloatProperty("StartY", 1);
-            RigidBody = new MovingBall(this, new Vec2(vx,vy), new Vec2(x, y), width / 2);
+            
+            RigidBody = new MovingBall(this, Vec2.zero, new Vec2(x, y), width / 2);
             RigidBody.Collided += OnCollision;
             RigidBody.Drag = data.GetFloatProperty("Drag", .98f);
             StartPos = this.GetPosInVec2();
@@ -53,12 +55,24 @@ namespace gxpengine_template.MyClasses.Environment
 
         void Update()
         {
-            if (shot)
+            if (shot) foreach (Physics.Collider col in RigidBody.GetOverlaps()) TriggerStay?.Invoke(col.rbOwner.parent);
+            
+            if (RigidBody == null) return;
+            
+            if(!fallen && !Table.Instance.OnTable(RigidBody.Collider.position))
             {
-                foreach (Physics.Collider col in RigidBody.GetOverlaps()) 
-                    TriggerStay?.Invoke(col.rbOwner.parent);
-            }  
+                AddChild(new Tween(TweenProperty.scale, 500, -1, EaseFunc.EaseInSine).OnCompleted(RestartGame) );
+                fallen = true;
+            }
         }
+
+        void RestartGame()
+        {
+            GameManager.Instance.StartIdleMode();
+            fallen = false;
+            scale = 1;
+        }
+            
         
 
         public void Shoot(Vec2 velocity)
@@ -71,6 +85,8 @@ namespace gxpengine_template.MyClasses.Environment
         public void SetIdleMode()
         {
             RigidBody.Enabled = false;
+            RigidBody.Collider.position = StartPos;
+
             shot = false;
         }
 

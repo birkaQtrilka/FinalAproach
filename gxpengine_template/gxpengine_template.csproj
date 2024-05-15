@@ -84,6 +84,7 @@
     <Compile Include="GXPEngine\Utils\Mathf.cs" />
     <Compile Include="GXPEngine\Utils\Time.cs" />
     <Compile Include="GXPEngine\Utils\Utils.cs" />
+    <Compile Include="MyClasses\AnimationCycler.cs" />
     <Compile Include="MyClasses\Animations\Animation.cs" />
     <Compile Include="MyClasses\Animations\AnimationManager.cs" />
     <Compile Include="MyClasses\Animations\AutoAnimatedSprite.cs" />
@@ -98,13 +99,16 @@
     <Compile Include="MyClasses\EaseFunc.cs" />
     <Compile Include="MyClasses\Environment\Booster.cs" />
     <Compile Include="MyClasses\Environment\DraggableRamp.cs" />
+    <Compile Include="MyClasses\Environment\DraggableRect.cs" />
     <Compile Include="MyClasses\Environment\Fan.cs" />
+    <Compile Include="MyClasses\Environment\Hazard.cs" />
     <Compile Include="MyClasses\Environment\Hole.cs" />
     <Compile Include="MyClasses\Environment\IPlaceable.cs" />
     <Compile Include="MyClasses\Environment\Player.cs" />
     <Compile Include="MyClasses\Environment\PlayerLauncher.cs" />
     <Compile Include="MyClasses\Environment\Star.cs" />
     <Compile Include="MyClasses\Environment\Table.cs" />
+    <Compile Include="MyClasses\GameManager.cs" />
     <Compile Include="MyClasses\IHealthHolder.cs" />
     <Compile Include="MyClasses\INonDestroyable.cs" />
     <Compile Include="MyClasses\MyUtils.cs" />
@@ -120,6 +124,7 @@
     <Compile Include="MyClasses\PhysicsEngine\Mover.cs" />
     <Compile Include="MyClasses\PhysicsEngine\StaticObj.cs" />
     <Compile Include="MyClasses\PhysicsEngine\Vec2.cs" />
+    <Compile Include="MyClasses\PhysicsObjects\Block.cs" />
     <Compile Include="MyClasses\PhysicsObjects\Edge.cs" />
     <Compile Include="MyClasses\PhysicsObjects\MovingBall.cs" />
     <Compile Include="MyClasses\PhysicsObjects\Ramp.cs" />

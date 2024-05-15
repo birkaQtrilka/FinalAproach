@@ -1,6 +1,8 @@
 ﻿using GXPEngine;
 using gxpengine_template.MyClasses.Dragging;
 using System.Collections;
+using System.Configuration;
+using System.Linq;
 using TiledMapParser;
 
 namespace gxpengine_template.MyClasses.Environment
@@ -9,7 +11,16 @@ namespace gxpengine_template.MyClasses.Environment
     {
         public bool CanLaunch { get; set; } = true;
         Player _player;
+        Vec2 _shootVelocity;
+        bool _mousePressed;
+        bool _canDrag;
+        Vec2 _visualVelocity;
+
+        readonly Sprite[] _powerLevels;
+        readonly Pivot _container;
         readonly float _speedCap;
+        readonly float _visualCap;
+        readonly float _spacing;
 
         // Sounds
         Sound _aimingSound;
@@ -23,6 +34,14 @@ namespace gxpengine_template.MyClasses.Environment
         {
             // Sounds
             _speedCap = data.GetFloatProperty("SpeedCap");
+            _visualCap = data.GetFloatProperty("VisualCap", 10);
+            _spacing = data.GetFloatProperty("ArrowSpacing");
+            _powerLevels = data.GetStringProperty("ArrowsSpritesCSV").Split(',').Select(x => new Sprite(x,true,false)).ToArray();
+            _container = new Pivot();
+            MyGame.main.AddChild(_container);
+            
+
+
             _aimingSound = new Sound(data.GetStringProperty("SoundFileName1", "Assets/Sounds/BallAiming.wav"));
             _launchingSound = new Sound(data.GetStringProperty("SoundFileName2", "Assets/Sounds/BallLaunch.wav"));
             _volumeAiming = data.GetFloatProperty("VolumeAiming");
@@ -36,22 +55,27 @@ namespace gxpengine_template.MyClasses.Environment
         IEnumerator Init()
         {
             yield return null;
-
             _player = MyGame.main.FindObjectOfType<Player>();
+
+            for (int i = 0; i < _powerLevels.Length; i++)
+            {
+                Sprite arrow = _powerLevels[i];
+                arrow.SetOrigin(arrow.width / 2, arrow.height / 2);
+                arrow.rotation = 180;
+
+                _container.AddChild(arrow);
+                arrow.SetXY(0, i * (arrow.height + _spacing) + arrow.height / 2 + _spacing + _player.width / 2);
+            }
         }
-        
-        bool _mousePressed;
-        bool _canDrag;
-        Vec2 _releaseVelocity;
 
         void Update()
         {
-            if (_player == null || !CanLaunch) return;
+            if (_player == null || !CanLaunch || Dragger.Instance.CurrentDrag != null) return;
 
             Vec2 mousePos = new Vec2(Input.mouseX, Input.mouseY);
             _player.SetColor(1, 1, 1);
 
-
+            _container.visible = false;
             if (Input.GetMouseButton(0))
             {
                 if (!_mousePressed)
@@ -64,13 +88,15 @@ namespace gxpengine_template.MyClasses.Environment
 
                 if (_canDrag)
                 {
-                    _releaseVelocity = _player.GetPosInVec2() - mousePos;
-                    if (_releaseVelocity.Length > _speedCap)
-                    {
-                        _releaseVelocity = _releaseVelocity.Normalized() * _speedCap;
-                    }
+                    _visualVelocity = _player.GetPosInVec2() - mousePos;
+                    float releaseLength = _visualVelocity.Length;
+                    float t = releaseLength / _visualCap;
+                    t  = Mathf.Min(t, 1f);
+                    Vec2 dir = _visualVelocity.Normalized();
+                    _visualVelocity = t * _visualCap * dir;
+                    _shootVelocity = t * _speedCap * dir;
                     _player.SetColor(1, 1, 0);
-                    Gizmos.DrawArrow(_player.x, _player.y, _releaseVelocity.x, _releaseVelocity.y);
+                    
 
 
                     // Play aiming sound only once, if player is aiming
@@ -79,6 +105,8 @@ namespace gxpengine_template.MyClasses.Environment
                         _aimingSound.Play(volume: _volumeLaunching);
                         _isAimingPlayed = true;
                     }
+                    
+                    DrawArrows(_visualVelocity, t);
                 }
             }
             else
@@ -88,17 +116,28 @@ namespace gxpengine_template.MyClasses.Environment
 
             if (Input.GetMouseButtonUp(0) && _canDrag)
             {
-                //start playMode
-                //put this in GameManager?
 
-                _player.SetPlayMode();
-                Dragger.Instance.CanDrag = false;
-                _player.Shoot(_releaseVelocity);
-                CanLaunch = false;
+                GameManager.Instance.StartPlayMode();
+                _player.Shoot(_shootVelocity);
                 _canDrag = false;
                 _launchingSound.Play(volume: _volumeLaunching);
             }
 
+        }
+
+        void DrawArrows(Vec2 powerVector, float t)
+        {
+            _container.visible = true;
+            _container.SetXY(_player.x, _player.y);
+            _container.rotation = powerVector.GetAngleDegrees() - 90;
+
+            int i = 0;
+            float persentPerVisual = 1f / _powerLevels.Length;
+            foreach (var arrow in _powerLevels)
+            {
+                arrow.visible = i * persentPerVisual < t;
+                i++;
+            }
         }
     }
 }

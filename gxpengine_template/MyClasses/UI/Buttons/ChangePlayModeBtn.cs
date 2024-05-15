@@ -3,39 +3,43 @@ using gxpengine_template.MyClasses.Environment;
 using TiledMapParser;
 using GXPEngine;
 using System.Collections;
+using System.Xml.Linq;
 
 namespace gxpengine_template.MyClasses.UI
 {
     public class ChangePlayModeBtn : Button
     {
-        /*temporary for testing*/
-        Player _player;
-        PlayerLauncher _launcher;
-        StarsUI _starsUI;
 
         public ChangePlayModeBtn(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
-            AddChild(new Coroutine(Init()));
+            AddChild(new Coroutine(Init(data)));
         }
 
-        IEnumerator Init()
+
+        IEnumerator Init(TiledObject data)
         {
             yield return null;
-            _player = MyUtils.MyGame.CurrentLevel.FindObjectOfType<Player>();
-            _launcher = MyGame.main.FindObjectOfType<PlayerLauncher>();
-            _starsUI = MyGame.main.FindObjectOfType<StarsUI>();
+
+            if (GameManager.Instance != null && data.GetBoolProperty("Disapear", false))
+                GameManager.Instance.OnWinScreen += OnWinScreen;
+
+        }
+
+        void OnWinScreen()
+        {
+            parent.RemoveChild(this);
+
         }
 
         protected override void OnButtonPress()
         {
-            //put this in GameManager?
-            _player.SetIdleMode();
-            _player.SetPosInVec2(_player.StartPos);
-            foreach (var star in _starsUI.Stars)
-                star.ReEnable();
-            _starsUI.ResetScore();
-            Dragger.Instance.CanDrag = true;
-            _launcher.CanLaunch = true;
+            GameManager.Instance.StartIdleMode();
+        }
+        protected override void OnDestroy()
+        {
+            if (GameManager.Instance != null)
+                GameManager.Instance.OnWinScreen -= OnWinScreen;
+
         }
     }
 }

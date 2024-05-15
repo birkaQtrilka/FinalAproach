@@ -11,11 +11,11 @@ namespace gxpengine_template.MyClasses.Environment
     {
         Ramp ramp;
         readonly TiledObject _data;
+
         public DraggableRamp(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
             _data = data;
             name = _data.Name;
-
             Placed += OnPlace;
             FailPlace += OnFailPlaced; 
             AddChild(new Coroutine(Init()));
@@ -48,7 +48,8 @@ namespace gxpengine_template.MyClasses.Environment
         
         void UpdateRamp()
         {
-            ramp = new Ramp("Assets/ramp.png", 1, 1, _data.GetFloatProperty("Bounciness", .98f));
+            ramp = new Ramp(texture.filename, 1, 1, _data.GetFloatProperty("Bounciness", .98f));
+            ramp.alpha = 0;
             MyUtils.MyGame.CurrentLevel.AddChild(ramp);
             ramp.SetOrigin(ramp.width / 2, ramp.height / 2);
             ramp.rotation = rotation;

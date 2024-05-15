@@ -11,6 +11,7 @@ namespace gxpengine_template.MyClasses.Environment
     {
         event Action<IPlaceable> Placed;
         string MenuImg { get; }
+        float MenuImageRotation { get; }
         void Place();
 
     }

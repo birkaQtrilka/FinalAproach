@@ -42,9 +42,7 @@ namespace gxpengine_template.MyClasses.Environment
                 _soundChannel = _winSound.Play(volume:_volume);
                 player.Destroy();
                 player = null;
-                var ui = MyGame.main.FindObjectOfType<NextLevelUI>();
-                ui.Pop();
-                Dragger.Instance.CanDrag = false;
+                GameManager.Instance.SpawnWinScreen();
 
             }
         }
