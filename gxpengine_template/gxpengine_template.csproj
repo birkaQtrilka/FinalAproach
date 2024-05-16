@@ -108,6 +108,7 @@
     <Compile Include="MyClasses\Environment\PlayerLauncher.cs" />
     <Compile Include="MyClasses\Environment\Star.cs" />
     <Compile Include="MyClasses\Environment\Table.cs" />
+    <Compile Include="MyClasses\Environment\TutorialShower.cs" />
     <Compile Include="MyClasses\GameManager.cs" />
     <Compile Include="MyClasses\IHealthHolder.cs" />
     <Compile Include="MyClasses\INonDestroyable.cs" />

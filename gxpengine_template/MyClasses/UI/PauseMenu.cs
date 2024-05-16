@@ -11,9 +11,11 @@ namespace gxpengine_template.MyClasses.UI
         readonly NextLevelButton _startScreenBtn;
         readonly DisableObjectButton _resumeBtn;
         readonly ExitGameBtn _exitGameBtn;
+        readonly Sprite _pauseText;
         readonly Vec2 _mainScreenBtnPos;
         readonly Vec2 _resumeBtnPos;
         readonly Vec2 _exitBtnPos;
+        readonly Vec2 _pauseTextPos;
         bool _opened;
 
         Sound _openSound;
@@ -27,10 +29,14 @@ namespace gxpengine_template.MyClasses.UI
             _startScreenBtn.NextLevelName = data.GetStringProperty("StartScreenName");
             _resumeBtn = prefabs[data.GetStringProperty("ResumeBtnName", "Resume")].Clone() as DisableObjectButton;
             _exitGameBtn = prefabs[data.GetStringProperty("ExitBtnName", "Exit")].Clone() as ExitGameBtn;
+            _pauseText = new Sprite(data.GetStringProperty("PauseTextName"), true, false);
+            _pauseText.SetCenterOrigin();
+
 
             _mainScreenBtnPos = new Vec2(data.GetFloatProperty("MainScreenBtnPosX"), data.GetFloatProperty("MainScreenBtnPosY"));
             _resumeBtnPos = new Vec2(data.GetFloatProperty("ResumeBtnPosX"), data.GetFloatProperty("ResumeBtnPosY"));
             _exitBtnPos = new Vec2(data.GetFloatProperty("ExitBtnPosX"), data.GetFloatProperty("ExitBtnPosY"));
+            _pauseTextPos = new Vec2(data.GetFloatProperty("PauseTxtPosX"), data.GetFloatProperty("PauseTxtPosY"));
 
             _openSound = new Sound(data.GetStringProperty("OpenSoundName"));
             _openSoundVolume = data.GetFloatProperty("OpenSoundVolume",1);
@@ -73,9 +79,13 @@ namespace gxpengine_template.MyClasses.UI
                 AddChild(_startScreenBtn);
                 AddChild(_resumeBtn);
                 AddChild(_exitGameBtn);
+                AddChild(_pauseText);
+
                 _resumeBtn.SetPosInVec2(_resumeBtnPos);
                 _exitGameBtn.SetPosInVec2 (_exitBtnPos);
                 _startScreenBtn.SetPosInVec2(_mainScreenBtnPos);
+                _pauseText.SetPosInVec2(_pauseTextPos);
+
                 _resumeBtn.SetOrigin(_resumeBtn.width / 2,_resumeBtn.height/2);
                 _exitGameBtn.SetOrigin(_exitGameBtn.width / 2, _exitGameBtn.height / 2);
                 _startScreenBtn.SetOrigin(_startScreenBtn.width / 2, _startScreenBtn.height / 2);
@@ -92,6 +102,8 @@ namespace gxpengine_template.MyClasses.UI
                 RemoveChild(_startScreenBtn);
                 RemoveChild(_resumeBtn);
                 RemoveChild(_exitGameBtn);
+                RemoveChild(_pauseText);
+
                 _resumeBtn.SetOrigin(0, 0);
                 _exitGameBtn.SetOrigin(0, 0);
                 _startScreenBtn.SetOrigin(0, 0);

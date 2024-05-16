@@ -23,7 +23,7 @@ public class MyGame : Game
 	{
         name = "Main";
         Prefabs = LoadPrefabs();
-
+        targetFps = 60;
         //to show how fast you've beat the game at the end
         StartTime = DateTime.Now;
         
