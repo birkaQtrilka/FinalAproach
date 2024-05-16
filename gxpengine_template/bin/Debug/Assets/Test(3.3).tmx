@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="200">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="201">
  <tileset firstgid="1" name="Player" tilewidth="432" tileheight="432" tilecount="1" columns="1">
   <image source="PortalSprite.png" width="432" height="432"/>
  </tileset>
@@ -57,6 +57,9 @@
  <tileset firstgid="39" name="PauseFrame" tilewidth="922" tileheight="1039" tilecount="1" columns="1">
   <image source="pauseframe.png" width="922" height="1039"/>
  </tileset>
+ <tileset firstgid="40" name="Slots" tilewidth="112" tileheight="1063" tilecount="1" columns="1">
+  <image source="itembox.png" width="112" height="1063"/>
+ </tileset>
  <objectgroup id="11" name="Capa de Objetos 5" locked="1">
   <object id="172" name="Bg" gid="11" x="4" y="1922.07" width="1080" height="1920"/>
   <object id="182" name="Table" gid="30" x="148" y="1920" width="792" height="1920"/>
@@ -112,10 +115,10 @@
   </object>
  </objectgroup>
  <objectgroup id="6" name="UI">
-  <object id="83" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="3" x="59" y="108.333" width="50" height="50">
+  <object id="83" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="3" x="103" y="149.333" width="50" height="50">
    <properties>
     <property name="NumbersTileSetName" value="Assets/numbers.png"/>
-    <property name="PrefabNameAndCountCSV" value="Bounce Block:1,Booster_Right:1,Booster_Left:1,Booster_Up:1,Booster_Down:4,Ramp1:1,Ramp2:1,Ramp3:1,Ramp4:1"/>
+    <property name="PrefabNameAndCountCSV" value="Booster_Right:1,Wall:1,Ramp4:1,Block:1"/>
     <property name="TextSize" type="int" value="30"/>
    </properties>
   </object>

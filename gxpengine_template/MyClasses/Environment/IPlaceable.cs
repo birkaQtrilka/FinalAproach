@@ -13,6 +13,8 @@ namespace gxpengine_template.MyClasses.Environment
         string MenuImg { get; }
         float MenuImageRotation { get; }
         void Place();
+        bool InInventory { get; set; }
+        Sprite MenuSprite { get; set; }
 
     }
 }

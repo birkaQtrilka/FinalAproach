@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="90">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="91">
  <tileset firstgid="1" name="StarsUI" tilewidth="150" tileheight="50" tilecount="4" columns="1">
   <image source="Stars.png" width="150" height="200"/>
  </tileset>
@@ -29,6 +29,9 @@
  </tileset>
  <tileset firstgid="27" name="PlayBtn" tilewidth="488" tileheight="194" tilecount="3" columns="3">
   <image source="Buttons/Play.png" width="1464" height="194"/>
+ </tileset>
+ <tileset firstgid="30" name="Wall" tilewidth="42" tileheight="312" tilecount="2" columns="2">
+  <image source="wall.png" width="84" height="312"/>
  </tileset>
  <objectgroup id="2" name="Object Layer 1">
   <object id="65" name="StarsUIMenu" type="gxpengine_template.MyClasses.UI.MenuStarsUI" gid="1" x="286.333" y="207" width="150" height="50">
@@ -148,6 +151,12 @@
   <object id="89" name="StartBtn" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="27" x="4.48485" y="1781.85" width="488" height="194">
    <properties>
     <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
+   </properties>
+  </object>
+  <object id="90" name="Wall" type="gxpengine_template.MyClasses.Environment.DraggableRect" gid="30" x="19" y="323" width="42" height="312">
+   <properties>
+    <property name="Bounciness" type="float" value="1"/>
+    <property name="MenuImage" value="Assets/wallicon.png"/>
    </properties>
   </object>
  </objectgroup>

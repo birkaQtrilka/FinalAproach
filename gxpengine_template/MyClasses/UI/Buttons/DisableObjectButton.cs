@@ -13,6 +13,7 @@ namespace gxpengine_template.MyClasses.UI
         }
         protected DisableObjectButton(string filename, int cols, int rows, TiledObject data, Sound clickSound, float clickVolume = 1) : base(filename, cols, rows, data, clickSound, clickVolume)
         {
+
         }
 
         protected override void OnButtonPress()
