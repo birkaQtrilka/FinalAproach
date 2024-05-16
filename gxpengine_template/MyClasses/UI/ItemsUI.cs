@@ -14,7 +14,7 @@ namespace gxpengine_template.MyClasses.UI
         public int Count;
         public readonly IPlaceable PlaceablePrefab;
         public Sprite Image;
-        public TextMesh CountText;
+        public AnimationSprite CountText;
 
         public PlaceableData(int count, IPlaceable placeable)
         {
@@ -29,11 +29,22 @@ namespace gxpengine_template.MyClasses.UI
             Count = int.Parse(pair[1]);
         }
     }
+    readonly struct TextData
+    {
+        public readonly Vec2 Pos;
+        public readonly int Frame;
+        public readonly AnimationSprite Text;
+        public TextData(Vec2 pos, int frame, AnimationSprite text)
+        {
+            Text = text;
+            Pos = pos;
+            Frame = frame;
+        }
+    }
 
     public class ItemsUI : AnimationSprite
     {
         List<PlaceableData> Placeables = new List<PlaceableData>();
-
         public ItemsUI(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, -1,true,false)
         {
             AddChild(new Coroutine(Init(data)));
@@ -48,23 +59,25 @@ namespace gxpengine_template.MyClasses.UI
             //SetOrigin(width / 2, height / 2);
             Vec2 head2 = new Vec2(-width/2,-height/2);
             Vec2 head = new Vec2(0, 0);
+            string numbersFileName = data.GetStringProperty("NumbersTileSetName");
+            List<TextData> texts = new List<TextData>();
 
             foreach (string pair in data.GetStringProperty("PrefabNameAndCountCSV").Split(','))
             {
                 if(string.IsNullOrEmpty(pair)) continue;
                 Placeables.Add(new PlaceableData(pair.Split(':')));
                 var newMenuImg = new Sprite(Placeables[i].PlaceablePrefab.MenuImg);
-                var newTextMesh = new TextMesh(Placeables[i].Count.ToString(), newMenuImg.width, newMenuImg.width);
+                //var newTextMesh = new TextMesh(Placeables[i].Count.ToString(), newMenuImg.width, newMenuImg.width);
+                var newTextMesh = new AnimationSprite(numbersFileName, 6, 2, -1, true, false);
+                texts.Add(new TextData(head + head2, Placeables[i].Count - 1, newTextMesh));
                 var placeableClone = Placeables[i].PlaceablePrefab.Clone() ;
 
-                newTextMesh.TextSize = data.GetIntProperty("TextSize");
-                newTextMesh.TextColor = Color.White;
+                //newTextMesh.TextSize = data.GetIntProperty("TextSize");
+                //newTextMesh.TextColor = Color.White;
                 Placeables[i].Image = newMenuImg;
                 Placeables[i].CountText = newTextMesh;
 
                 AddChild(newMenuImg);
-                AddChild(newTextMesh);
-                newTextMesh.SetPosInVec2(head + head2);
                 newMenuImg.SetPosInVec2(head + head2);
                 newMenuImg.SetOrigin(newMenuImg.width / 2, newMenuImg.height / 2);
                 newMenuImg.rotation = Placeables[i].PlaceablePrefab.MenuImageRotation;
@@ -75,11 +88,17 @@ namespace gxpengine_template.MyClasses.UI
                 placeableClone.SetXY(clonePos.x, clonePos.y);
                 (placeableClone as IPlaceable).Placed += OnItemPlaced;
 
-                newTextMesh.HorizontalAlign = CenterMode.Max;
-                newTextMesh.VerticalAlign = CenterMode.Max;
+                //newTextMesh.HorizontalAlign = CenterMode.Max;
+                //newTextMesh.VerticalAlign = CenterMode.Max;
                 //newTextMesh.SetXY(newMenuImg.width / 2, newMenuImg.height / 2);
                 head += Vec2.up * newMenuImg.height;
                 i++;
+            }
+            foreach (var t in texts)
+            {
+                AddChild(t.Text);
+                t.Text.SetPosInVec2(t.Pos);
+                t.Text.SetFrame(t.Frame);
             }
         }
 
@@ -90,7 +109,7 @@ namespace gxpengine_template.MyClasses.UI
 
             PlaceableData itemData = Placeables.First(x => (x.PlaceablePrefab as GameObject).name == goItem.name);
             
-            itemData.CountText.Text = (--itemData.Count).ToString();
+            itemData.CountText.SetFrame(--itemData.Count - 1);
 
             if(itemData.Count == 0)
             {

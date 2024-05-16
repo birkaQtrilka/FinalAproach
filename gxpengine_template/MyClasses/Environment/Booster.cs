@@ -1,6 +1,7 @@
 ﻿using GXPEngine;
 using gxpengine_template.MyClasses.Dragging;
 using Physics;
+using System;
 using System.Linq;
 using TiledMapParser;
 
@@ -13,11 +14,18 @@ namespace gxpengine_template.MyClasses.Environment
         float _boostPower;
         Vec2 _boostDir;
 
+        Sound _boostSound;
+        float _boostVolume;
+        bool _exitedPlayer;
+
         public Booster(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
             _data = data;
             _boostPower = data.GetFloatProperty("BoostPower", 3);
             _boostDir = new Vec2(data.GetFloatProperty("BoostDirX"), data.GetFloatProperty("BoostDirY"));
+            _boostSound = new Sound(data.GetStringProperty("BoostSound"));
+            _boostVolume = data.GetFloatProperty("BoostVolume", 1);
+
             _boostDir.Normalize();
             SetOrigin(width / 2, height / 2);
             rotation = data.Rotation;
@@ -31,6 +39,15 @@ namespace gxpengine_template.MyClasses.Environment
             {
                 var mover = col.rbOwner as Mover;
                 mover.acceleration += _boostDir * _boostPower / mover.Mass ;
+                if(!_exitedPlayer)
+                {
+                    _boostSound.Play(volume: _boostVolume);
+                    _exitedPlayer = true;
+                }
+            }
+            else
+            {
+                _exitedPlayer = false;
             }
         }
 

@@ -49,6 +49,7 @@ namespace gxpengine_template.MyClasses.Environment
         void UpdateRamp()
         {
             block = new Block(texture.filename, 1, 1, _data.GetFloatProperty("Bounciness", .98f),width,height);
+            block.name = "BounceBlock";
             block.alpha = 0;
             MyUtils.MyGame.CurrentLevel.AddChild(block);
             block.SetOrigin(block.width / 2, block.height / 2);

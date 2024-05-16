@@ -19,6 +19,7 @@ namespace gxpengine_template.MyClasses.UI
         Vec2 _nextLvlBtnPos;
         Vec2 _menuStarsPos;
         Vec2 _youWinPos;
+        float _bgVolume;
 
         public NextLevelUI(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
@@ -41,7 +42,7 @@ namespace gxpengine_template.MyClasses.UI
             _resetBtnPos = new Vec2(data.GetFloatProperty("ResetBtnPosX"), data.GetFloatProperty("ResetBtnPosY"));
             _youWinPos = new Vec2(data.GetFloatProperty("YouWinTextPosX"), data.GetFloatProperty("YouWinTextPosY"));
             //completion time?
-
+            _bgVolume = data.GetFloatProperty("BgVolume",0.1f);
             visible = false;
             AddChild(new Coroutine(Init()));
         }
@@ -67,7 +68,9 @@ namespace gxpengine_template.MyClasses.UI
 
             visible = true;
             _menuStarsUI.Score = _starsUI.Score;
-            GameManager.Instance.BgMusic.Stop();
+
+            GameManager.Instance.BgMusic.Volume = _bgVolume;
+            //GameManager.Instance.BgMusic.Stop();
             AddChild(new Tween(TweenProperty.scale, 500, 1, EaseFunc.Factory("EaseOutSin")).OnCompleted(()=> _menuStarsUI.PlayAnim()));
         }
 

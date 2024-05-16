@@ -70,6 +70,8 @@
   </object>
   <object id="117" name="Disc" type="gxpengine_template.MyClasses.Environment.Player" gid="12" x="563.987" y="1809.41" width="60" height="60">
    <properties>
+    <property name="BounceSound" value="Assets/Sounds/Bounce wall.wav"/>
+    <property name="BounceVolume" type="float" value="1"/>
     <property name="CollisionSound" value="Assets/Sounds/BUmp in to da wall.wav"/>
     <property name="CollisionVolume" type="float" value="1"/>
     <property name="DeathSoundName" value="Assets/Sounds/Death sound.mp3"/>
@@ -110,6 +112,7 @@
  <objectgroup id="6" name="UI">
   <object id="83" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="3" x="59" y="108.333" width="50" height="50">
    <properties>
+    <property name="NumbersTileSetName" value="Assets/numbers.png"/>
     <property name="PrefabNameAndCountCSV" value="Bounce Block:1,Booster_Right:1,Booster_Left:1,Booster_Up:1,Booster_Down:4,Ramp1:1,Ramp2:1,Ramp3:1,Ramp4:1"/>
     <property name="TextSize" type="int" value="30"/>
    </properties>
@@ -134,6 +137,7 @@
   </object>
   <object id="189" name="WinScreen" type="gxpengine_template.MyClasses.UI.NextLevelUI" gid="37" x="78.3939" y="1548.67" width="922" height="1163" visible="0">
    <properties>
+    <property name="BgVolume" type="float" value="0.25"/>
     <property name="MenuStarsPosX" type="float" value="-183"/>
     <property name="MenuStarsPosY" type="float" value="-150"/>
     <property name="NextLevelName" value="Assets/Test(4.1).tmx"/>
@@ -184,8 +188,8 @@
   </object>
   <object id="139" name="GameManager" type="gxpengine_template.MyClasses.GameManager" x="-227.273" y="151.515" width="57.5758" height="72.7273">
    <properties>
-    <property name="BgMusic" value="Assets/Sounds/Sakura-Girl-Daisy-chosic.com_.mp3"/>
-    <property name="BgMusicVolume" type="float" value="0"/>
+    <property name="BgMusic" value="Assets/Sounds/Main_theme.wav"/>
+    <property name="BgMusicVolume" type="float" value="0.4"/>
     <property name="MuffleFrequency" type="float" value="30000"/>
    </properties>
   </object>
