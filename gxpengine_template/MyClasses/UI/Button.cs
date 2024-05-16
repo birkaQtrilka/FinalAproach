@@ -17,7 +17,7 @@ namespace gxpengine_template.MyClasses.UI
         public Button(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
             if (data != null)
-                clickSound = new Sound(data.GetStringProperty("ClickSoundName", "Assets/Sounds/PlacingItems.wav"));
+                clickSound = new Sound(data.GetStringProperty("ClickSoundName", "Assets/Sounds/UiClick2.wav"));
 
             clickVolume = data.GetFloatProperty("ClickSoundVolume", 1);
             buttonPause = data.GetFloatProperty("ButtonPauseBeforeClick", 0.1f);
@@ -27,7 +27,7 @@ namespace gxpengine_template.MyClasses.UI
         protected Button(string filename, int cols, int rows, TiledObject data, Sound clickSound, float clickVolume = 1, float buttonPause = 0.1f) : base(filename, cols, rows, data)
         {
             this.buttonPause = buttonPause;
-            this.clickSound = clickSound ?? new Sound("Assets/Sounds/PlacingItems.wav");
+            this.clickSound = clickSound ?? new Sound("Assets/Sounds/UiClick2.wav");
             this.clickVolume = clickVolume;
         }
 
