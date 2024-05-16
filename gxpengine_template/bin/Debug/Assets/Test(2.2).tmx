@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="222">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="275">
  <tileset firstgid="1" name="Player" tilewidth="432" tileheight="432" tilecount="1" columns="1">
   <image source="PortalSprite.png" width="432" height="432"/>
  </tileset>
@@ -57,6 +57,9 @@
  <tileset firstgid="39" name="Ramp" tilewidth="78" tileheight="78" tilecount="2" columns="2">
   <image source="Enviromentramp.png" width="156" height="78"/>
  </tileset>
+ <tileset firstgid="41" name="Player_Objects" tilewidth="112" tileheight="1063" tilecount="1" columns="1">
+  <image source="itembox.png" width="112" height="1063"/>
+ </tileset>
  <objectgroup id="11" name="Capa de Objetos 5" locked="1">
   <object id="172" name="Bg" gid="11" x="4" y="1922.07" width="1080" height="1920"/>
   <object id="182" name="Table" gid="29" x="148" y="1920" width="792" height="1920"/>
@@ -81,54 +84,40 @@
     <property name="RespawnVolume" type="float" value="1"/>
    </properties>
   </object>
-  <object id="186" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="31" x="387.455" y="1384.69" width="83" height="83">
+  <object id="186" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="31" x="715.455" y="1466.69" width="83" height="83">
    <properties>
     <property name="PickUpSound" value="Assets/Sounds/Collectiable sound.wav"/>
     <property name="Volume" type="float" value="0.35"/>
    </properties>
   </object>
-  <object id="187" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="31" x="499.667" y="645.833" width="83" height="83">
+  <object id="187" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="31" x="507.667" y="413.833" width="83" height="83">
    <properties>
     <property name="PickUpSound" value="Assets/Sounds/Collectiable sound.wav"/>
     <property name="Volume" type="float" value="0.35"/>
    </properties>
   </object>
-  <object id="188" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="31" x="461.667" y="363.834" width="83" height="83">
+  <object id="188" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="31" x="367.667" y="915.77" width="83" height="83">
    <properties>
     <property name="PickUpSound" value="Assets/Sounds/Collectiable sound.wav"/>
     <property name="Volume" type="float" value="0.35"/>
    </properties>
   </object>
-  <object id="205" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="204.833" y="953.833" width="87" height="87"/>
-  <object id="206" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="204.167" y="878.5" width="87" height="87"/>
-  <object id="207" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="204.834" y="1027.83" width="87" height="87"/>
-  <object id="208" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="533.833" y="883.5" width="87" height="87"/>
-  <object id="209" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="459.833" y="884.5" width="87" height="87"/>
-  <object id="212" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="203.667" y="582.5" width="87" height="87"/>
-  <object id="214" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="268.667" y="507.833" width="87" height="87"/>
-  <object id="217" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="203.833" y="657.167" width="87" height="87"/>
-  <object id="218" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="204.167" y="730.5" width="87" height="87"/>
-  <object id="219" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="203.833" y="804.5" width="87" height="87"/>
-  <object id="220" name="Ramp4" type="gxpengine_template.MyClasses.PhysicsObjects.Ramp" gid="39" x="277" y="575" width="78" height="78">
+  <object id="235" name="Ramp4" type="gxpengine_template.MyClasses.PhysicsObjects.Ramp" gid="39" x="376.333" y="104.333" width="78" height="78">
    <properties>
     <property name="MenuImage" value="Assets/Ramp.png"/>
    </properties>
   </object>
-  <object id="221" name="Ramp3" type="gxpengine_template.MyClasses.PhysicsObjects.Ramp" gid="39" x="654.515" y="555.364" width="78" height="78" rotation="180">
-   <properties>
-    <property name="MenuImage" value="Assets/Ramp.png"/>
-    <property name="MenuImageRotation" type="float" value="180"/>
-   </properties>
-  </object>
+  <object id="251" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="573.924" y="1411.97" width="87" height="87"/>
+  <object id="266" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="648.106" y="1410.38" width="87" height="87"/>
+  <object id="267" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="722.409" y="1409.79" width="87" height="87"/>
+  <object id="268" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="796.591" y="1408.2" width="87" height="87"/>
+  <object id="270" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="500.924" y="1413.04" width="87" height="87"/>
+  <object id="271" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="797.333" y="722.667" width="87" height="87"/>
+  <object id="272" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="796.5" y="647.833" width="87" height="87"/>
+  <object id="273" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="796.833" y="574.167" width="87" height="87"/>
+  <object id="274" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="798.5" y="797.167" width="87" height="87"/>
  </objectgroup>
  <objectgroup id="6" name="UI">
-  <object id="83" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="3" x="59" y="108.333" width="50" height="50">
-   <properties>
-    <property name="NumbersTileSetName" value="Assets/numbers.png"/>
-    <property name="PrefabNameAndCountCSV" value=""/>
-    <property name="TextSize" type="int" value="30"/>
-   </properties>
-  </object>
   <object id="92" name="StarsUI" type="gxpengine_template.MyClasses.UI.StarsUI" gid="7" x="907.333" y="61.3333" width="120" height="40">
    <properties>
     <property name="EmptyStarName" value="Assets/EmptyStar.png"/>
@@ -182,6 +171,13 @@
     <property name="StartScreenName" value="Assets/Level_Menu.tmx"/>
    </properties>
   </object>
+  <object id="224" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="3" x="89" y="119" width="50" height="50">
+   <properties>
+    <property name="NumbersTileSetName" value="Assets/numbers.png"/>
+    <property name="PrefabNameAndCountCSV" value="Block:2"/>
+    <property name="TextSize" type="int" value="30"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="10" name="Managers">
   <object id="77" name="Draggerss" type="gxpengine_template.MyClasses.Dragging.Dragger" x="-246.667" y="25.3333" width="93.3333" height="77.3333"/>
@@ -214,7 +210,7 @@
  <objectgroup id="9" name="SceneConfig">
   <object id="55" name="Configs" type="gxpengine_template.MyClasses.SceneHandling.PlaySceneConfigs" x="-247.939" y="-97.6363" width="112.121" height="109.091">
    <properties>
-    <property name="ObjectLayersCSV" value="Assets/Test(1.3).tmx:Managers,Main:UI,Assets/Test(1.3).tmx:Object Layer 1"/>
+    <property name="ObjectLayersCSV" value="Assets/Test(2.2).tmx:Managers,Main:UI,Assets/Test(2.2).tmx:Object Layer 1"/>
    </properties>
   </object>
  </objectgroup>

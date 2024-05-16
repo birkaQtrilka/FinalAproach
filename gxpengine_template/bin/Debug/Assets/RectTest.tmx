@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="104">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="105">
  <tileset firstgid="1" name="Tutorial" tilewidth="1080" tileheight="1920" tilecount="1" columns="1">
   <image source="Tutorial/tutorial 1.1.png" width="1080" height="1920"/>
  </tileset>
@@ -15,7 +15,7 @@
     <property name="NextBtnPosX" type="float" value="0"/>
     <property name="NextBtnPosY" type="float" value="750"/>
     <property name="NextBtnPrefabName" value="NextBtn"/>
-    <property name="NextLevelName" value="Assets/Test(3.3).tmx"/>
+    <property name="NextLevelName" value="Assets/Level_Menu.tmx"/>
     <property name="RestTimeS" type="float" value="0.5"/>
     <property name="StartBtnPosX" type="float" value="0"/>
     <property name="StartBtnPosY" type="float" value="754"/>
@@ -28,6 +28,13 @@
   <object id="55" name="Configs" type="gxpengine_template.MyClasses.SceneHandling.PlaySceneConfigs" x="-246.606" y="-100.303" width="112.121" height="109.091">
    <properties>
     <property name="ObjectLayersCSV" value="Assets/RectTest.tmx:Managers,Main:UI,Assets/RectTest.tmx:Object Layer 1"/>
+   </properties>
+  </object>
+  <object id="104" name="GameManager" type="gxpengine_template.MyClasses.GameManager" x="-257.155" y="130.834" width="57.5758" height="72.7273">
+   <properties>
+    <property name="BgMusic" value="Assets/Sounds/Main_theme.wav"/>
+    <property name="BgMusicVolume" type="float" value="0.2"/>
+    <property name="MuffleFrequency" type="float" value="30000"/>
    </properties>
   </object>
  </objectgroup>

@@ -172,8 +172,8 @@
   <object id="77" name="Draggerss" type="gxpengine_template.MyClasses.Dragging.Dragger" x="-246.667" y="25.3333" width="93.3333" height="77.3333"/>
   <object id="139" name="GameManager" type="gxpengine_template.MyClasses.GameManager" x="-227.273" y="151.515" width="57.5758" height="72.7273">
    <properties>
-    <property name="BgMusic" value="Assets/Sounds/Sakura-Girl-Daisy-chosic.com_.mp3"/>
-    <property name="BgMusicVolume" type="float" value="0"/>
+    <property name="BgMusic" value="Assets/Sounds/Main_theme.wav"/>
+    <property name="BgMusicVolume" type="float" value="0.4"/>
     <property name="MuffleFrequency" type="float" value="30000"/>
    </properties>
   </object>

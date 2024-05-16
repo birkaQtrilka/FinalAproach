@@ -73,6 +73,8 @@
   </object>
   <object id="117" name="Disc" type="gxpengine_template.MyClasses.Environment.Player" gid="12" x="515" y="1767.41" width="60" height="60">
    <properties>
+    <property name="BounceSound" value="Assets/Sounds/Bounce wall.wav"/>
+    <property name="BounceVolume" type="float" value="1"/>
     <property name="CollisionSound" value="Assets/Sounds/BUmp in to da wall.wav"/>
     <property name="CollisionVolume" type="float" value="1"/>
     <property name="DeathSoundName" value="Assets/Sounds/Death sound.mp3"/>
@@ -162,8 +164,9 @@
     <property name="StartScreenName" value="Assets/Level_Menu.tmx"/>
    </properties>
   </object>
-  <object id="224" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="3" x="89" y="119" width="50" height="50">
+  <object id="224" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="3" x="93" y="125" width="50" height="50">
    <properties>
+    <property name="NumbersTileSetName" value="Assets/numbers.png"/>
     <property name="PrefabNameAndCountCSV" value="Block:1"/>
     <property name="TextSize" type="int" value="30"/>
    </properties>
@@ -177,7 +180,7 @@
     <property name="ArrowSpacing" type="float" value="40"/>
     <property name="ArrowsSpritesCSV" value="Assets/power1.png,Assets/power2.png,Assets/power2.png,Assets/power3.png"/>
     <property name="LaunchingSound" value="Assets/Sounds/BallLaunch.wav"/>
-    <property name="SpeedCap" type="float" value="20"/>
+    <property name="SpeedCap" type="float" value="25"/>
     <property name="VisualCap" type="float" value="100"/>
     <property name="VolumeAiming" type="float" value="0.4"/>
     <property name="VolumeLaunching" type="float" value="1"/>

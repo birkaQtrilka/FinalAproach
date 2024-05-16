@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="210">
+ <tileset firstgid="1" name="Player" tilewidth="432" tileheight="432" tilecount="1" columns="1">
+  <image source="PortalSprite.png" width="432" height="432"/>
+ </tileset>
+ <tileset firstgid="2" name="Line" tilewidth="50" tileheight="50" tilecount="1" columns="1">
+  <image source="line.png" width="50" height="50"/>
+ </tileset>
+ <tileset firstgid="3" name="Square" tilewidth="50" tileheight="50" tilecount="4" columns="2">
+  <image source="square.png" width="100" height="100"/>
+ </tileset>
+ <tileset firstgid="7" name="StarsUI" tilewidth="150" tileheight="50" tilecount="4" columns="1">
+  <image source="Stars.png" width="150" height="200"/>
+ </tileset>
+ <tileset firstgid="11" name="BG" tilewidth="1080" tileheight="1920" tilecount="1" columns="1">
+  <image source="gameBG.png" width="1080" height="1920"/>
+ </tileset>
+ <tileset firstgid="12" name="Disc" tilewidth="60" tileheight="60" tilecount="4" columns="4">
+  <image source="player.png" width="240" height="60"/>
+ </tileset>
+ <tileset firstgid="16" name="Booster Right" tilewidth="87" tileheight="87" tilecount="3" columns="3">
+  <image source="boost.png" width="261" height="87"/>
+ </tileset>
+ <tileset firstgid="19" name="Bounce Block" tilewidth="87" tileheight="87" tilecount="2" columns="2">
+  <image source="spring.png" width="174" height="87"/>
+ </tileset>
+ <tileset firstgid="21" name="Basic Block" tilewidth="87" tileheight="87" tilecount="3" columns="3">
+  <image source="Basic_Box.png" width="261" height="87"/>
+ </tileset>
+ <tileset firstgid="24" name="Hole Hazard" tilewidth="131" tileheight="128" tilecount="3" columns="3">
+  <image source="hazard_hole.png" width="393" height="128"/>
+ </tileset>
+ <tileset firstgid="27" name="BuildMode" tilewidth="88" tileheight="121" tilecount="1" columns="1">
+  <image source="build icon.png" width="88" height="121"/>
+ </tileset>
+ <tileset firstgid="28" name="RestartButton" tilewidth="101" tileheight="123" tilecount="1" columns="1">
+  <image source="reseticon.png" width="101" height="123"/>
+ </tileset>
+ <tileset firstgid="29" name="Table" tilewidth="792" tileheight="1920" tilecount="1" columns="1">
+  <image source="tablenohole.png" width="792" height="1920"/>
+ </tileset>
+ <tileset firstgid="30" name="Hole" tilewidth="135" tileheight="135" tilecount="1" columns="1">
+  <image source="holegoal.png" width="135" height="135"/>
+ </tileset>
+ <tileset firstgid="31" name="StarFull" tilewidth="83" tileheight="83" tilecount="3" columns="3">
+  <image source="FullStar.png" width="255" height="83"/>
+ </tileset>
+ <tileset firstgid="34" name="StarEmpty" tilewidth="83" tileheight="83" tilecount="3" columns="3">
+  <image source="EmptyStar.png" width="255" height="83"/>
+ </tileset>
+ <tileset firstgid="37" name="WinScreen" tilewidth="922" tileheight="1163" tilecount="1" columns="1">
+  <image source="winframe.png" width="922" height="1163"/>
+ </tileset>
+ <tileset firstgid="38" name="PauseFrame" tilewidth="922" tileheight="1039" tilecount="1" columns="1">
+  <image source="pauseframe.png" width="922" height="1039"/>
+ </tileset>
+ <tileset firstgid="39" name="Continue" tilewidth="50" tileheight="50" tilecount="1" columns="1">
+  <image source="ContinueBtn.png" width="50" height="50"/>
+ </tileset>
+ <tileset firstgid="40" name="MainMenuBG" tilewidth="1080" tileheight="1920" tilecount="1" columns="1">
+  <image source="mainmenubg.png" width="1080" height="1920"/>
+ </tileset>
+ <tileset firstgid="41" name="MenuTitle" tilewidth="1133" tileheight="484" tilecount="1" columns="1">
+  <image source="title (2).png" width="1133" height="484"/>
+ </tileset>
+ <tileset firstgid="42" name="Quit" tilewidth="488" tileheight="194" tilecount="3" columns="3">
+  <image source="Buttons/Quit.png" width="1464" height="194"/>
+ </tileset>
+ <tileset firstgid="45" name="PlayBtn" tilewidth="488" tileheight="194" tilecount="3" columns="3">
+  <image source="Buttons/Play.png" width="1464" height="194"/>
+ </tileset>
+ <tileset firstgid="48" name="Options" tilewidth="488" tileheight="195" tilecount="3" columns="3">
+  <image source="Buttons/Options.png" width="1464" height="195"/>
+ </tileset>
+ <objectgroup id="11" name="Capa de Objetos 5" locked="1">
+  <object id="205" name="MainMenuBG" gid="40" x="-0.0625" y="1920" width="1080" height="1920"/>
+ </objectgroup>
+ <objectgroup id="2" name="Object Layer 1"/>
+ <objectgroup id="6" name="UI">
+  <object id="190" name="PauseMenu" type="gxpengine_template.MyClasses.UI.PauseMenu" gid="38" x="90.5152" y="1438.18" width="922" height="1039" visible="0">
+   <properties>
+    <property name="CloseSoundFrequency" type="float" value="36000"/>
+    <property name="ExitBtnName" value="Exit"/>
+    <property name="ExitBtnPosX" type="float" value="0"/>
+    <property name="ExitBtnPosY" type="float" value="388"/>
+    <property name="GoToMainScreenBtnName" value="NxtLvl"/>
+    <property name="MainScreenBtnPosX" type="float" value="0"/>
+    <property name="MainScreenBtnPosY" type="float" value="194"/>
+    <property name="OpenSoundName" value="Assets/Sounds/pause menu sound.wav"/>
+    <property name="OpenSoundVolume" type="float" value="0.3"/>
+    <property name="PauseTextName" value="Assets/Paused.png"/>
+    <property name="PauseTxtPosX" type="float" value="0"/>
+    <property name="PauseTxtPosY" type="float" value="-300"/>
+    <property name="ResumeBtnName" value="EmptyBtn"/>
+    <property name="ResumeBtnPosX" type="float" value="0"/>
+    <property name="ResumeBtnPosY" type="float" value="0"/>
+    <property name="StartScreenName" value="Assets/Test.tmx"/>
+   </properties>
+  </object>
+  <object id="204" name="MainMenuBG" gid="40" x="0.0020202" y="1920" width="1080" height="1920" visible="0"/>
+  <object id="206" name="MenuTitle" gid="41" x="-26.5" y="510.667" width="1133" height="484"/>
+  <object id="207" name="Exit" type="gxpengine_template.MyClasses.UI.ExitGameBtn" gid="42" x="296" y="1470" width="488" height="194">
+   <properties>
+    <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
+   </properties>
+  </object>
+  <object id="208" name="StartBtn" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="45" x="296" y="870" width="488" height="194">
+   <properties>
+    <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
+    <property name="LevelName" value="Assets/RectTest.tmx"/>
+   </properties>
+  </object>
+  <object id="209" name="Options Button" type="gxpengine_template.MyClasses.UI.DisableObjectButton" gid="48" x="296" y="1170" width="488" height="195">
+   <properties>
+    <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="10" name="Managers">
+  <object id="77" name="Draggerss" type="gxpengine_template.MyClasses.Dragging.Dragger" x="-246.667" y="25.3333" width="93.3333" height="77.3333"/>
+  <object id="139" name="GameManager" type="gxpengine_template.MyClasses.GameManager" x="-227.273" y="151.515" width="57.5758" height="72.7273">
+   <properties>
+    <property name="BgMusic" value="Assets/Sounds/Main_theme.wav"/>
+    <property name="BgMusicVolume" type="float" value="0.4"/>
+    <property name="MuffleFrequency" type="float" value="30000"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="9" name="SceneConfig">
+  <object id="55" name="Configs" type="gxpengine_template.MyClasses.SceneHandling.PlaySceneConfigs" x="-247.939" y="-97.6363" width="112.121" height="109.091">
+   <properties>
+    <property name="ObjectLayersCSV" value="Assets/MainMenuScreen.tmx:Managers,Main:UI,Assets/MainMenuScreen.tmx:Object Layer 1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

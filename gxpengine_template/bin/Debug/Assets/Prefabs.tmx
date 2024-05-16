@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="89">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="91">
  <tileset firstgid="1" name="StarsUI" tilewidth="150" tileheight="50" tilecount="4" columns="1">
   <image source="Stars.png" width="150" height="200"/>
  </tileset>
@@ -24,15 +24,24 @@
  <tileset firstgid="21" name="Resume" tilewidth="488" tileheight="194" tilecount="3" columns="3">
   <image source="Buttons/resume.png" width="1464" height="194"/>
  </tileset>
- <tileset firstgid="24" name="Basic_Block" tilewidth="87" tileheight="87" tilecount="3" columns="3">
+ <tileset firstgid="24" name="NextBtn" tilewidth="488" tileheight="195" tilecount="3" columns="3">
+  <image source="Buttons/Next.png" width="1464" height="195"/>
+ </tileset>
+ <tileset firstgid="27" name="PlayBtn" tilewidth="488" tileheight="194" tilecount="3" columns="3">
+  <image source="Buttons/Play.png" width="1464" height="194"/>
+ </tileset>
+ <tileset firstgid="30" name="Normal_Block" tilewidth="87" tileheight="87" tilecount="3" columns="3">
   <image source="Basic_Box.png" width="261" height="87"/>
  </tileset>
  <objectgroup id="2" name="Object Layer 1">
   <object id="65" name="StarsUIMenu" type="gxpengine_template.MyClasses.UI.MenuStarsUI" gid="1" x="286.333" y="207" width="150" height="50">
    <properties>
     <property name="EmptyStarName" value="Assets/EmptyStar.png"/>
+    <property name="FrequencyIncrease" type="float" value="5000"/>
     <property name="FullStarName" value="Assets/FullStar.png"/>
     <property name="StarScaling" type="float" value="1.5"/>
+    <property name="StarSound" value="Assets/Sounds/Collectiable sound.wav"/>
+    <property name="StarVolume" type="float" value="0.3"/>
    </properties>
   </object>
   <object id="73" name="Bounce Block" type="gxpengine_template.MyClasses.Environment.DraggableRect" gid="5" x="315.5" y="421.5" width="87" height="87">
@@ -46,6 +55,8 @@
     <property name="BoostDirX" type="float" value="1"/>
     <property name="BoostDirY" type="float" value="0"/>
     <property name="BoostPower" type="float" value="250"/>
+    <property name="BoostSound" value="Assets/Sounds/Booster 1-3.wav"/>
+    <property name="BoostVolume" type="float" value="1"/>
     <property name="MenuImage" value="Assets/boosticon.png"/>
     <property name="MenuImageRotation" type="float" value="0"/>
    </properties>
@@ -55,6 +66,8 @@
     <property name="BoostDirX" type="float" value="0"/>
     <property name="BoostDirY" type="float" value="-1"/>
     <property name="BoostPower" type="float" value="250"/>
+    <property name="BoostSound" value="Assets/Sounds/Booster 1-3.wav"/>
+    <property name="BoostVolume" type="float" value="1"/>
     <property name="MenuImage" value="Assets/boosticon.png"/>
     <property name="MenuImageRotation" type="float" value="270"/>
    </properties>
@@ -64,6 +77,8 @@
     <property name="BoostDirX" type="float" value="0"/>
     <property name="BoostDirY" type="float" value="1"/>
     <property name="BoostPower" type="float" value="250"/>
+    <property name="BoostSound" value="Assets/Sounds/Booster 1-3.wav"/>
+    <property name="BoostVolume" type="float" value="1"/>
     <property name="MenuImage" value="Assets/boosticon.png"/>
     <property name="MenuImageRotation" type="float" value="90"/>
    </properties>
@@ -73,6 +88,8 @@
     <property name="BoostDirX" type="float" value="-1"/>
     <property name="BoostDirY" type="float" value="0"/>
     <property name="BoostPower" type="float" value="250"/>
+    <property name="BoostSound" value="Assets/Sounds/Booster 1-3.wav"/>
+    <property name="BoostVolume" type="float" value="1"/>
     <property name="MenuImage" value="Assets/boosticon.png"/>
     <property name="MenuImageRotation" type="float" value="180"/>
    </properties>
@@ -120,7 +137,17 @@
     <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
    </properties>
   </object>
-  <object id="88" name="Block" type="gxpengine_template.MyClasses.Environment.DraggableRect" gid="24" x="310" y="318" width="87" height="87">
+  <object id="88" name="NextBtn" type="gxpengine_template.MyClasses.UI.DisableObjectButton" gid="24" x="-10.6667" y="1528.3" width="488" height="195">
+   <properties>
+    <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
+   </properties>
+  </object>
+  <object id="89" name="StartBtn" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="27" x="4.48485" y="1781.85" width="488" height="194">
+   <properties>
+    <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
+   </properties>
+  </object>
+  <object id="90" name="Block" type="gxpengine_template.MyClasses.Environment.DraggableRect" gid="30" x="313.667" y="315.333" width="87" height="87">
    <properties>
     <property name="Bounciness" type="float" value="0.6"/>
     <property name="MenuImage" value="Assets/BlockMenuImg.png"/>

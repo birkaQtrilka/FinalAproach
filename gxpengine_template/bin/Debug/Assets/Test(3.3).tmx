@@ -140,7 +140,7 @@
     <property name="BgVolume" type="float" value="0.25"/>
     <property name="MenuStarsPosX" type="float" value="-183"/>
     <property name="MenuStarsPosY" type="float" value="-150"/>
-    <property name="NextLevelName" value="Assets/Test(4.1).tmx"/>
+    <property name="NextLevelName" value="Assets/Level_Menu.tmx"/>
     <property name="NextLvlBtnPosX" type="float" value="0"/>
     <property name="NextLvlBtnPosY" type="float" value="194"/>
     <property name="ResetBtnPosX" type="float" value="0"/>
@@ -195,7 +195,7 @@
   </object>
   <object id="184" name="Hole" type="gxpengine_template.MyClasses.Environment.Hole" gid="30" x="478.455" y="189.212" width="135" height="135">
    <properties>
-    <property name="NextLevelName" value="Assets/Test(4.1).tmx"/>
+    <property name="NextLevelName" value="Assets/Level_Menu.tmx"/>
     <property name="PersentageOfBall" type="float" value="0.25"/>
    </properties>
   </object>
