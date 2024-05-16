@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="291">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="292">
  <tileset firstgid="1" name="Player" tilewidth="432" tileheight="432" tilecount="1" columns="1">
   <image source="PortalSprite.png" width="432" height="432"/>
  </tileset>
@@ -59,6 +59,9 @@
  </tileset>
  <tileset firstgid="41" name="Player_Objects" tilewidth="112" tileheight="1063" tilecount="1" columns="1">
   <image source="itembox.png" width="112" height="1063"/>
+ </tileset>
+ <tileset firstgid="42" name="PauseButton" tilewidth="85" tileheight="118" tilecount="2" columns="2">
+  <image source="game/pauseicon.png" width="170" height="118"/>
  </tileset>
  <objectgroup id="11" name="Capa de Objetos 5" locked="1">
   <object id="172" name="Bg" gid="11" x="4" y="1922.07" width="1080" height="1920"/>
@@ -164,19 +167,19 @@
   </object>
  </objectgroup>
  <objectgroup id="6" name="UI">
-  <object id="92" name="StarsUI" type="gxpengine_template.MyClasses.UI.StarsUI" gid="7" x="907.333" y="61.3333" width="120" height="40">
+  <object id="92" name="StarsUI" type="gxpengine_template.MyClasses.UI.StarsUI" gid="7" x="882" y="69" width="120" height="40">
    <properties>
     <property name="EmptyStarName" value="Assets/EmptyStar.png"/>
     <property name="FullStarName" value="Assets/FullStar.png"/>
    </properties>
   </object>
-  <object id="168" name="PlayBtn" type=" gxpengine_template.MyClasses.UI.ChangePlayModeBtn" gid="27" x="940.091" y="643.273" width="88" height="121">
+  <object id="168" name="PlayBtn" type=" gxpengine_template.MyClasses.UI.ChangePlayModeBtn" gid="27" x="940" y="1080" width="88" height="121">
    <properties>
     <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
     <property name="Disapear" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="169" name="ResetSceneBtn" type="gxpengine_template.MyClasses.UI.ResetSceneBtn" gid="28" x="935.167" y="1008.33" width="101" height="123">
+  <object id="169" name="ResetSceneBtn" type="gxpengine_template.MyClasses.UI.ResetSceneBtn" gid="28" x="940" y="1425" width="101" height="123">
    <properties>
     <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
     <property name="Disapear" type="bool" value="true"/>
@@ -217,13 +220,14 @@
     <property name="StartScreenName" value="Assets/Level_Menu.tmx"/>
    </properties>
   </object>
-  <object id="224" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="3" x="89" y="119" width="50" height="50">
+  <object id="224" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="3" x="89.3636" y="748.51" width="50" height="50">
    <properties>
     <property name="NumbersTileSetName" value="Assets/numbers.png"/>
     <property name="PrefabNameAndCountCSV" value="Block:2,Wall:1"/>
     <property name="TextSize" type="int" value="30"/>
    </properties>
   </object>
+  <object id="291" name="Pause" gid="42" x="940" y="727" width="85" height="118"/>
  </objectgroup>
  <objectgroup id="10" name="Managers">
   <object id="77" name="Draggerss" type="gxpengine_template.MyClasses.Dragging.Dragger" x="-246.667" y="25.3333" width="93.3333" height="77.3333"/>

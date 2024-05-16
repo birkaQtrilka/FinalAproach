@@ -120,7 +120,9 @@ namespace gxpengine_template.MyClasses.UI
             goClone.visible = false;
             IPlaceable clone = goClone as IPlaceable;
             MyUtils.MyGame.CurrentLevel.AddChild(goClone);
-            Vector2 clonePos = TransformPoint(itemData.Image.x + itemData.Image.width * .5f, itemData.Image.y + itemData.Image.height * .5f);
+            clone.InInventory = true;
+            clone.MenuSprite = itemData.Image;
+            Vector2 clonePos = TransformPoint(itemData.Image.x, itemData.Image.y);
             goClone.SetXY(clonePos.x, clonePos.y);
             clone.Placed += OnItemPlaced;
         }

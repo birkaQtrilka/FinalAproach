@@ -19,7 +19,7 @@ public class MyGame : Game
         new MyGame().Start();
     }
 
-    public MyGame() : base(1080,1920, false, true,500,1040,false)
+    public MyGame() : base(1080,1920, false, true,430,765,false)
 	{
         name = "Main";
         Prefabs = LoadPrefabs();
@@ -27,7 +27,7 @@ public class MyGame : Game
         //to show how fast you've beat the game at the end
         StartTime = DateTime.Now;
         
-        LoadLevel("Assets/MainMenuScreen.tmx");
+        LoadLevel("Assets/Test(3.3).tmx");
 
         OnAfterStep += LoadSceneIfNotNull;
 	}

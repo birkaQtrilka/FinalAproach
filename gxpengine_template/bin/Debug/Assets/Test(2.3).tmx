@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="291">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="299">
  <tileset firstgid="1" name="Player" tilewidth="432" tileheight="432" tilecount="1" columns="1">
   <image source="PortalSprite.png" width="432" height="432"/>
  </tileset>
@@ -60,6 +60,9 @@
  <tileset firstgid="41" name="Player_Objects" tilewidth="112" tileheight="1063" tilecount="1" columns="1">
   <image source="itembox.png" width="112" height="1063"/>
  </tileset>
+ <tileset firstgid="42" name="PauseButton" tilewidth="85" tileheight="118" tilecount="2" columns="2">
+  <image source="game/pauseicon.png" width="170" height="118"/>
+ </tileset>
  <objectgroup id="11" name="Capa de Objetos 5" locked="1">
   <object id="172" name="Bg" gid="11" x="4" y="1922.07" width="1080" height="1920"/>
   <object id="182" name="Table" gid="29" x="148" y="1920" width="792" height="1920"/>
@@ -84,13 +87,13 @@
     <property name="RespawnVolume" type="float" value="1"/>
    </properties>
   </object>
-  <object id="186" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="31" x="644.788" y="178.69" width="83" height="83">
+  <object id="186" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="31" x="502.788" y="366.69" width="83" height="83">
    <properties>
     <property name="PickUpSound" value="Assets/Sounds/Collectiable sound.wav"/>
     <property name="Volume" type="float" value="0.35"/>
    </properties>
   </object>
-  <object id="187" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="31" x="507.667" y="413.833" width="83" height="83">
+  <object id="187" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="31" x="697.667" y="783.833" width="83" height="83">
    <properties>
     <property name="PickUpSound" value="Assets/Sounds/Collectiable sound.wav"/>
     <property name="Volume" type="float" value="0.35"/>
@@ -102,84 +105,26 @@
     <property name="Volume" type="float" value="0.35"/>
    </properties>
   </object>
-  <object id="251" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="573.924" y="1411.97" width="87" height="87">
+  <object id="294" name="Hazard" type="gxpengine_template.MyClasses.Environment.Hazard" gid="24" x="467.5" y="802" width="131" height="128">
    <properties>
-    <property name="Bounciness" type="float" value="0.6"/>
+    <property name="DeathSoundName" value="Assets/Sounds/Death sound.mp3"/>
+    <property name="DeathSoundVolume" type="float" value="0.5"/>
+    <property name="WaitForDeathS" type="float" value="0.07"/>
    </properties>
   </object>
-  <object id="266" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="648.106" y="1410.38" width="87" height="87">
+  <object id="295" name="Hazard" type="gxpengine_template.MyClasses.Environment.Hazard" gid="24" x="656.5" y="514" width="131" height="128">
    <properties>
-    <property name="Bounciness" type="float" value="0.6"/>
-   </properties>
-  </object>
-  <object id="267" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="722.409" y="1409.79" width="87" height="87">
-   <properties>
-    <property name="Bounciness" type="float" value="0.6"/>
-   </properties>
-  </object>
-  <object id="268" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="796.591" y="1408.2" width="87" height="87">
-   <properties>
-    <property name="Bounciness" type="float" value="0.6"/>
-   </properties>
-  </object>
-  <object id="270" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="500.924" y="1413.04" width="87" height="87">
-   <properties>
-    <property name="Bounciness" type="float" value="0.6"/>
-   </properties>
-  </object>
-  <object id="281" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="572.5" y="746.5" width="87" height="87">
-   <properties>
-    <property name="Bounciness" type="float" value="0.6"/>
-   </properties>
-  </object>
-  <object id="282" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="574.5" y="812.5" width="87" height="87">
-   <properties>
-    <property name="Bounciness" type="float" value="0.6"/>
-   </properties>
-  </object>
-  <object id="283" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="576.5" y="874.5" width="87" height="87">
-   <properties>
-    <property name="Bounciness" type="float" value="0.6"/>
-   </properties>
-  </object>
-  <object id="284" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="573.5" y="675.5" width="87" height="87">
-   <properties>
-    <property name="Bounciness" type="float" value="0.6"/>
-   </properties>
-  </object>
-  <object id="285" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="214.667" y="512" width="87" height="87">
-   <properties>
-    <property name="Bounciness" type="float" value="0.6"/>
-   </properties>
-  </object>
-  <object id="286" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="215.167" y="439.167" width="87" height="87">
-   <properties>
-    <property name="Bounciness" type="float" value="0.6"/>
-   </properties>
-  </object>
-  <object id="287" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="213.833" y="364.5" width="87" height="87">
-   <properties>
-    <property name="Bounciness" type="float" value="0.6"/>
+    <property name="DeathSoundName" value="Assets/Sounds/Death sound.mp3"/>
+    <property name="DeathSoundVolume" type="float" value="0.5"/>
+    <property name="WaitForDeathS" type="float" value="0.07"/>
    </properties>
   </object>
  </objectgroup>
  <objectgroup id="6" name="UI">
-  <object id="92" name="StarsUI" type="gxpengine_template.MyClasses.UI.StarsUI" gid="7" x="907.333" y="61.3333" width="120" height="40">
+  <object id="92" name="StarsUI" type="gxpengine_template.MyClasses.UI.StarsUI" gid="7" x="882" y="69" width="120" height="40">
    <properties>
     <property name="EmptyStarName" value="Assets/EmptyStar.png"/>
     <property name="FullStarName" value="Assets/FullStar.png"/>
-   </properties>
-  </object>
-  <object id="168" name="PlayBtn" type=" gxpengine_template.MyClasses.UI.ChangePlayModeBtn" gid="27" x="940.091" y="643.273" width="88" height="121">
-   <properties>
-    <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
-    <property name="Disapear" type="bool" value="true"/>
-   </properties>
-  </object>
-  <object id="169" name="ResetSceneBtn" type="gxpengine_template.MyClasses.UI.ResetSceneBtn" gid="28" x="935.167" y="1008.33" width="101" height="123">
-   <properties>
-    <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
-    <property name="Disapear" type="bool" value="true"/>
    </properties>
   </object>
   <object id="189" name="WinScreen" type="gxpengine_template.MyClasses.UI.NextLevelUI" gid="37" x="78.3939" y="1548.67" width="922" height="1163" visible="0">
@@ -217,13 +162,26 @@
     <property name="StartScreenName" value="Assets/Level_Menu.tmx"/>
    </properties>
   </object>
-  <object id="224" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="3" x="89" y="119" width="50" height="50">
+  <object id="224" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="3" x="89.36" y="748.51" width="50" height="50">
    <properties>
     <property name="NumbersTileSetName" value="Assets/numbers.png"/>
-    <property name="PrefabNameAndCountCSV" value="Block:2,Wall:1"/>
+    <property name="PrefabNameAndCountCSV" value="Ramp1:2,Ramp2:2,Ramp3:1,Ramp4:1"/>
     <property name="TextSize" type="int" value="30"/>
    </properties>
   </object>
+  <object id="296" name="PlayBtn" type=" gxpengine_template.MyClasses.UI.ChangePlayModeBtn" gid="27" x="940" y="1080" width="88" height="121">
+   <properties>
+    <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
+    <property name="Disapear" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="297" name="ResetSceneBtn" type="gxpengine_template.MyClasses.UI.ResetSceneBtn" gid="28" x="940" y="1425" width="101" height="123">
+   <properties>
+    <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
+    <property name="Disapear" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="298" name="Pause" gid="42" x="940" y="727" width="85" height="118"/>
  </objectgroup>
  <objectgroup id="10" name="Managers">
   <object id="77" name="Draggerss" type="gxpengine_template.MyClasses.Dragging.Dragger" x="-246.667" y="25.3333" width="93.3333" height="77.3333"/>
@@ -256,7 +214,7 @@
  <objectgroup id="9" name="SceneConfig">
   <object id="55" name="Configs" type="gxpengine_template.MyClasses.SceneHandling.PlaySceneConfigs" x="-247.939" y="-97.6363" width="112.121" height="109.091">
    <properties>
-    <property name="ObjectLayersCSV" value="Assets/Test(2.2).tmx:Managers,Main:UI,Assets/Test(2.2).tmx:Object Layer 1"/>
+    <property name="ObjectLayersCSV" value="Assets/Test(2.3).tmx:Managers,Main:UI,Assets/Test(2.3).tmx:Object Layer 1"/>
    </properties>
   </object>
  </objectgroup>

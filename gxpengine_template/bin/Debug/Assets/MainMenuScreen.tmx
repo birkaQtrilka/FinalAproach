@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="210">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="215">
  <tileset firstgid="1" name="Player" tilewidth="432" tileheight="432" tilecount="1" columns="1">
   <image source="PortalSprite.png" width="432" height="432"/>
  </tileset>
@@ -98,7 +98,7 @@
    </properties>
   </object>
   <object id="204" name="MainMenuBG" gid="40" x="0.0020202" y="1920" width="1080" height="1920" visible="0"/>
-  <object id="206" name="MenuTitle" gid="41" x="-26.5" y="510.667" width="1133" height="484"/>
+  <object id="206" name="MenuTitle" gid="41" x="-6.5" y="737.67" width="1133" height="484"/>
   <object id="207" name="Exit" type="gxpengine_template.MyClasses.UI.ExitGameBtn" gid="42" x="296" y="1470" width="488" height="194">
    <properties>
     <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
