@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="203">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="205">
  <tileset firstgid="1" name="Player" tilewidth="432" tileheight="432" tilecount="1" columns="1">
   <image source="PortalSprite.png" width="432" height="432"/>
  </tileset>
- <tileset firstgid="2" name="Line" tilewidth="50" tileheight="50" tilecount="1" columns="1">
-  <image source="line.png" width="50" height="50"/>
- </tileset>
- <tileset firstgid="3" name="Square" tilewidth="50" tileheight="50" tilecount="4" columns="2">
+ <tileset firstgid="2" name="Square" tilewidth="50" tileheight="50" tilecount="4" columns="2">
   <image source="square.png" width="100" height="100"/>
  </tileset>
- <tileset firstgid="7" name="StarsUI" tilewidth="150" tileheight="50" tilecount="4" columns="1">
+ <tileset firstgid="6" name="StarsUI" tilewidth="150" tileheight="50" tilecount="4" columns="1">
   <image source="Stars.png" width="150" height="200"/>
  </tileset>
- <tileset firstgid="11" name="NextLevelUI" tilewidth="689" tileheight="308" tilecount="1" columns="1">
+ <tileset firstgid="10" name="NextLevelUI" tilewidth="689" tileheight="308" tilecount="1" columns="1">
   <image source="FinishLevelUI.png" width="689" height="308"/>
  </tileset>
- <tileset firstgid="12" name="Pause" tilewidth="436" tileheight="308" tilecount="1" columns="1">
+ <tileset firstgid="11" name="Pause" tilewidth="436" tileheight="308" tilecount="1" columns="1">
   <image source="PauseTab.png" width="436" height="308"/>
  </tileset>
- <tileset firstgid="13" name="Table" tilewidth="792" tileheight="1920" tilecount="1" columns="1">
+ <tileset firstgid="12" name="Table" tilewidth="792" tileheight="1920" tilecount="1" columns="1">
   <image source="table.png" width="792" height="1920"/>
  </tileset>
- <tileset firstgid="14" name="BG" tilewidth="1080" tileheight="1920" tilecount="1" columns="1">
+ <tileset firstgid="13" name="BG" tilewidth="1080" tileheight="1920" tilecount="1" columns="1">
   <image source="gameBG.png" width="1080" height="1920"/>
  </tileset>
- <tileset firstgid="15" name="Star" tilewidth="85" tileheight="83" tilecount="3" columns="3">
-  <image source="Star (2).png" width="255" height="83"/>
- </tileset>
- <tileset firstgid="18" name="Disc" tilewidth="60" tileheight="60" tilecount="4" columns="4">
+ <tileset firstgid="14" name="Disc" tilewidth="60" tileheight="60" tilecount="4" columns="4">
   <image source="player.png" width="240" height="60"/>
  </tileset>
- <tileset firstgid="22" name="Booster Right" tilewidth="87" tileheight="87" tilecount="3" columns="3">
+ <tileset firstgid="18" name="Booster Right" tilewidth="87" tileheight="87" tilecount="3" columns="3">
   <image source="boost.png" width="261" height="87"/>
  </tileset>
- <tileset firstgid="25" name="Bounce Block" tilewidth="87" tileheight="87" tilecount="2" columns="2">
+ <tileset firstgid="21" name="Bounce Block" tilewidth="87" tileheight="87" tilecount="2" columns="2">
   <image source="spring.png" width="174" height="87"/>
  </tileset>
- <tileset firstgid="27" name="Basic Block" tilewidth="87" tileheight="87" tilecount="3" columns="3">
+ <tileset firstgid="23" name="Basic Block" tilewidth="87" tileheight="87" tilecount="3" columns="3">
   <image source="Basic_Box.png" width="261" height="87"/>
  </tileset>
- <tileset firstgid="30" name="Hole Hazard" tilewidth="131" tileheight="128" tilecount="3" columns="3">
+ <tileset firstgid="26" name="Hole Hazard" tilewidth="131" tileheight="128" tilecount="3" columns="3">
   <image source="hazard_hole.png" width="393" height="128"/>
  </tileset>
- <tileset firstgid="33" name="Ramp" tilewidth="78" tileheight="78" tilecount="1" columns="1">
+ <tileset firstgid="29" name="Ramp" tilewidth="78" tileheight="78" tilecount="1" columns="1">
   <image source="ramp.png" width="78" height="78"/>
  </tileset>
- <tileset firstgid="34" name="WinScreen" tilewidth="1927" tileheight="1286" tilecount="1" columns="1">
+ <tileset firstgid="30" name="WinScreen" tilewidth="1927" tileheight="1286" tilecount="1" columns="1">
   <image source="WinScreen.png" width="1927" height="1286"/>
  </tileset>
- <tileset firstgid="35" name="BuildMode" tilewidth="88" tileheight="121" tilecount="1" columns="1">
+ <tileset firstgid="31" name="BuildMode" tilewidth="88" tileheight="121" tilecount="1" columns="1">
   <image source="build icon.png" width="88" height="121"/>
  </tileset>
- <tileset firstgid="36" name="RestartButton" tilewidth="101" tileheight="123" tilecount="1" columns="1">
+ <tileset firstgid="32" name="RestartButton" tilewidth="101" tileheight="123" tilecount="1" columns="1">
   <image source="reseticon.png" width="101" height="123"/>
  </tileset>
+ <tileset firstgid="33" name="Star" tilewidth="85" tileheight="83" tilecount="3" columns="3">
+  <image source="FullStar.png" width="255" height="83"/>
+ </tileset>
+ <tileset firstgid="36" name="NextLevelUI" tilewidth="779" tileheight="892" tilecount="1" columns="1">
+  <image source="youwin.png" width="779" height="892"/>
+ </tileset>
  <objectgroup id="6" name="UI">
-  <object id="83" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="3" x="59" y="108.333" width="50" height="50">
+  <object id="83" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="2" x="59" y="108.333" width="50" height="50">
    <properties>
     <property name="PrefabNameAndCountCSV" value=""/>
    </properties>
   </object>
-  <object id="92" name="StarsUI" type="gxpengine_template.MyClasses.UI.StarsUI" gid="7" x="907.333" y="61.3333" width="120" height="40">
+  <object id="92" name="StarsUI" type="gxpengine_template.MyClasses.UI.StarsUI" gid="6" x="907.333" y="61.3333" width="120" height="40">
    <properties>
     <property name="StarName" value="Assets/StarC.png"/>
    </properties>
   </object>
-  <object id="98" name="PauseMenu" type="gxpengine_template.MyClasses.UI.PauseMenu" gid="12" x="148.524" y="415.733" width="330.228" height="269.777" visible="0">
+  <object id="98" name="PauseMenu" type="gxpengine_template.MyClasses.UI.PauseMenu" gid="11" x="148.524" y="415.733" width="330.228" height="269.777" visible="0">
    <properties>
     <property name="ExitBtnName" value="Exit"/>
     <property name="ExitBtnPosX" type="float" value="-80"/>
@@ -79,7 +79,19 @@
     <property name="StartScreenName" value="Assets/Test.tmx"/>
    </properties>
   </object>
-  <object id="167" name="NextLevelUI" type="gxpengine_template.MyClasses.UI.NextLevelUI" gid="34" x="0" y="1280" width="1927" height="1286" visible="0">
+  <object id="168" name="PlayBtn" type=" gxpengine_template.MyClasses.UI.ChangePlayModeBtn" gid="31" x="935" y="686.667" width="88" height="121">
+   <properties>
+    <property name="Disapear" type="bool" value="true"/>
+    <property name="testX" type="float" value="0"/>
+    <property name="testY" type="float" value="7"/>
+   </properties>
+  </object>
+  <object id="169" name="ResetSceneBtn" type="gxpengine_template.MyClasses.UI.ResetSceneBtn" gid="32" x="935.167" y="1008.33" width="101" height="123">
+   <properties>
+    <property name="Disapear" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="204" name="NextLevelUI" type="gxpengine_template.MyClasses.UI.NextLevelUI" gid="36" x="153" y="1260" width="779" height="892" visible="0">
    <properties>
     <property name="MenuStarsPosX" type="float" value="0"/>
     <property name="MenuStarsPosY" type="float" value="-10"/>
@@ -90,22 +102,10 @@
     <property name="ResetBtnPosY" type="float" value="80"/>
    </properties>
   </object>
-  <object id="168" name="PlayBtn" type=" gxpengine_template.MyClasses.UI.ChangePlayModeBtn" gid="35" x="935" y="686.667" width="88" height="121">
-   <properties>
-    <property name="Disapear" type="bool" value="true"/>
-    <property name="testX" type="float" value="0"/>
-    <property name="testY" type="float" value="7"/>
-   </properties>
-  </object>
-  <object id="169" name="ResetSceneBtn" type="gxpengine_template.MyClasses.UI.ResetSceneBtn" gid="36" x="935.167" y="1008.33" width="101" height="123">
-   <properties>
-    <property name="Disapear" type="bool" value="true"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup id="11" name="Capa de Objetos 5" locked="1">
-  <object id="172" name="Bg" gid="14" x="4" y="1922.07" width="1080" height="1920"/>
-  <object id="173" name="Table" type="gxpengine_template.MyClasses.Environment.Table" gid="13" x="147.879" y="1921.92" width="792" height="1920"/>
+  <object id="172" name="Bg" gid="13" x="4" y="1922.07" width="1080" height="1920"/>
+  <object id="173" name="Table" type="gxpengine_template.MyClasses.Environment.Table" gid="12" x="147.879" y="1921.92" width="792" height="1920"/>
  </objectgroup>
  <objectgroup id="2" name="Object Layer 1">
   <object id="93" name="Hole" type="gxpengine_template.MyClasses.Environment.Hole" gid="1" x="495.758" y="164.939" width="97" height="97">
@@ -114,56 +114,54 @@
     <property name="PersentageOfBall" type="float" value="0.25"/>
    </properties>
   </object>
-  <object id="114" name="Bg" gid="14" x="0" y="1921.54" width="1080" height="1920" visible="0"/>
-  <object id="115" name="Table" type="gxpengine_template.MyClasses.Environment.Table" gid="13" x="143.879" y="1921.39" width="792" height="1920" visible="0">
+  <object id="114" name="Bg" gid="13" x="0" y="1921.54" width="1080" height="1920" visible="0"/>
+  <object id="115" name="Table" type="gxpengine_template.MyClasses.Environment.Table" gid="12" x="143.879" y="1921.39" width="792" height="1920" visible="0">
    <properties>
     <property name="Padding" type="float" value="150"/>
    </properties>
   </object>
-  <object id="117" name="Disc" type="gxpengine_template.MyClasses.Environment.Player" gid="18" x="510" y="1719.41" width="60" height="60">
+  <object id="117" name="Disc" type="gxpengine_template.MyClasses.Environment.Player" gid="14" x="510" y="1719.41" width="60" height="60">
    <properties>
     <property name="Drag" type="float" value="0.99"/>
     <property name="StartX" type="float" value="0"/>
     <property name="StartY" type="float" value="0"/>
    </properties>
   </object>
-  <object id="192" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="15" x="597" y="510.167" width="85" height="83"/>
-  <object id="193" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="15" x="609" y="1419.83" width="85" height="83"/>
-  <object id="194" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="15" x="681.523" y="972.833" width="85" height="83"/>
-  <object id="195" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="29" x="797.311" y="806.333" width="87" height="87" rotation="90">
+  <object id="195" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="25" x="797.311" y="806.333" width="87" height="87" rotation="90">
    <properties>
     <property name="Bounciness" type="float" value="0.6"/>
    </properties>
   </object>
-  <object id="196" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="29" x="797.735" y="951.166" width="87" height="87" rotation="90">
+  <object id="196" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="25" x="797.735" y="951.166" width="87" height="87" rotation="90">
    <properties>
     <property name="Bounciness" type="float" value="0.6"/>
    </properties>
   </object>
-  <object id="198" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="29" x="502.023" y="975.333" width="87" height="87">
+  <object id="198" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="25" x="502.023" y="975.333" width="87" height="87">
    <properties>
     <property name="Bounciness" type="float" value="0.6"/>
    </properties>
   </object>
-  <object id="199" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="29" x="427.023" y="975.333" width="87" height="87">
+  <object id="199" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="25" x="427.023" y="975.333" width="87" height="87">
    <properties>
     <property name="Bounciness" type="float" value="0.6"/>
    </properties>
   </object>
-  <object id="200" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="29" x="797.022" y="878.667" width="87" height="87" rotation="90">
+  <object id="200" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="25" x="797.022" y="878.667" width="87" height="87" rotation="90">
    <properties>
     <property name="Bounciness" type="float" value="0.6"/>
    </properties>
   </object>
-  <object id="202" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="29" x="797.167" y="1024.17" width="87" height="87" rotation="90">
+  <object id="202" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="25" x="797.167" y="1024.17" width="87" height="87" rotation="90">
    <properties>
     <property name="Bounciness" type="float" value="0.6"/>
    </properties>
   </object>
+  <object id="203" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="33" x="590" y="760.667" width="85" height="83"/>
  </objectgroup>
  <objectgroup id="10" name="Managers">
   <object id="77" name="Draggerss" type="gxpengine_template.MyClasses.Dragging.Dragger" x="-246.667" y="25.3333" width="93.3333" height="77.3333"/>
-  <object id="100" name="PlayerLauncher" type="gxpengine_template.MyClasses.Environment.PlayerLauncher" gid="3" x="-165.667" y="389" width="50" height="50">
+  <object id="100" name="PlayerLauncher" type="gxpengine_template.MyClasses.Environment.PlayerLauncher" gid="2" x="-165.667" y="389" width="50" height="50">
    <properties>
     <property name="ArrowSpacing" type="float" value="40"/>
     <property name="ArrowsSpritesCSV" value="Assets/power1.png,Assets/power2.png,Assets/power2.png,Assets/power3.png"/>
