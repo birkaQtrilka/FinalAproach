@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="88">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="89">
  <tileset firstgid="1" name="StarsUI" tilewidth="150" tileheight="50" tilecount="4" columns="1">
   <image source="Stars.png" width="150" height="200"/>
  </tileset>
@@ -23,6 +23,9 @@
  </tileset>
  <tileset firstgid="21" name="Resume" tilewidth="488" tileheight="194" tilecount="3" columns="3">
   <image source="Buttons/resume.png" width="1464" height="194"/>
+ </tileset>
+ <tileset firstgid="24" name="Basic_Block" tilewidth="87" tileheight="87" tilecount="3" columns="3">
+  <image source="Basic_Box.png" width="261" height="87"/>
  </tileset>
  <objectgroup id="2" name="Object Layer 1">
   <object id="65" name="StarsUIMenu" type="gxpengine_template.MyClasses.UI.MenuStarsUI" gid="1" x="286.333" y="207" width="150" height="50">
@@ -74,12 +77,6 @@
     <property name="MenuImageRotation" type="float" value="180"/>
    </properties>
   </object>
-  <object id="79" name="Block" type="gxpengine_template.MyClasses.Environment.DraggableRect" gid="5" x="315.5" y="315.5" width="87" height="87">
-   <properties>
-    <property name="Bounciness" type="float" value="1.5"/>
-    <property name="MenuImage" value="Assets/SpringMenuImg.png"/>
-   </properties>
-  </object>
   <object id="80" name="Ramp4" type="gxpengine_template.MyClasses.Environment.DraggableRamp" gid="10" x="564" y="100" width="78" height="78">
    <properties>
     <property name="MenuImage" value="Assets/Ramp.png"/>
@@ -121,6 +118,12 @@
   <object id="87" name="EmptyBtn" type="gxpengine_template.MyClasses.UI.DisableObjectButton" gid="21" x="-2.66667" y="1318.33" width="488" height="194">
    <properties>
     <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
+   </properties>
+  </object>
+  <object id="88" name="Block" type="gxpengine_template.MyClasses.Environment.DraggableRect" gid="24" x="310" y="318" width="87" height="87">
+   <properties>
+    <property name="Bounciness" type="float" value="0.6"/>
+    <property name="MenuImage" value="Assets/BlockMenuImg.png"/>
    </properties>
   </object>
  </objectgroup>

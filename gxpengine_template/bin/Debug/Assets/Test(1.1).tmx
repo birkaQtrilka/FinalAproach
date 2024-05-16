@@ -1,111 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="101">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="203">
  <tileset firstgid="1" name="Player" tilewidth="432" tileheight="432" tilecount="1" columns="1">
   <image source="PortalSprite.png" width="432" height="432"/>
  </tileset>
  <tileset firstgid="2" name="Line" tilewidth="50" tileheight="50" tilecount="1" columns="1">
   <image source="line.png" width="50" height="50"/>
  </tileset>
- <tileset firstgid="3" name="Booster" tilewidth="50" tileheight="50" tilecount="1" columns="1">
-  <image source="booster.png" width="50" height="50"/>
- </tileset>
- <tileset firstgid="4" name="Square" tilewidth="50" tileheight="50" tilecount="4" columns="2">
+ <tileset firstgid="3" name="Square" tilewidth="50" tileheight="50" tilecount="4" columns="2">
   <image source="square.png" width="100" height="100"/>
  </tileset>
- <tileset firstgid="8" name="Ramp" tilewidth="50" tileheight="50" tilecount="1" columns="1">
-  <image source="ramp.png" width="50" height="50"/>
- </tileset>
- <tileset firstgid="9" name="StarsUI" tilewidth="150" tileheight="50" tilecount="4" columns="1">
+ <tileset firstgid="7" name="StarsUI" tilewidth="150" tileheight="50" tilecount="4" columns="1">
   <image source="Stars.png" width="150" height="200"/>
  </tileset>
- <tileset firstgid="13" name="Star" tilewidth="50" tileheight="50" tilecount="1" columns="1">
-  <image source="Star.png" width="50" height="50"/>
+ <tileset firstgid="11" name="BG" tilewidth="1080" tileheight="1920" tilecount="1" columns="1">
+  <image source="gameBG.png" width="1080" height="1920"/>
  </tileset>
- <tileset firstgid="14" name="NextLevelUI" tilewidth="689" tileheight="308" tilecount="1" columns="1">
-  <image source="FinishLevelUI.png" width="689" height="308"/>
+ <tileset firstgid="12" name="Disc" tilewidth="60" tileheight="60" tilecount="4" columns="4">
+  <image source="player.png" width="240" height="60"/>
  </tileset>
- <tileset firstgid="15" name="Pause" tilewidth="436" tileheight="308" tilecount="1" columns="1">
-  <image source="PauseTab.png" width="436" height="308"/>
+ <tileset firstgid="16" name="Booster Right" tilewidth="87" tileheight="87" tilecount="3" columns="3">
+  <image source="boost.png" width="261" height="87"/>
  </tileset>
- <objectgroup id="6" name="UI">
-  <object id="83" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="4" x="59" y="121" width="50" height="50">
+ <tileset firstgid="19" name="Bounce Block" tilewidth="87" tileheight="87" tilecount="2" columns="2">
+  <image source="spring.png" width="174" height="87"/>
+ </tileset>
+ <tileset firstgid="21" name="Basic Block" tilewidth="87" tileheight="87" tilecount="3" columns="3">
+  <image source="Basic_Box.png" width="261" height="87"/>
+ </tileset>
+ <tileset firstgid="24" name="Hole Hazard" tilewidth="131" tileheight="128" tilecount="3" columns="3">
+  <image source="hazard_hole.png" width="393" height="128"/>
+ </tileset>
+ <tileset firstgid="27" name="BuildMode" tilewidth="88" tileheight="121" tilecount="1" columns="1">
+  <image source="build icon.png" width="88" height="121"/>
+ </tileset>
+ <tileset firstgid="28" name="RestartButton" tilewidth="101" tileheight="123" tilecount="1" columns="1">
+  <image source="reseticon.png" width="101" height="123"/>
+ </tileset>
+ <tileset firstgid="29" name="Table" tilewidth="792" tileheight="1920" tilecount="1" columns="1">
+  <image source="tablenohole.png" width="792" height="1920"/>
+ </tileset>
+ <tileset firstgid="30" name="Hole" tilewidth="135" tileheight="135" tilecount="1" columns="1">
+  <image source="holegoal.png" width="135" height="135"/>
+ </tileset>
+ <tileset firstgid="31" name="StarFull" tilewidth="83" tileheight="83" tilecount="3" columns="3">
+  <image source="FullStar.png" width="255" height="83"/>
+ </tileset>
+ <tileset firstgid="34" name="StarEmpty" tilewidth="83" tileheight="83" tilecount="3" columns="3">
+  <image source="EmptyStar.png" width="255" height="83"/>
+ </tileset>
+ <tileset firstgid="37" name="WinScreen" tilewidth="922" tileheight="1163" tilecount="1" columns="1">
+  <image source="winframe.png" width="922" height="1163"/>
+ </tileset>
+ <tileset firstgid="38" name="PauseFrame" tilewidth="922" tileheight="1039" tilecount="1" columns="1">
+  <image source="pauseframe.png" width="922" height="1039"/>
+ </tileset>
+ <objectgroup id="11" name="Capa de Objetos 5" locked="1">
+  <object id="172" name="Bg" gid="11" x="4" y="1922.07" width="1080" height="1920"/>
+  <object id="182" name="Table" gid="29" x="148" y="1920" width="792" height="1920"/>
+ </objectgroup>
+ <objectgroup id="2" name="Object Layer 1">
+  <object id="114" name="Bg" gid="11" x="0" y="1920" width="1080" height="1920" visible="0"/>
+  <object id="179" name="Table" type="gxpengine_template.MyClasses.Environment.Table" gid="29" x="150" y="1920" width="792" height="1920" visible="0">
    <properties>
-    <property name="PrefabNameAndCountCSV" value=""/>
+    <property name="Padding" type="float" value="150"/>
    </properties>
   </object>
-  <object id="84" name="PlayBtn" type=" gxpengine_template.MyClasses.UI.ChangePlayModeBtn" gid="4" x="468.333" y="221" width="50" height="50">
+  <object id="117" name="Disc" type="gxpengine_template.MyClasses.Environment.Player" gid="12" x="515" y="1767.41" width="60" height="60">
    <properties>
-    <property name="testX" type="float" value="0"/>
-    <property name="testY" type="float" value="7"/>
+    <property name="CollisionSound" value="Assets/Sounds/BUmp in to da wall.wav"/>
+    <property name="CollisionVolume" type="float" value="1"/>
+    <property name="DeathSoundName" value="Assets/Sounds/Death sound.mp3"/>
+    <property name="DeathSoundVolume" type="float" value="0.4"/>
+    <property name="Drag" type="float" value="0.99"/>
+    <property name="RespawnSound" value="Assets/Sounds/respawn sound.wav"/>
+    <property name="RespawnVolume" type="float" value="1"/>
    </properties>
   </object>
-  <object id="85" name="ResetSceneBtn" type="gxpengine_template.MyClasses.UI.ResetSceneBtn" gid="4" x="479" y="303.667" width="50" height="50"/>
-  <object id="93" name="NextLevelUI" type="gxpengine_template.MyClasses.UI.NextLevelUI" gid="14" x="6.83333" y="453.242" width="655.667" height="414.061" visible="0">
+  <object id="186" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="31" x="503" y="1295.33" width="83" height="83">
    <properties>
-    <property name="NextLevelName" value="Assets/Test(1.2).tmx"/>
+    <property name="PickUpSound" value="Assets/Sounds/Collectiable sound.wav"/>
+    <property name="Volume" type="float" value="0.35"/>
    </properties>
   </object>
-  <object id="94" name="PauseMenu" type="gxpengine_template.MyClasses.UI.PauseMenu" gid="15" x="109.273" y="430.848" width="417.818" height="341.333" visible="0">
+  <object id="187" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="31" x="503" y="878.5" width="83" height="83">
    <properties>
-    <property name="ExitBtnName" value="Exit"/>
-    <property name="GoToMainScreenBtnName" value="NxtLvl"/>
-    <property name="ResumeBtnName" value="EmptyBtn"/>
-    <property name="StartScreenName" value="Assets/Test.tmx"/>
+    <property name="PickUpSound" value="Assets/Sounds/Collectiable sound.wav"/>
+    <property name="Volume" type="float" value="0.35"/>
+   </properties>
+  </object>
+  <object id="188" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="31" x="503" y="503.167" width="83" height="83">
+   <properties>
+    <property name="PickUpSound" value="Assets/Sounds/Collectiable sound.wav"/>
+    <property name="Volume" type="float" value="0.35"/>
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="2" name="Object Layer 1">
-  <object id="60" name="Player" type="gxpengine_template.MyClasses.Environment.Player" gid="1" x="284.365" y="486.725" width="39.6977" height="39.6977">
+ <objectgroup id="6" name="UI">
+  <object id="83" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="3" x="59" y="108.333" width="50" height="50">
    <properties>
-    <property name="Drag" type="float" value="0.99"/>
-    <property name="StartX" type="float" value="0"/>
-    <property name="StartY" type="float" value="0"/>
+    <property name="PrefabNameAndCountCSV" value=""/>
+    <property name="TextSize" type="int" value="30"/>
    </properties>
   </object>
-  <object id="68" type="gxpengine_template.MyClasses.Edge" gid="2" x="415" y="60" width="450" height="65" rotation="98">
+  <object id="92" name="StarsUI" type="gxpengine_template.MyClasses.UI.StarsUI" gid="7" x="907.333" y="61.3333" width="120" height="40">
    <properties>
-    <property name="Bounciness" type="float" value="0.99"/>
+    <property name="EmptyStarName" value="Assets/EmptyStar.png"/>
+    <property name="FullStarName" value="Assets/FullStar.png"/>
    </properties>
   </object>
-  <object id="71" type="gxpengine_template.MyClasses.Edge" gid="2" x="188.376" y="509.148" width="226.458" height="39.5759" rotation="9.90739">
+  <object id="168" name="PlayBtn" type=" gxpengine_template.MyClasses.UI.ChangePlayModeBtn" gid="27" x="940.091" y="643.273" width="88" height="121">
    <properties>
-    <property name="Bounciness" type="float" value="0.99"/>
+    <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
+    <property name="Disapear" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="72" type="gxpengine_template.MyClasses.Edge" gid="2" x="193.144" y="63.9841" width="219.56" height="39.7782" rotation="9.90739">
+  <object id="169" name="ResetSceneBtn" type="gxpengine_template.MyClasses.UI.ResetSceneBtn" gid="28" x="935.167" y="1008.33" width="101" height="123">
    <properties>
-    <property name="Bounciness" type="float" value="0.99"/>
+    <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
+    <property name="Disapear" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="80" name="Table" type="gxpengine_template.MyClasses.Environment.Table" gid="4" x="186.334" y="512.333" width="233.333" height="451.667" visible="0"/>
-  <object id="91" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="200.333" y="311.667" width="40" height="40"/>
-  <object id="92" name="Hole" type="gxpengine_template.MyClasses.Environment.Hole" gid="1" x="267.667" y="145" width="66" height="66">
+  <object id="189" name="WinScreen" type="gxpengine_template.MyClasses.UI.NextLevelUI" gid="37" x="78.3939" y="1548.67" width="922" height="1163" visible="0">
    <properties>
-    <property name="NextLevelName" value="Assets/Test(1.2).tmx"/>
+    <property name="MenuStarsPosX" type="float" value="-183"/>
+    <property name="MenuStarsPosY" type="float" value="-150"/>
+    <property name="NextLevelName" value="Assets/Level_Menu.tmx"/>
+    <property name="NextLvlBtnPosX" type="float" value="0"/>
+    <property name="NextLvlBtnPosY" type="float" value="194"/>
+    <property name="ResetBtnPosX" type="float" value="0"/>
+    <property name="ResetBtnPosY" type="float" value="388"/>
+    <property name="StarScaling" type="float" value="2"/>
+    <property name="YouWinTextName" value="Assets/YOU WIN!.png"/>
+    <property name="YouWinTextPosX" type="float" value="0"/>
+    <property name="YouWinTextPosY" type="float" value="-300"/>
    </properties>
   </object>
-  <object id="95" type="gxpengine_template.MyClasses.Edge" gid="2" x="190.333" y="60" width="450" height="65" rotation="98">
+  <object id="190" name="PauseMenu" type="gxpengine_template.MyClasses.UI.PauseMenu" gid="38" x="90.5152" y="1438.18" width="922" height="1039" visible="0">
    <properties>
-    <property name="Bounciness" type="float" value="0.99"/>
+    <property name="CloseSoundFrequency" type="float" value="36000"/>
+    <property name="ExitBtnName" value="Exit"/>
+    <property name="ExitBtnPosX" type="float" value="0"/>
+    <property name="ExitBtnPosY" type="float" value="388"/>
+    <property name="GoToMainScreenBtnName" value="NxtLvl"/>
+    <property name="MainScreenBtnPosX" type="float" value="0"/>
+    <property name="MainScreenBtnPosY" type="float" value="194"/>
+    <property name="OpenSoundName" value="Assets/Sounds/pause menu sound.wav"/>
+    <property name="OpenSoundVolume" type="float" value="0.3"/>
+    <property name="PauseTextName" value="Assets/Paused.png"/>
+    <property name="PauseTxtPosX" type="float" value="0"/>
+    <property name="PauseTxtPosY" type="float" value="-300"/>
+    <property name="ResumeBtnName" value="EmptyBtn"/>
+    <property name="ResumeBtnPosX" type="float" value="0"/>
+    <property name="ResumeBtnPosY" type="float" value="0"/>
+    <property name="StartScreenName" value="Assets/Level_Menu.tmx"/>
    </properties>
   </object>
-  <object id="99" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="246.333" y="223.667" width="40" height="40"/>
-  <object id="100" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="13" x="245.333" y="410.333" width="40" height="40"/>
  </objectgroup>
  <objectgroup id="10" name="Managers">
   <object id="77" name="Draggerss" type="gxpengine_template.MyClasses.Dragging.Dragger" x="-246.667" y="25.3333" width="93.3333" height="77.3333"/>
-  <object id="96" name="PlayerLauncher" type="gxpengine_template.MyClasses.Environment.PlayerLauncher" gid="4" x="51.3333" y="197.667" width="50" height="50">
+  <object id="100" name="PlayerLauncher" type="gxpengine_template.MyClasses.Environment.PlayerLauncher" gid="3" x="-165.667" y="389" width="50" height="50">
    <properties>
-    <property name="SpeedCap" type="float" value="10"/>
+    <property name="AimingSound" value="Assets/Sounds/BallAiming.wav"/>
+    <property name="ArrowSpacing" type="float" value="40"/>
+    <property name="ArrowsSpritesCSV" value="Assets/power1.png,Assets/power2.png,Assets/power2.png,Assets/power3.png"/>
+    <property name="LaunchingSound" value="Assets/Sounds/BallLaunch.wav"/>
+    <property name="SpeedCap" type="float" value="20"/>
+    <property name="VisualCap" type="float" value="100"/>
+    <property name="VolumeAiming" type="float" value="0.4"/>
+    <property name="VolumeLaunching" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="139" name="GameManager" type="gxpengine_template.MyClasses.GameManager" x="-227.273" y="151.515" width="57.5758" height="72.7273">
+   <properties>
+    <property name="BgMusic" value="Assets/Sounds/Sakura-Girl-Daisy-chosic.com_.mp3"/>
+    <property name="BgMusicVolume" type="float" value="0"/>
+    <property name="MuffleFrequency" type="float" value="30000"/>
+   </properties>
+  </object>
+  <object id="184" name="Hole" type="gxpengine_template.MyClasses.Environment.Hole" gid="30" x="476.455" y="189.212" width="135" height="135">
+   <properties>
+    <property name="NextLevelName" value="Assets/Level_Menu.tmx"/>
+    <property name="PersentageOfBall" type="float" value="0.25"/>
    </properties>
   </object>
  </objectgroup>
  <objectgroup id="9" name="SceneConfig">
-  <object id="55" name="Configs" type="gxpengine_template.MyClasses.SceneHandling.PlaySceneConfigs" x="-246.606" y="-100.303" width="112.121" height="109.091">
+  <object id="55" name="Configs" type="gxpengine_template.MyClasses.SceneHandling.PlaySceneConfigs" x="-247.939" y="-97.6363" width="112.121" height="109.091">
    <properties>
     <property name="ObjectLayersCSV" value="Assets/Test(1.1).tmx:Managers,Main:UI,Assets/Test(1.1).tmx:Object Layer 1"/>
    </properties>
   </object>
-  <object id="90" name="StarsUI" type="gxpengine_template.MyClasses.UI.StarsUI" gid="9" x="429" y="63" width="120" height="40"/>
  </objectgroup>
 </map>
