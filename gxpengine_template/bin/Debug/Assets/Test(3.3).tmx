@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="177">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="183">
  <tileset firstgid="1" name="Player" tilewidth="432" tileheight="432" tilecount="1" columns="1">
   <image source="PortalSprite.png" width="432" height="432"/>
  </tileset>
@@ -120,21 +120,18 @@
     <property name="Padding" type="float" value="150"/>
    </properties>
   </object>
-  <object id="117" name="Disc" type="gxpengine_template.MyClasses.Environment.Player" gid="18" x="563.987" y="1809.41" width="60" height="60">
+  <object id="117" name="Disc" type="gxpengine_template.MyClasses.Environment.Player" gid="18" x="533.987" y="1719.41" width="60" height="60">
    <properties>
     <property name="Drag" type="float" value="0.99"/>
     <property name="StartX" type="float" value="0"/>
     <property name="StartY" type="float" value="0"/>
    </properties>
   </object>
-  <object id="128" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="29" x="709.183" y="540.061" width="87" height="87"/>
   <object id="155" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="15" x="261.5" y="869.167" width="85" height="83"/>
   <object id="156" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="15" x="602.5" y="1107.5" width="85" height="83"/>
   <object id="159" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="15" x="720.333" y="817" width="85" height="83"/>
-  <object id="160" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="29" x="791.167" y="539.167" width="87" height="87"/>
-  <object id="164" name="NoMoveRamp" type="gxpengine_template.MyClasses.PhysicsObjects.Ramp" gid="33" x="715.134" y="553.319" width="78" height="78" rotation="314.514"/>
   <object id="165" name="NoMoveRamp" type="gxpengine_template.MyClasses.PhysicsObjects.Ramp" gid="33" x="2589.13" y="390.652" width="78" height="78" rotation="314.514"/>
-  <object id="175" name="Hazard" type="gxpengine_template.MyClasses.Environment.Hazard" gid="30" x="265" y="1252" width="131" height="128">
+  <object id="175" name="Hazard" type="gxpengine_template.MyClasses.Environment.Hazard" gid="30" x="473" y="858" width="131" height="128">
    <properties>
     <property name="WaitForDeathS" type="float" value="0.07"/>
    </properties>

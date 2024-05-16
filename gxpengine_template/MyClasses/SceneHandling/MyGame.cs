@@ -23,11 +23,11 @@ public class MyGame : Game
 	{
         name = "Main";
         Prefabs = LoadPrefabs();
-
+        targetFps = 60;
         //to show how fast you've beat the game at the end
         StartTime = DateTime.Now;
         
-        LoadLevel("Assets/Test(3.3).tmx");
+        LoadLevel("Assets/Test(1.1).tmx");
 
         OnAfterStep += LoadSceneIfNotNull;
 	}
