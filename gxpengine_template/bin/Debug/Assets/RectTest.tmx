@@ -10,7 +10,7 @@
  <objectgroup id="2" name="Object Layer 1">
   <object id="103" name="TutorialShower" type="gxpengine_template.MyClasses.Environment.TutorialShower" gid="2" x="0" y="1920" width="1080" height="1920">
    <properties>
-    <property name="AnimatedPagesCSV" value="Assets/Tutorial/tutorial 1.1.png:Assets/Tutorial/tutorial 1.2.png,Assets/Tutorial/tutorial 2.1.png:Assets/Tutorial/tutorial 2.2.png,Assets/Tutorial/tutorial 3.1.png:Assets/Tutorial/tutorial 3.2.png,Assets/Tutorial/tutorial 4.1.png:Assets/Tutorial/tutorial 4.2.png:Assets/Tutorial/tutorial 4.3.png:Assets/Tutorial/tutorial 4.4.png,Assets/Tutorial/tutorial 5.1.png:Assets/Tutorial/tutorial 5.2.png"/>
+    <property name="AnimatedPagesCSV" value="Assets/Tutorial/tutorial 1.1.png:Assets/Tutorial/tutorial 1.2.png,Assets/Tutorial/tutorial 2.1.png:Assets/Tutorial/tutorial 2.2.png,Assets/Tutorial/tutorial 4.1.png:Assets/Tutorial/tutorial 4.2.png:Assets/Tutorial/tutorial 4.3.png:Assets/Tutorial/tutorial 4.4.png,Assets/Tutorial/tutorial 5.1.png:Assets/Tutorial/tutorial 5.2.png"/>
     <property name="LastFrameRestTimeS" type="float" value="0.8"/>
     <property name="NextBtnPosX" type="float" value="0"/>
     <property name="NextBtnPosY" type="float" value="750"/>

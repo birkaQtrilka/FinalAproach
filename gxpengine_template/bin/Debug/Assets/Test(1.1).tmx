@@ -30,40 +30,40 @@
  <tileset firstgid="24" name="Hole Hazard" tilewidth="131" tileheight="128" tilecount="3" columns="3">
   <image source="hazard_hole.png" width="393" height="128"/>
  </tileset>
- <tileset firstgid="27" name="BuildMode" tilewidth="88" tileheight="121" tilecount="1" columns="1">
-  <image source="build icon.png" width="88" height="121"/>
+ <tileset firstgid="27" name="BuildMode" tilewidth="88" tileheight="121" tilecount="2" columns="2">
+  <image source="build icon.png" width="176" height="121"/>
  </tileset>
- <tileset firstgid="28" name="RestartButton" tilewidth="101" tileheight="123" tilecount="1" columns="1">
-  <image source="reseticon.png" width="101" height="123"/>
+ <tileset firstgid="29" name="RestartButton" tilewidth="101" tileheight="123" tilecount="2" columns="2">
+  <image source="reseticon.png" width="202" height="123"/>
  </tileset>
- <tileset firstgid="29" name="Table" tilewidth="792" tileheight="1920" tilecount="1" columns="1">
+ <tileset firstgid="31" name="Table" tilewidth="792" tileheight="1920" tilecount="1" columns="1">
   <image source="tablenohole.png" width="792" height="1920"/>
  </tileset>
- <tileset firstgid="30" name="Hole" tilewidth="135" tileheight="135" tilecount="1" columns="1">
+ <tileset firstgid="32" name="Hole" tilewidth="135" tileheight="135" tilecount="1" columns="1">
   <image source="holegoal.png" width="135" height="135"/>
  </tileset>
- <tileset firstgid="31" name="StarFull" tilewidth="83" tileheight="83" tilecount="3" columns="3">
+ <tileset firstgid="33" name="StarFull" tilewidth="83" tileheight="83" tilecount="3" columns="3">
   <image source="FullStar.png" width="255" height="83"/>
  </tileset>
- <tileset firstgid="34" name="StarEmpty" tilewidth="83" tileheight="83" tilecount="3" columns="3">
+ <tileset firstgid="36" name="StarEmpty" tilewidth="83" tileheight="83" tilecount="3" columns="3">
   <image source="EmptyStar.png" width="255" height="83"/>
  </tileset>
- <tileset firstgid="37" name="WinScreen" tilewidth="922" tileheight="1163" tilecount="1" columns="1">
+ <tileset firstgid="39" name="WinScreen" tilewidth="922" tileheight="1163" tilecount="1" columns="1">
   <image source="winframe.png" width="922" height="1163"/>
  </tileset>
- <tileset firstgid="38" name="PauseFrame" tilewidth="922" tileheight="1039" tilecount="1" columns="1">
+ <tileset firstgid="40" name="PauseFrame" tilewidth="922" tileheight="1039" tilecount="1" columns="1">
   <image source="pauseframe.png" width="922" height="1039"/>
  </tileset>
- <tileset firstgid="39" name="PauseButton" tilewidth="85" tileheight="118" tilecount="2" columns="2">
+ <tileset firstgid="41" name="PauseButton" tilewidth="85" tileheight="118" tilecount="2" columns="2">
   <image source="game/pauseicon.png" width="170" height="118"/>
  </tileset>
  <objectgroup id="11" name="Capa de Objetos 5" locked="1">
   <object id="172" name="Bg" gid="11" x="4" y="1922.07" width="1080" height="1920"/>
-  <object id="182" name="Table" gid="29" x="148" y="1920" width="792" height="1920"/>
+  <object id="182" name="Table" gid="31" x="148" y="1920" width="792" height="1920"/>
  </objectgroup>
  <objectgroup id="2" name="Object Layer 1">
   <object id="114" name="Bg" gid="11" x="0" y="1920" width="1080" height="1920" visible="0"/>
-  <object id="179" name="Table" type="gxpengine_template.MyClasses.Environment.Table" gid="29" x="150" y="1920" width="792" height="1920" visible="0">
+  <object id="179" name="Table" type="gxpengine_template.MyClasses.Environment.Table" gid="31" x="150" y="1920" width="792" height="1920" visible="0">
    <properties>
     <property name="Padding" type="float" value="150"/>
    </properties>
@@ -81,19 +81,19 @@
     <property name="RespawnVolume" type="float" value="1"/>
    </properties>
   </object>
-  <object id="186" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="31" x="503" y="1295.33" width="83" height="83">
+  <object id="186" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="33" x="503" y="1300" width="83" height="83">
    <properties>
     <property name="PickUpSound" value="Assets/Sounds/Collectiable sound.wav"/>
     <property name="Volume" type="float" value="0.35"/>
    </properties>
   </object>
-  <object id="187" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="31" x="503" y="878.5" width="83" height="83">
+  <object id="187" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="33" x="503" y="880" width="83" height="83">
    <properties>
     <property name="PickUpSound" value="Assets/Sounds/Collectiable sound.wav"/>
     <property name="Volume" type="float" value="0.35"/>
    </properties>
   </object>
-  <object id="188" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="31" x="503" y="503.167" width="83" height="83">
+  <object id="188" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="33" x="503" y="500" width="83" height="83">
    <properties>
     <property name="PickUpSound" value="Assets/Sounds/Collectiable sound.wav"/>
     <property name="Volume" type="float" value="0.35"/>
@@ -101,7 +101,8 @@
   </object>
  </objectgroup>
  <objectgroup id="6" name="UI">
-  <object id="83" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="3" x="59" y="108.333" width="50" height="50">
+  <object id="209" name="Pause" type="gxpengine_template.MyClasses.UI.PauseButton" gid="41" x="940" y="727" width="85" height="118"/>
+  <object id="83" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="3" x="89.36" y="748.51" width="50" height="50">
    <properties>
     <property name="NumbersTileSetName" value="Assets/numbers.png"/>
     <property name="PrefabNameAndCountCSV" value=""/>
@@ -114,7 +115,7 @@
     <property name="FullStarName" value="Assets/FullStar.png"/>
    </properties>
   </object>
-  <object id="189" name="WinScreen" type="gxpengine_template.MyClasses.UI.NextLevelUI" gid="37" x="78.3939" y="1548.67" width="922" height="1163" visible="0">
+  <object id="189" name="WinScreen" type="gxpengine_template.MyClasses.UI.NextLevelUI" gid="39" x="78.3939" y="1548.67" width="922" height="1163" visible="0">
    <properties>
     <property name="MenuStarsPosX" type="float" value="-183"/>
     <property name="MenuStarsPosY" type="float" value="-150"/>
@@ -129,7 +130,19 @@
     <property name="YouWinTextPosY" type="float" value="-300"/>
    </properties>
   </object>
-  <object id="190" name="PauseMenu" type="gxpengine_template.MyClasses.UI.PauseMenu" gid="38" x="90.5152" y="1438.18" width="922" height="1039" visible="0">
+  <object id="207" name="PlayBtn" type=" gxpengine_template.MyClasses.UI.ChangePlayModeBtn" gid="27" x="940" y="1080" width="88" height="121">
+   <properties>
+    <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
+    <property name="Disapear" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="208" name="ResetSceneBtn" type="gxpengine_template.MyClasses.UI.ResetSceneBtn" gid="29" x="940" y="1425" width="101" height="123">
+   <properties>
+    <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
+    <property name="Disapear" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="190" name="PauseMenu" type="gxpengine_template.MyClasses.UI.PauseMenu" gid="40" x="90.5152" y="1438.18" width="922" height="1039" visible="0">
    <properties>
     <property name="CloseSoundFrequency" type="float" value="36000"/>
     <property name="ExitBtnName" value="Exit"/>
@@ -149,19 +162,6 @@
     <property name="StartScreenName" value="Assets/Level_Menu.tmx"/>
    </properties>
   </object>
-  <object id="207" name="PlayBtn" type=" gxpengine_template.MyClasses.UI.ChangePlayModeBtn" gid="27" x="940" y="1080" width="88" height="121">
-   <properties>
-    <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
-    <property name="Disapear" type="bool" value="true"/>
-   </properties>
-  </object>
-  <object id="208" name="ResetSceneBtn" type="gxpengine_template.MyClasses.UI.ResetSceneBtn" gid="28" x="940" y="1425" width="101" height="123">
-   <properties>
-    <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
-    <property name="Disapear" type="bool" value="true"/>
-   </properties>
-  </object>
-  <object id="209" name="Pause" gid="39" x="940" y="727" width="85" height="118"/>
  </objectgroup>
  <objectgroup id="10" name="Managers">
   <object id="77" name="Draggerss" type="gxpengine_template.MyClasses.Dragging.Dragger" x="-246.667" y="25.3333" width="93.3333" height="77.3333"/>
@@ -184,7 +184,7 @@
     <property name="MuffleFrequency" type="float" value="30000"/>
    </properties>
   </object>
-  <object id="184" name="Hole" type="gxpengine_template.MyClasses.Environment.Hole" gid="30" x="476.455" y="189.212" width="135" height="135">
+  <object id="184" name="Hole" type="gxpengine_template.MyClasses.Environment.Hole" gid="32" x="476.455" y="189.212" width="135" height="135">
    <properties>
     <property name="NextLevelName" value="Assets/Level_Menu.tmx"/>
     <property name="PersentageOfBall" type="float" value="0.25"/>

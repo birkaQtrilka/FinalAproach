@@ -27,7 +27,7 @@ public class MyGame : Game
         //to show how fast you've beat the game at the end
         StartTime = DateTime.Now;
         
-        LoadLevel("Assets/Test(3.3).tmx");
+        LoadLevel("Assets/MainMenuScreen.tmx");
 
         OnAfterStep += LoadSceneIfNotNull;
 	}

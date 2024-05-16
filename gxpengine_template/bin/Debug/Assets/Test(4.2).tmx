@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="317">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="369">
  <tileset firstgid="1" name="Player" tilewidth="432" tileheight="432" tilecount="1" columns="1">
   <image source="PortalSprite.png" width="432" height="432"/>
  </tileset>
@@ -74,7 +74,7 @@
     <property name="Padding" type="float" value="150"/>
    </properties>
   </object>
-  <object id="117" name="Disc" type="gxpengine_template.MyClasses.Environment.Player" gid="12" x="515" y="1767.41" width="60" height="60">
+  <object id="117" name="Disc" type="gxpengine_template.MyClasses.Environment.Player" gid="12" x="509" y="1145.41" width="60" height="60">
    <properties>
     <property name="BounceSound" value="Assets/Sounds/Bounce wall.wav"/>
     <property name="BounceVolume" type="float" value="1"/>
@@ -87,52 +87,87 @@
     <property name="RespawnVolume" type="float" value="1"/>
    </properties>
   </object>
-  <object id="186" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="33" x="482.788" y="1364.69" width="83" height="83">
+  <object id="186" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="33" x="439.121" y="1441.36" width="83" height="83">
    <properties>
     <property name="PickUpSound" value="Assets/Sounds/Collectiable sound.wav"/>
     <property name="Volume" type="float" value="0.35"/>
    </properties>
   </object>
-  <object id="187" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="33" x="507.667" y="303.833" width="83" height="83">
+  <object id="187" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="33" x="247.334" y="472.833" width="83" height="83">
    <properties>
     <property name="PickUpSound" value="Assets/Sounds/Collectiable sound.wav"/>
     <property name="Volume" type="float" value="0.35"/>
    </properties>
   </object>
-  <object id="188" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="33" x="503.667" y="921.77" width="83" height="83">
+  <object id="188" name="Star" type="gxpengine_template.MyClasses.Environment.Star" gid="33" x="498.334" y="375.1" width="83" height="83">
    <properties>
     <property name="PickUpSound" value="Assets/Sounds/Collectiable sound.wav"/>
     <property name="Volume" type="float" value="0.35"/>
    </properties>
   </object>
-  <object id="311" name="Ramp4" type="gxpengine_template.MyClasses.PhysicsObjects.Ramp" gid="41" x="471.333" y="1258.33" width="78" height="78">
+  <object id="339" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="377.5" y="562.5" width="87" height="87">
    <properties>
-    <property name="MenuImage" value="Assets/Ramp.png"/>
+    <property name="Bounciness" type="float" value="0.6"/>
    </properties>
   </object>
-  <object id="312" name="Ramp4" type="gxpengine_template.MyClasses.PhysicsObjects.Ramp" gid="41" x="863" y="1225.66" width="78" height="78" rotation="180">
+  <object id="340" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="430.5" y="634.5" width="87" height="87">
    <properties>
-    <property name="MenuImage" value="Assets/Ramp.png"/>
+    <property name="Bounciness" type="float" value="0.6"/>
    </properties>
   </object>
-  <object id="313" name="Ramp4" type="gxpengine_template.MyClasses.PhysicsObjects.Ramp" gid="41" x="789.666" y="847.666" width="78" height="78" rotation="90">
+  <object id="341" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="507" y="633" width="87" height="87">
    <properties>
-    <property name="MenuImage" value="Assets/Ramp.png"/>
+    <property name="Bounciness" type="float" value="0.6"/>
    </properties>
   </object>
-  <object id="314" name="Ramp4" type="gxpengine_template.MyClasses.PhysicsObjects.Ramp" gid="41" x="313" y="962.333" width="78" height="78" rotation="270">
+  <object id="342" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="580" y="631.5" width="87" height="87">
    <properties>
-    <property name="MenuImage" value="Assets/Ramp.png"/>
+    <property name="Bounciness" type="float" value="0.6"/>
    </properties>
   </object>
-  <object id="315" name="Ramp4" type="gxpengine_template.MyClasses.PhysicsObjects.Ramp" gid="41" x="223" y="656.333" width="78" height="78">
+  <object id="343" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="624.5" y="556.167" width="87" height="87">
    <properties>
-    <property name="MenuImage" value="Assets/Ramp.png"/>
+    <property name="Bounciness" type="float" value="0.6"/>
    </properties>
   </object>
-  <object id="316" name="Ramp4" type="gxpengine_template.MyClasses.PhysicsObjects.Ramp" gid="41" x="588.333" y="605.667" width="78" height="78" rotation="180">
+  <object id="344" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="374.5" y="488.833" width="87" height="87">
    <properties>
-    <property name="MenuImage" value="Assets/Ramp.png"/>
+    <property name="Bounciness" type="float" value="0.6"/>
+   </properties>
+  </object>
+  <object id="361" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="373.5" y="415.5" width="87" height="87">
+   <properties>
+    <property name="Bounciness" type="float" value="0.6"/>
+   </properties>
+  </object>
+  <object id="362" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="623.5" y="482.5" width="87" height="87">
+   <properties>
+    <property name="Bounciness" type="float" value="0.6"/>
+   </properties>
+  </object>
+  <object id="363" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="622.5" y="408.5" width="87" height="87">
+   <properties>
+    <property name="Bounciness" type="float" value="0.6"/>
+   </properties>
+  </object>
+  <object id="364" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="494.5" y="1028.5" width="87" height="87">
+   <properties>
+    <property name="Bounciness" type="float" value="0.6"/>
+   </properties>
+  </object>
+  <object id="365" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="569.167" y="1026.5" width="87" height="87">
+   <properties>
+    <property name="Bounciness" type="float" value="0.6"/>
+   </properties>
+  </object>
+  <object id="366" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="643.167" y="1025.17" width="87" height="87">
+   <properties>
+    <property name="Bounciness" type="float" value="0.6"/>
+   </properties>
+  </object>
+  <object id="367" name="NMBlock" type="gxpengine_template.MyClasses.PhysicsObjects.Block" gid="23" x="419.833" y="1028.5" width="87" height="87">
+   <properties>
+    <property name="Bounciness" type="float" value="0.6"/>
    </properties>
   </object>
  </objectgroup>
@@ -193,7 +228,7 @@
   <object id="224" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="3" x="89.3636" y="748.515" width="50" height="50">
    <properties>
     <property name="NumbersTileSetName" value="Assets/numbers.png"/>
-    <property name="PrefabNameAndCountCSV" value="Booster_Up:1"/>
+    <property name="PrefabNameAndCountCSV" value="Bounce Block:1,Wall:1,Block:1,Booster_Down:1,Booster_Right:1"/>
     <property name="TextSize" type="int" value="30"/>
    </properties>
   </object>
@@ -220,7 +255,7 @@
     <property name="MuffleFrequency" type="float" value="30000"/>
    </properties>
   </object>
-  <object id="184" name="Hole" type="gxpengine_template.MyClasses.Environment.Hole" gid="32" x="476.455" y="189.212" width="135" height="135">
+  <object id="184" name="Hole" type="gxpengine_template.MyClasses.Environment.Hole" gid="32" x="475.091" y="529.452" width="135" height="135">
    <properties>
     <property name="NextLevelName" value="Assets/Level_Menu.tmx"/>
     <property name="PersentageOfBall" type="float" value="0.25"/>
@@ -230,7 +265,7 @@
  <objectgroup id="9" name="SceneConfig">
   <object id="55" name="Configs" type="gxpengine_template.MyClasses.SceneHandling.PlaySceneConfigs" x="-247.939" y="-97.6363" width="112.121" height="109.091">
    <properties>
-    <property name="ObjectLayersCSV" value="Assets/Test(3.1).tmx:Managers,Main:UI,Assets/Test(3.1).tmx:Object Layer 1"/>
+    <property name="ObjectLayersCSV" value="Assets/Test(4.2).tmx:Managers,Main:UI,Assets/Test(4.2).tmx:Object Layer 1"/>
    </properties>
   </object>
  </objectgroup>

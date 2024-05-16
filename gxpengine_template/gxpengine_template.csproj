@@ -148,6 +148,7 @@
     <Compile Include="MyClasses\UI\Buttons\DisableObjectButton.cs" />
     <Compile Include="MyClasses\UI\Buttons\ExitGameBtn.cs" />
     <Compile Include="MyClasses\UI\Buttons\NextLevelButton.cs" />
+    <Compile Include="MyClasses\UI\Buttons\PauseButton.cs" />
     <Compile Include="MyClasses\UI\Buttons\ResetSceneBtn.cs" />
     <Compile Include="MyClasses\UI\ItemsUI.cs" />
     <Compile Include="MyClasses\UI\MenuStarsUI.cs" />
