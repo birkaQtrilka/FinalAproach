@@ -1,5 +1,6 @@
 ﻿using GXPEngine;
 using gxpengine_template.MyClasses.Environment;
+using gxpengine_template.MyClasses.UI;
 using Physics;
 using System;
 using System.Collections;
@@ -17,6 +18,8 @@ namespace gxpengine_template.MyClasses.Dragging
         public string MenuImg { get; private set; }
         public float MenuImageRotation { get; private set; }
         public Vec2 OrigPosition { get; set; }
+        public bool InInventory { get; set; }
+        public Sprite MenuSprite { get; set; }
 
         protected StaticObj trigger;
         
@@ -55,9 +58,27 @@ namespace gxpengine_template.MyClasses.Dragging
             _wasPlaced = true;
             Placed?.Invoke(this);
         }
+        
+        //protected void Update()
+        //{
+        //    Boundary r;
+        //    if (InInventory)
+        //    {
+        //        var vec = MenuSprite.parent.TransformPoint(MenuSprite.x, MenuSprite.y);
+        //         r = new Boundary(vec.x, vec.y, MenuSprite.width, MenuSprite.height);
+        //    }
+        //    else
+        //        r = new Boundary(x, y, width, height);
+        //    Gizmos.DrawLine(r.Position.x - r.Size.x / 2, r.Position.y - r.Size.y / 2, r.Position.x - r.Size.x / 2, r.Position.y + r.Size.y / 2);
+        //}
 
         public bool ContainsPoint(Vec2 p)
         {
+            if (InInventory)
+            {
+                var vec = MenuSprite.parent.TransformPoint(MenuSprite.x, MenuSprite.y);
+                return new Boundary(vec.x,vec.y,MenuSprite.width,MenuSprite.height).Contains(p);
+            }
             return new Boundary(x, y, width, height).Contains(p);
         }
 

@@ -1,7 +1,6 @@
 ﻿using GXPEngine;
 using gxpengine_template.MyClasses.Dragging;
 using gxpengine_template.MyClasses.PhysicsObjects;
-using System;
 using System.Collections;
 using TiledMapParser;
 
@@ -33,6 +32,7 @@ namespace gxpengine_template.MyClasses.Environment
             yield return null;
             UpdateRamp();
         }
+
         public override void OnStartDrag(Vec2 mousePos)
         {
             base.OnStartDrag(mousePos);
@@ -60,7 +60,7 @@ namespace gxpengine_template.MyClasses.Environment
         public override GameObject Clone()
         {
             var clone = new DraggableRect(texture.filename, _cols, _rows, _data);
-            clone.SetOrigin(clone.width / 2, clone.width / 2);
+            clone.SetOrigin(clone.width / 2, clone.height / 2);
             name = _data.Name;
             return clone;
         }

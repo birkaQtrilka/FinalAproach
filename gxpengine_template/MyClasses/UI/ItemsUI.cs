@@ -67,13 +67,9 @@ namespace gxpengine_template.MyClasses.UI
                 if(string.IsNullOrEmpty(pair)) continue;
                 Placeables.Add(new PlaceableData(pair.Split(':')));
                 var newMenuImg = new Sprite(Placeables[i].PlaceablePrefab.MenuImg);
-                //var newTextMesh = new TextMesh(Placeables[i].Count.ToString(), newMenuImg.width, newMenuImg.width);
                 var newTextMesh = new AnimationSprite(numbersFileName, 6, 2, -1, true, false);
                 texts.Add(new TextData(head + head2, Placeables[i].Count - 1, newTextMesh));
-                var placeableClone = Placeables[i].PlaceablePrefab.Clone() ;
 
-                //newTextMesh.TextSize = data.GetIntProperty("TextSize");
-                //newTextMesh.TextColor = Color.White;
                 Placeables[i].Image = newMenuImg;
                 Placeables[i].CountText = newTextMesh;
 
@@ -82,15 +78,16 @@ namespace gxpengine_template.MyClasses.UI
                 newMenuImg.SetOrigin(newMenuImg.width / 2, newMenuImg.height / 2);
                 newMenuImg.rotation = Placeables[i].PlaceablePrefab.MenuImageRotation;
 
+                var placeableClone = Placeables[i].PlaceablePrefab.Clone() ;
                 MyUtils.MyGame.CurrentLevel.AddChild(placeableClone);
                 placeableClone.visible = false;
                 Vector2 clonePos = TransformPoint(newMenuImg.x, newMenuImg.y);
                 placeableClone.SetXY(clonePos.x, clonePos.y);
-                (placeableClone as IPlaceable).Placed += OnItemPlaced;
+                var placeable = (placeableClone as IPlaceable);
+                placeable.Placed += OnItemPlaced;
+                placeable.InInventory = true;
+                placeable.MenuSprite = newMenuImg;
 
-                //newTextMesh.HorizontalAlign = CenterMode.Max;
-                //newTextMesh.VerticalAlign = CenterMode.Max;
-                //newTextMesh.SetXY(newMenuImg.width / 2, newMenuImg.height / 2);
                 head += Vec2.up * newMenuImg.height;
                 i++;
             }
@@ -108,7 +105,7 @@ namespace gxpengine_template.MyClasses.UI
             GameObject goItem = item as GameObject;
 
             PlaceableData itemData = Placeables.First(x => (x.PlaceablePrefab as GameObject).name == goItem.name);
-            
+            item.InInventory = false;
             itemData.CountText.SetFrame(--itemData.Count - 1);
 
             if(itemData.Count == 0)
