@@ -21,9 +21,11 @@ namespace gxpengine_template.MyClasses.UI
             Dictionary<string, IPrefab> prefabs = MyUtils.MyGame.Prefabs;
             _resetSceneBtn = prefabs[data.GetStringProperty("ResetBtnName", "Reset")].Clone() as ResetSceneBtn;
             _resetSceneBtn.SetOrigin(_resetSceneBtn.width/2,_resetSceneBtn.height/2);
+
             _nextLevelButton = prefabs[data.GetStringProperty("NextLvlBtnName", "NxtLvl")].Clone() as NextLevelButton;
             _nextLevelButton.SetOrigin(_nextLevelButton.width / 2, _nextLevelButton.height / 2);
             _nextLevelButton.NextLevelName = data.GetStringProperty("NextLevelName");
+
             _menuStarsUI = prefabs[data.GetStringProperty("StarsUIName", "StarsUIMenu")].Clone() as MenuStarsUI;
             _menuStarsUI.SetOrigin(_menuStarsUI.width / 2, _resetSceneBtn.height / 2);
 
@@ -56,7 +58,7 @@ namespace gxpengine_template.MyClasses.UI
             _menuStarsUI.SetPosInVec2 (_menuStarsPos);
             visible = true;
             _menuStarsUI.Score = _starsUI.Score;
-
+            GameManager.Instance.BgMusic.Stop();
             AddChild(new Tween(TweenProperty.scale, 500, 1, EaseFunc.Factory("EaseOutSin")).OnCompleted(()=> _menuStarsUI.PlayAnim()));
         }
 

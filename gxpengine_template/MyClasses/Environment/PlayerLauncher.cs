@@ -26,7 +26,6 @@ namespace gxpengine_template.MyClasses.Environment
         // Sounds
         Sound _aimingSound;
         Sound _launchingSound;
-        SoundChannel _soundChannel;
         bool _isAimingPlayed;
         float _volumeAiming;
         float _volumeLaunching;
@@ -43,8 +42,8 @@ namespace gxpengine_template.MyClasses.Environment
             
 
 
-            _aimingSound = new Sound(data.GetStringProperty("SoundFileName1", "Assets/Sounds/BallAiming.wav"));
-            _launchingSound = new Sound(data.GetStringProperty("SoundFileName2", "Assets/Sounds/BallLaunch.wav"));
+            _aimingSound = new Sound(data.GetStringProperty("AimingSound", "Assets/Sounds/BallAiming.wav"));
+            _launchingSound = new Sound(data.GetStringProperty("LaunchingSound", "Assets/Sounds/BallLaunch.wav"));
             _volumeAiming = data.GetFloatProperty("VolumeAiming");
             _volumeLaunching = data.GetFloatProperty("VolumeLaunching");
 
@@ -102,7 +101,7 @@ namespace gxpengine_template.MyClasses.Environment
                     // Play aiming sound only once, if player is aiming
                     if (!_isAimingPlayed)
                     {
-                        _aimingSound.Play(volume: _volumeLaunching);
+                        _aimingSound.Play(volume: _volumeAiming);
                         _isAimingPlayed = true;
                     }
                     

@@ -11,6 +11,9 @@ namespace gxpengine_template.MyClasses.UI
         {
 
         }
+        protected DisableObjectButton(string filename, int cols, int rows, TiledObject data, Sound clickSound, float clickVolume = 1) : base(filename, cols, rows, data, clickSound, clickVolume)
+        {
+        }
 
         protected override void OnButtonPress()
         {
@@ -19,7 +22,7 @@ namespace gxpengine_template.MyClasses.UI
 
         public GameObject Clone()
         {
-            return new DisableObjectButton(texture.filename,_cols,_rows, null);
+            return new DisableObjectButton(texture.filename,_cols,_rows, null, clickSound, clickVolume);
         }
     }
 }

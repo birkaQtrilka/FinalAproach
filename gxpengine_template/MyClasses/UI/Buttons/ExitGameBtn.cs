@@ -13,7 +13,11 @@ namespace gxpengine_template.MyClasses.UI
             _data = data;
             AddChild(new Coroutine(Init()));
         }
-        
+
+        protected ExitGameBtn(string filename, int cols, int rows, TiledObject data, Sound clickSound, float clickVolume = 1) : base(filename, cols, rows, data, clickSound, clickVolume)
+        {
+        }
+
         IEnumerator Init()
         {
             yield return null;
@@ -34,7 +38,7 @@ namespace gxpengine_template.MyClasses.UI
         
         public GameObject Clone()
         {
-            return new ExitGameBtn(texture.filename, _cols, _rows, _data);
+            return new ExitGameBtn(texture.filename, _cols, _rows, _data, clickSound,clickVolume);
         }
 
         protected override void OnDestroy()

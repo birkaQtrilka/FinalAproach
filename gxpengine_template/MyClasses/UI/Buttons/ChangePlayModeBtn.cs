@@ -15,7 +15,6 @@ namespace gxpengine_template.MyClasses.UI
             AddChild(new Coroutine(Init(data)));
         }
 
-
         IEnumerator Init(TiledObject data)
         {
             yield return null;

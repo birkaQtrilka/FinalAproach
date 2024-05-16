@@ -31,6 +31,8 @@ namespace gxpengine_template.MyClasses.Environment
         {
             yield return null;
             UpdateRamp();
+            yield return new WaitForSeconds(0.2f);
+            ramp.DisableColliders();
         }
 
         public override void OnStartDrag(Vec2 mousePos)
@@ -40,7 +42,7 @@ namespace gxpengine_template.MyClasses.Environment
 
         }
 
-        private void OnPlace(IPlaceable obj)
+        void OnPlace(IPlaceable obj)
         {
 
             UpdateRamp();
@@ -48,7 +50,7 @@ namespace gxpengine_template.MyClasses.Environment
         
         void UpdateRamp()
         {
-            ramp = new Ramp(texture.filename, 1, 1, _data.GetFloatProperty("Bounciness", .98f));
+            ramp = new Ramp("Assets/ramp.png", 1, 1, _data.GetFloatProperty("Bounciness", .98f));
             ramp.alpha = 0;
             MyUtils.MyGame.CurrentLevel.AddChild(ramp);
             ramp.SetOrigin(ramp.width / 2, ramp.height / 2);
@@ -63,7 +65,7 @@ namespace gxpengine_template.MyClasses.Environment
             var clone = new DraggableRamp(texture.filename,_cols,_rows, _data);
             clone.SetOrigin(clone.width / 2, clone.width / 2);
             name = _data.Name;
-            clone.rotation = _data.Rotation;
+            clone.rotation = rotation;
             return clone;
         }
 

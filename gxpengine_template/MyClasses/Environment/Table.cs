@@ -32,7 +32,6 @@ namespace gxpengine_template.MyClasses.Environment
 
         }
 
-        
         public bool OnTable(Vec2 point)
         {
             return _boundary.Contains(point);

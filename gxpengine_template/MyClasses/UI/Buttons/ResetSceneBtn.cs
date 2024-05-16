@@ -15,6 +15,13 @@ namespace gxpengine_template.MyClasses.UI
             AddChild(new Coroutine(Init()));
         }
 
+        protected ResetSceneBtn(string filename, int cols, int rows, TiledObject data, Sound clickSound, float clickVolume = 1) : base(filename, cols, rows, data, clickSound,clickVolume)
+        {
+        }
+        public GameObject Clone()
+        {
+            return new ResetSceneBtn(texture.filename, _cols, _rows, _data, clickSound,clickVolume);
+        }
 
         IEnumerator Init()
         {
@@ -31,10 +38,7 @@ namespace gxpengine_template.MyClasses.UI
 
         }
 
-        public GameObject Clone()
-        {
-            return new ResetSceneBtn(texture.filename, _cols, _rows, _data);
-        }
+        
 
         protected override void OnButtonPress()
         {

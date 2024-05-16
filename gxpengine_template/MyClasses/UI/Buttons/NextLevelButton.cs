@@ -16,7 +16,8 @@ namespace gxpengine_template.MyClasses.UI
             NextLevelName = data.GetStringProperty("LevelName");
         }
 
-        private NextLevelButton(string filename, int cols, int rows, string lvlName) : base(filename, cols, rows, null)
+        
+        protected NextLevelButton(string filename, int cols, int rows, string lvlName, Sound clickSound, float clickVolume = 1) : base(filename, cols, rows, null, clickSound, clickVolume)
         {
             NextLevelName = lvlName;
         }
@@ -28,7 +29,7 @@ namespace gxpengine_template.MyClasses.UI
 
         public GameObject Clone()
         {
-            return new NextLevelButton(texture.filename,_cols, _rows, NextLevelName);
+            return new NextLevelButton(texture.filename,_cols, _rows, NextLevelName, clickSound, clickVolume);
         }
     }
 }

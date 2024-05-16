@@ -11,25 +11,33 @@ namespace gxpengine_template.MyClasses
     public class GameManager : Sprite
     {
         public event Action OnWinScreen;
+        Sound _bgMusic;
+        public SoundChannel BgMusic { get; private set; }
+
         public static GameManager Instance { get; private set; }
 
         Player _player;
         PlayerLauncher _launcher;
         StarsUI _starsUI;
         NextLevelUI _nextLevelUI;
+        float _defaultHz = 44100;
+        float _muffleHz;
 
-        public GameManager(TiledObject data) : base("Assets/square.png",true, false)
+        public GameManager(TiledObject data) : base("Assets/square.png", true, false)
         {
 
-            if(Instance != null && Instance == this)
+            if (Instance != null && Instance == this)
             {
                 Destroy();
                 return;
             }
-            else 
+            else
                 Instance = this;
             visible = false;
             AddChild(new Coroutine(Init()));
+            _muffleHz = data.GetFloatProperty("MuffleFrequency", 30000);
+            _bgMusic = new Sound(data.GetStringProperty("BgMusic", ""),true);
+            BgMusic = _bgMusic.Play(volume: data.GetFloatProperty("BgMusicVolume",1));
         }
 
         IEnumerator Init()
@@ -39,6 +47,16 @@ namespace gxpengine_template.MyClasses
             _launcher = MyGame.main.FindObjectOfType<PlayerLauncher>();
             _starsUI = MyGame.main.FindObjectOfType<StarsUI>();
             _nextLevelUI = MyGame.main.FindObjectOfType<NextLevelUI>();
+        }
+
+        public void MuffleBgMusic()
+        {
+            BgMusic.Frequency = _muffleHz;
+        }
+
+        public void ResetBGMusic()
+        {
+            BgMusic.Frequency = _defaultHz;
         }
 
         public void StartIdleMode()
@@ -68,6 +86,7 @@ namespace gxpengine_template.MyClasses
 
         protected override void OnDestroy()
         {
+            BgMusic.Stop();
             OnWinScreen = null;
             Instance = null;
         }
