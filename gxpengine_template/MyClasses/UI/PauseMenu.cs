@@ -71,7 +71,7 @@ namespace gxpengine_template.MyClasses.UI
             Toggle();
         }
 
-        void Toggle()
+        public void Toggle()
         {
             _opened = !_opened;
             if (_opened)

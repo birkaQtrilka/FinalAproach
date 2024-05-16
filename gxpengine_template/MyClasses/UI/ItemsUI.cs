@@ -125,45 +125,5 @@ namespace gxpengine_template.MyClasses.UI
             clone.Placed += OnItemPlaced;
         }
 
-        //IEnumerator Init(TiledObject data)
-        //{
-        //    yield return null;
-
-        //    var paddingL = data.GetFloatProperty("PaddingL", 0.1f) * width;
-        //    var paddingR = data.GetFloatProperty("PaddingR", 0.1f) * width;
-        //    var paddingT = data.GetFloatProperty("PaddingT", 0.1f) * height;
-        //    var paddingB = data.GetFloatProperty("PaddingB", 0.1f) * height;
-        //    var spacingX = data.GetFloatProperty("SpacingX", 0.1f) * width;
-        //    var spacingY = data.GetFloatProperty("SpacingY", 0.1f) * height;
-
-        //    Vec2 pos = new Vec2(x, y);
-
-        //    SetOrigin(0, 0);
-        //    SetXY(pos.x, pos.y);
-        //    alpha = data.GetFloatProperty("BgAlpha", 1);
-
-        //    int mazeColumns = data.GetIntProperty("Columns",1);
-        //    int mazeRows = data.GetIntProperty("Rows", 4);
-        //    int pieceW = Mathf.Floor((width - paddingL - paddingR - (spacingX * (mazeColumns - 1))) / mazeColumns);
-        //    int pieceH = Mathf.Floor((height - paddingT - paddingB - (spacingY * (mazeRows - 1))) / mazeRows);
-        //    Vector2 offset = new Vector2(pieceW * .5f + paddingL, pieceH * .5f + paddingT);
-        //    Vector2 currSpacing = new Vector2();
-
-        //    for (int i = 0; i < _pieces.Length; i++)
-        //    {
-        //        var piece = PieceFactory(_mazeLogic.Pieces[i].Type, pieceSpriteSheetPath, ssColumns, ssRows);
-        //        piece.SetOrigin(piece.width / 2, piece.height / 2);
-        //        _container.AddChild(piece);
-        //        _pieces[i] = piece;
-
-        //        piece.width = pieceW;
-        //        piece.height = pieceH;
-
-        //        currSpacing.x = spacingX * (i % mazeColumns);
-        //        currSpacing.y = spacingY * (i / mazeColumns);
-        //        piece.SetXY(pieceW * (i % mazeColumns) + offset.x + currSpacing.x, pieceH * (i / mazeColumns) + offset.y + currSpacing.y);
-        //    }
-
-        //}
     }
 }

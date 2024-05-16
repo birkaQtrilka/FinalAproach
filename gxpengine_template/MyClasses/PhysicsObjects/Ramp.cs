@@ -23,6 +23,7 @@ namespace gxpengine_template.MyClasses.PhysicsObjects
         public Ramp(string filename, int cols, int rows, TiledObject data) : base(filename, cols, rows, data)
         {
             this.bounciness = data.GetFloatProperty("Bounciness", .98f);
+            AddChild(new AnimationCycler(this, 500));
             AddChild(new Coroutine(Init()));
         }
 
