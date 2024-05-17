@@ -33,7 +33,7 @@
   <object id="104" name="GameManager" type="gxpengine_template.MyClasses.GameManager" x="-257.155" y="130.834" width="57.5758" height="72.7273">
    <properties>
     <property name="BgMusic" value="Assets/Sounds/Main_theme.wav"/>
-    <property name="BgMusicVolume" type="float" value="0.2"/>
+    <property name="BgMusicVolume" type="float" value="0"/>
     <property name="MuffleFrequency" type="float" value="30000"/>
    </properties>
   </object>

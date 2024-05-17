@@ -30,150 +30,150 @@
  <tileset firstgid="24" name="Hole Hazard" tilewidth="131" tileheight="128" tilecount="3" columns="3">
   <image source="hazard_hole.png" width="393" height="128"/>
  </tileset>
- <tileset firstgid="27" name="BuildMode" tilewidth="88" tileheight="121" tilecount="1" columns="1">
-  <image source="build icon.png" width="88" height="121"/>
+ <tileset firstgid="27" name="BuildMode" tilewidth="88" tileheight="121" tilecount="2" columns="2">
+  <image source="build icon.png" width="176" height="121"/>
  </tileset>
- <tileset firstgid="28" name="RestartButton" tilewidth="101" tileheight="123" tilecount="1" columns="1">
-  <image source="reseticon.png" width="101" height="123"/>
+ <tileset firstgid="29" name="RestartButton" tilewidth="101" tileheight="123" tilecount="2" columns="2">
+  <image source="reseticon.png" width="202" height="123"/>
  </tileset>
- <tileset firstgid="29" name="Table" tilewidth="792" tileheight="1920" tilecount="1" columns="1">
+ <tileset firstgid="31" name="Table" tilewidth="792" tileheight="1920" tilecount="1" columns="1">
   <image source="tablenohole.png" width="792" height="1920"/>
  </tileset>
- <tileset firstgid="30" name="Hole" tilewidth="135" tileheight="135" tilecount="1" columns="1">
+ <tileset firstgid="32" name="Hole" tilewidth="135" tileheight="135" tilecount="1" columns="1">
   <image source="holegoal.png" width="135" height="135"/>
  </tileset>
- <tileset firstgid="31" name="StarFull" tilewidth="83" tileheight="83" tilecount="3" columns="3">
+ <tileset firstgid="33" name="StarFull" tilewidth="83" tileheight="83" tilecount="3" columns="3">
   <image source="FullStar.png" width="255" height="83"/>
  </tileset>
- <tileset firstgid="34" name="StarEmpty" tilewidth="83" tileheight="83" tilecount="3" columns="3">
+ <tileset firstgid="36" name="StarEmpty" tilewidth="83" tileheight="83" tilecount="3" columns="3">
   <image source="EmptyStar.png" width="255" height="83"/>
  </tileset>
- <tileset firstgid="37" name="WinScreen" tilewidth="922" tileheight="1163" tilecount="1" columns="1">
+ <tileset firstgid="39" name="WinScreen" tilewidth="922" tileheight="1163" tilecount="1" columns="1">
   <image source="winframe.png" width="922" height="1163"/>
  </tileset>
- <tileset firstgid="38" name="PauseFrame" tilewidth="922" tileheight="1039" tilecount="1" columns="1">
+ <tileset firstgid="40" name="PauseFrame" tilewidth="922" tileheight="1039" tilecount="1" columns="1">
   <image source="pauseframe.png" width="922" height="1039"/>
  </tileset>
- <tileset firstgid="39" name="Continue" tilewidth="50" tileheight="50" tilecount="1" columns="1">
+ <tileset firstgid="41" name="Continue" tilewidth="50" tileheight="50" tilecount="1" columns="1">
   <image source="ContinueBtn.png" width="50" height="50"/>
  </tileset>
- <tileset firstgid="40" name="Level_Menu_BG" tilewidth="1080" tileheight="1920" tilecount="1" columns="1">
+ <tileset firstgid="42" name="Level_Menu_BG" tilewidth="1080" tileheight="1920" tilecount="1" columns="1">
   <image source="levelselectbg.png" width="1080" height="1920"/>
  </tileset>
- <tileset firstgid="41" name="Level1" tilewidth="487" tileheight="195" tilecount="3" columns="3">
+ <tileset firstgid="43" name="Level1" tilewidth="487" tileheight="195" tilecount="3" columns="3">
   <image source="Buttons/lvl 1.png" width="1464" height="195"/>
  </tileset>
- <tileset firstgid="44" name="Button_Blank" tilewidth="487" tileheight="195" tilecount="3" columns="3">
+ <tileset firstgid="46" name="Button_Blank" tilewidth="487" tileheight="195" tilecount="3" columns="3">
   <image source="Buttons/buttonblanks.png" width="1464" height="195"/>
  </tileset>
- <tileset firstgid="47" name="Level_Name" tilewidth="234" tileheight="79" tilecount="1" columns="1">
+ <tileset firstgid="49" name="Level_Name" tilewidth="234" tileheight="79" tilecount="1" columns="1">
   <image source="Buttons/Level.png" width="234" height="79"/>
  </tileset>
- <tileset firstgid="48" name="Level_Number" tilewidth="109" tileheight="74" tilecount="12" columns="6">
+ <tileset firstgid="50" name="Level_Number" tilewidth="109" tileheight="74" tilecount="12" columns="6">
   <image source="Buttons/numbers.png" width="654" height="148"/>
  </tileset>
- <tileset firstgid="60" name="Level_Menu_Title" tilewidth="563" tileheight="129" tilecount="1" columns="1">
+ <tileset firstgid="62" name="Level_Menu_Title" tilewidth="563" tileheight="129" tilecount="1" columns="1">
   <image source="Levels.png" width="563" height="129"/>
  </tileset>
  <objectgroup id="11" name="Capa de Objetos 5" locked="1">
-  <object id="204" name="Level_Menu_BG" gid="40" x="0" y="1920" width="1080" height="1920"/>
+  <object id="204" name="Level_Menu_BG" gid="42" x="0" y="1920" width="1080" height="1920"/>
  </objectgroup>
  <objectgroup id="2" name="Object Layer 1">
-  <object id="207" name="Level_Menu_BG" gid="40" x="0" y="1920" width="1080" height="1920" visible="0"/>
+  <object id="207" name="Level_Menu_BG" gid="42" x="0" y="1920" width="1080" height="1920" visible="0"/>
  </objectgroup>
  <objectgroup id="6" name="UI">
-  <object id="208" name="Level_1_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="44" x="38" y="476" width="487" height="195">
+  <object id="208" name="Level_1_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="46" x="38" y="476" width="487" height="195">
    <properties>
     <property name="LevelName" value="Assets/Test(1.1).tmx"/>
    </properties>
   </object>
-  <object id="214" name="Level_3_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="44" x="38" y="726" width="487" height="195">
+  <object id="214" name="Level_3_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="46" x="38" y="726" width="487" height="195">
    <properties>
     <property name="LevelName" value="Assets/Test(1.3).tmx"/>
    </properties>
   </object>
-  <object id="217" name="Level_5_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="44" x="38" y="976" width="487" height="195">
+  <object id="217" name="Level_5_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="46" x="38" y="976" width="487" height="195">
    <properties>
     <property name="LevelName" value="Assets/Test(2.2).tmx"/>
    </properties>
   </object>
-  <object id="220" name="Level_7_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="44" x="38" y="1226" width="487" height="195">
+  <object id="220" name="Level_7_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="46" x="38" y="1226" width="487" height="195">
    <properties>
     <property name="LevelName" value="Assets/Test(3.1).tmx"/>
    </properties>
   </object>
-  <object id="223" name="Level_9_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="44" x="38" y="1476" width="487" height="195">
+  <object id="223" name="Level_9_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="46" x="38" y="1476" width="487" height="195">
    <properties>
     <property name="LevelName" value="Assets/Test(3.3).tmx"/>
    </properties>
   </object>
-  <object id="226" name="Level_11_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="44" x="38" y="1726" width="487" height="195">
+  <object id="226" name="Level_11_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="46" x="38" y="1726" width="487" height="195">
    <properties>
     <property name="LevelName" value="Assets/Test(4.2).tmx"/>
    </properties>
   </object>
-  <object id="238" name="Level_6_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="44" x="551" y="976" width="487" height="195">
+  <object id="238" name="Level_6_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="46" x="551" y="976" width="487" height="195">
    <properties>
     <property name="LevelName" value="Assets/Test(2.3).tmx"/>
    </properties>
   </object>
-  <object id="235" name="Level_4_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="44" x="551" y="726" width="487" height="195">
+  <object id="235" name="Level_4_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="46" x="551" y="726" width="487" height="195">
    <properties>
     <property name="LevelName" value="Assets/Test(2.1).tmx"/>
    </properties>
   </object>
-  <object id="247" name="Level_12_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="44" x="551" y="1726" width="487" height="195">
+  <object id="247" name="Level_12_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="46" x="551" y="1726" width="487" height="195">
    <properties>
     <property name="LevelName" value="Assets/Test(4.3).tmx"/>
    </properties>
   </object>
-  <object id="241" name="Level_8_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="44" x="551" y="1226" width="487" height="195">
+  <object id="241" name="Level_8_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="46" x="551" y="1226" width="487" height="195">
    <properties>
     <property name="LevelName" value="Assets/Test(3.2).tmx"/>
    </properties>
   </object>
-  <object id="229" name="Level_2_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="44" x="551" y="476" width="487" height="195">
+  <object id="229" name="Level_2_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="46" x="551" y="476" width="487" height="195">
    <properties>
     <property name="LevelName" value="Assets/Test(1.2).tmx"/>
    </properties>
   </object>
-  <object id="244" name="Level_10_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="44" x="551" y="1476" width="487" height="195">
+  <object id="244" name="Level_10_Button" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="46" x="551" y="1476" width="487" height="195">
    <properties>
     <property name="LevelName" value="Assets/Test(4.1).tmx"/>
    </properties>
   </object>
-  <object id="209" name="Level_1_level" gid="47" x="113" y="409" width="234" height="79"/>
-  <object id="212" name="Level_3_level" gid="47" x="113" y="659" width="234" height="79"/>
-  <object id="215" name="Level_5_level" gid="47" x="113" y="909" width="234" height="79"/>
-  <object id="221" name="Level_9_level" gid="47" x="113" y="1409" width="234" height="79"/>
-  <object id="218" name="Level_7_level" gid="47" x="113" y="1159" width="234" height="79"/>
-  <object id="224" name="Level_11_level" gid="47" x="113" y="1659" width="234" height="79"/>
-  <object id="227" name="Level_2_level" gid="47" x="611" y="409" width="234" height="79"/>
-  <object id="233" name="Level_4_level" gid="47" x="611" y="659" width="234" height="79"/>
-  <object id="236" name="Level_6_level" gid="47" x="611" y="909" width="234" height="79"/>
-  <object id="239" name="Level_8_level" gid="47" x="611" y="1159" width="234" height="79"/>
-  <object id="242" name="Level_10_level" gid="47" x="611" y="1409" width="234" height="79"/>
-  <object id="245" name="Level_12_level" gid="47" x="611" y="1659" width="234" height="79"/>
-  <object id="248" name="Level_11_Number" gid="58" x="378" y="1659" width="109" height="74"/>
-  <object id="249" name="Level_12_Number" gid="59" x="876" y="1659" width="109" height="74"/>
-  <object id="210" name="Level_1_Number" gid="48" x="378" y="409" width="109" height="74"/>
-  <object id="250" name="Level_10_Number" gid="57" x="876" y="1409" width="109" height="74"/>
-  <object id="251" name="Level_9_Number" gid="56" x="378" y="1409" width="109" height="74"/>
-  <object id="252" name="Level_8_Number" gid="55" x="876" y="1159" width="109" height="74"/>
-  <object id="253" name="Level_7_Number" gid="54" x="378" y="1159" width="109" height="74"/>
-  <object id="254" name="Level_6_Number" gid="53" x="876" y="909" width="109" height="74"/>
-  <object id="255" name="Level_5_Number" gid="52" x="378" y="909" width="109" height="74"/>
-  <object id="256" name="Level_4_Number" gid="51" x="876" y="659" width="109" height="74"/>
-  <object id="257" name="Level_3_Number" gid="50" x="378" y="659" width="109" height="74"/>
-  <object id="258" name="Level_2_Number" gid="49" x="876" y="409" width="109" height="74"/>
-  <object id="259" name="Level_Menu_Title" gid="60" x="259" y="213" width="563" height="129"/>
+  <object id="209" name="Level_1_level" gid="49" x="113" y="409" width="234" height="79"/>
+  <object id="212" name="Level_3_level" gid="49" x="113" y="659" width="234" height="79"/>
+  <object id="215" name="Level_5_level" gid="49" x="113" y="909" width="234" height="79"/>
+  <object id="221" name="Level_9_level" gid="49" x="113" y="1409" width="234" height="79"/>
+  <object id="218" name="Level_7_level" gid="49" x="113" y="1159" width="234" height="79"/>
+  <object id="224" name="Level_11_level" gid="49" x="113" y="1659" width="234" height="79"/>
+  <object id="227" name="Level_2_level" gid="49" x="611" y="409" width="234" height="79"/>
+  <object id="233" name="Level_4_level" gid="49" x="611" y="659" width="234" height="79"/>
+  <object id="236" name="Level_6_level" gid="49" x="611" y="909" width="234" height="79"/>
+  <object id="239" name="Level_8_level" gid="49" x="611" y="1159" width="234" height="79"/>
+  <object id="242" name="Level_10_level" gid="49" x="611" y="1409" width="234" height="79"/>
+  <object id="245" name="Level_12_level" gid="49" x="611" y="1659" width="234" height="79"/>
+  <object id="248" name="Level_11_Number" gid="60" x="378" y="1659" width="109" height="74"/>
+  <object id="249" name="Level_12_Number" gid="61" x="876" y="1659" width="109" height="74"/>
+  <object id="210" name="Level_1_Number" gid="50" x="378" y="409" width="109" height="74"/>
+  <object id="250" name="Level_10_Number" gid="59" x="876" y="1409" width="109" height="74"/>
+  <object id="251" name="Level_9_Number" gid="58" x="378" y="1409" width="109" height="74"/>
+  <object id="252" name="Level_8_Number" gid="57" x="876" y="1159" width="109" height="74"/>
+  <object id="253" name="Level_7_Number" gid="56" x="378" y="1159" width="109" height="74"/>
+  <object id="254" name="Level_6_Number" gid="55" x="876" y="909" width="109" height="74"/>
+  <object id="255" name="Level_5_Number" gid="54" x="378" y="909" width="109" height="74"/>
+  <object id="256" name="Level_4_Number" gid="53" x="876" y="659" width="109" height="74"/>
+  <object id="257" name="Level_3_Number" gid="52" x="378" y="659" width="109" height="74"/>
+  <object id="258" name="Level_2_Number" gid="51" x="876" y="409" width="109" height="74"/>
+  <object id="259" name="Level_Menu_Title" gid="62" x="259" y="213" width="563" height="129"/>
  </objectgroup>
  <objectgroup id="10" name="Managers">
   <object id="77" name="Draggerss" type="gxpengine_template.MyClasses.Dragging.Dragger" x="-246.667" y="25.3333" width="93.3333" height="77.3333"/>
   <object id="139" name="GameManager" type="gxpengine_template.MyClasses.GameManager" x="-227.273" y="151.515" width="57.5758" height="72.7273">
    <properties>
     <property name="BgMusic" value="Assets/Sounds/Main_theme.wav"/>
-    <property name="BgMusicVolume" type="float" value="0.4"/>
+    <property name="BgMusicVolume" type="float" value="0"/>
     <property name="MuffleFrequency" type="float" value="30000"/>
    </properties>
   </object>

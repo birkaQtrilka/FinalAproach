@@ -30,54 +30,54 @@
  <tileset firstgid="24" name="Hole Hazard" tilewidth="131" tileheight="128" tilecount="3" columns="3">
   <image source="hazard_hole.png" width="393" height="128"/>
  </tileset>
- <tileset firstgid="27" name="BuildMode" tilewidth="88" tileheight="121" tilecount="1" columns="1">
-  <image source="build icon.png" width="88" height="121"/>
+ <tileset firstgid="27" name="BuildMode" tilewidth="88" tileheight="121" tilecount="2" columns="2">
+  <image source="build icon.png" width="176" height="121"/>
  </tileset>
- <tileset firstgid="28" name="RestartButton" tilewidth="101" tileheight="123" tilecount="1" columns="1">
-  <image source="reseticon.png" width="101" height="123"/>
+ <tileset firstgid="29" name="RestartButton" tilewidth="101" tileheight="123" tilecount="2" columns="2">
+  <image source="reseticon.png" width="202" height="123"/>
  </tileset>
- <tileset firstgid="29" name="Table" tilewidth="792" tileheight="1920" tilecount="1" columns="1">
+ <tileset firstgid="31" name="Table" tilewidth="792" tileheight="1920" tilecount="1" columns="1">
   <image source="tablenohole.png" width="792" height="1920"/>
  </tileset>
- <tileset firstgid="30" name="Hole" tilewidth="135" tileheight="135" tilecount="1" columns="1">
+ <tileset firstgid="32" name="Hole" tilewidth="135" tileheight="135" tilecount="1" columns="1">
   <image source="holegoal.png" width="135" height="135"/>
  </tileset>
- <tileset firstgid="31" name="StarFull" tilewidth="83" tileheight="83" tilecount="3" columns="3">
+ <tileset firstgid="33" name="StarFull" tilewidth="83" tileheight="83" tilecount="3" columns="3">
   <image source="FullStar.png" width="255" height="83"/>
  </tileset>
- <tileset firstgid="34" name="StarEmpty" tilewidth="83" tileheight="83" tilecount="3" columns="3">
+ <tileset firstgid="36" name="StarEmpty" tilewidth="83" tileheight="83" tilecount="3" columns="3">
   <image source="EmptyStar.png" width="255" height="83"/>
  </tileset>
- <tileset firstgid="37" name="WinScreen" tilewidth="922" tileheight="1163" tilecount="1" columns="1">
+ <tileset firstgid="39" name="WinScreen" tilewidth="922" tileheight="1163" tilecount="1" columns="1">
   <image source="winframe.png" width="922" height="1163"/>
  </tileset>
- <tileset firstgid="38" name="PauseFrame" tilewidth="922" tileheight="1039" tilecount="1" columns="1">
+ <tileset firstgid="40" name="PauseFrame" tilewidth="922" tileheight="1039" tilecount="1" columns="1">
   <image source="pauseframe.png" width="922" height="1039"/>
  </tileset>
- <tileset firstgid="39" name="Continue" tilewidth="50" tileheight="50" tilecount="1" columns="1">
+ <tileset firstgid="41" name="Continue" tilewidth="50" tileheight="50" tilecount="1" columns="1">
   <image source="ContinueBtn.png" width="50" height="50"/>
  </tileset>
- <tileset firstgid="40" name="MainMenuBG" tilewidth="1080" tileheight="1920" tilecount="1" columns="1">
+ <tileset firstgid="42" name="MainMenuBG" tilewidth="1080" tileheight="1920" tilecount="1" columns="1">
   <image source="mainmenubg.png" width="1080" height="1920"/>
  </tileset>
- <tileset firstgid="41" name="MenuTitle" tilewidth="1133" tileheight="484" tilecount="1" columns="1">
+ <tileset firstgid="43" name="MenuTitle" tilewidth="1133" tileheight="484" tilecount="1" columns="1">
   <image source="title (2).png" width="1133" height="484"/>
  </tileset>
- <tileset firstgid="42" name="Quit" tilewidth="488" tileheight="194" tilecount="3" columns="3">
+ <tileset firstgid="44" name="Quit" tilewidth="488" tileheight="194" tilecount="3" columns="3">
   <image source="Buttons/Quit.png" width="1464" height="194"/>
  </tileset>
- <tileset firstgid="45" name="PlayBtn" tilewidth="488" tileheight="194" tilecount="3" columns="3">
+ <tileset firstgid="47" name="PlayBtn" tilewidth="488" tileheight="194" tilecount="3" columns="3">
   <image source="Buttons/Play.png" width="1464" height="194"/>
  </tileset>
- <tileset firstgid="48" name="Options" tilewidth="488" tileheight="195" tilecount="3" columns="3">
+ <tileset firstgid="50" name="Options" tilewidth="488" tileheight="195" tilecount="3" columns="3">
   <image source="Buttons/Options.png" width="1464" height="195"/>
  </tileset>
  <objectgroup id="11" name="Capa de Objetos 5" locked="1">
-  <object id="205" name="MainMenuBG" gid="40" x="-0.0625" y="1920" width="1080" height="1920"/>
+  <object id="205" name="MainMenuBG" gid="42" x="-0.0625" y="1920" width="1080" height="1920"/>
  </objectgroup>
  <objectgroup id="2" name="Object Layer 1"/>
  <objectgroup id="6" name="UI">
-  <object id="190" name="PauseMenu" type="gxpengine_template.MyClasses.UI.PauseMenu" gid="38" x="90.5152" y="1438.18" width="922" height="1039" visible="0">
+  <object id="190" name="PauseMenu" type="gxpengine_template.MyClasses.UI.PauseMenu" gid="40" x="90.5152" y="1438.18" width="922" height="1039" visible="0">
    <properties>
     <property name="CloseSoundFrequency" type="float" value="36000"/>
     <property name="ExitBtnName" value="Exit"/>
@@ -97,20 +97,20 @@
     <property name="StartScreenName" value="Assets/Test.tmx"/>
    </properties>
   </object>
-  <object id="204" name="MainMenuBG" gid="40" x="0.0020202" y="1920" width="1080" height="1920" visible="0"/>
-  <object id="206" name="MenuTitle" gid="41" x="-6.5" y="737.67" width="1133" height="484"/>
-  <object id="207" name="Exit" type="gxpengine_template.MyClasses.UI.ExitGameBtn" gid="42" x="296" y="1470" width="488" height="194">
+  <object id="204" name="MainMenuBG" gid="42" x="0.0020202" y="1920" width="1080" height="1920" visible="0"/>
+  <object id="206" name="MenuTitle" gid="43" x="-6.5" y="737.67" width="1133" height="484"/>
+  <object id="207" name="Exit" type="gxpengine_template.MyClasses.UI.ExitGameBtn" gid="44" x="296" y="1470" width="488" height="194">
    <properties>
     <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
    </properties>
   </object>
-  <object id="208" name="StartBtn" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="45" x="296" y="870" width="488" height="194">
+  <object id="208" name="StartBtn" type="gxpengine_template.MyClasses.UI.NextLevelButton" gid="47" x="296" y="870" width="488" height="194">
    <properties>
     <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
     <property name="LevelName" value="Assets/RectTest.tmx"/>
    </properties>
   </object>
-  <object id="209" name="Options Button" type="gxpengine_template.MyClasses.UI.DisableObjectButton" gid="48" x="296" y="1170" width="488" height="195">
+  <object id="209" name="Options Button" type="gxpengine_template.MyClasses.UI.DisableObjectButton" gid="50" x="296" y="1170" width="488" height="195">
    <properties>
     <property name="ButtonPauseBeforeClick" type="float" value="0.1"/>
    </properties>

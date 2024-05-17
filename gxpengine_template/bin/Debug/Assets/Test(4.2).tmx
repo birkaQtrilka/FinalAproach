@@ -205,6 +205,14 @@
     <property name="YouWinTextPosY" type="float" value="-300"/>
    </properties>
   </object>
+  <object id="224" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="3" x="89.3636" y="748.515" width="50" height="50">
+   <properties>
+    <property name="NumbersTileSetName" value="Assets/numbers.png"/>
+    <property name="PrefabNameAndCountCSV" value="Bounce Block:1,Wall:1,Block:1,Booster_Down:1,Booster_Right:1"/>
+    <property name="TextSize" type="int" value="30"/>
+   </properties>
+  </object>
+  <object id="291" name="Pause" type="gxpengine_template.MyClasses.UI.PauseButton" gid="44" x="940" y="727" width="85" height="118"/>
   <object id="190" name="PauseMenu" type="gxpengine_template.MyClasses.UI.PauseMenu" gid="40" x="90.5152" y="1438.18" width="922" height="1039" visible="0">
    <properties>
     <property name="CloseSoundFrequency" type="float" value="36000"/>
@@ -225,14 +233,6 @@
     <property name="StartScreenName" value="Assets/Level_Menu.tmx"/>
    </properties>
   </object>
-  <object id="224" name="itemsUI" type="gxpengine_template.MyClasses.UI.ItemsUI" gid="3" x="89.3636" y="748.515" width="50" height="50">
-   <properties>
-    <property name="NumbersTileSetName" value="Assets/numbers.png"/>
-    <property name="PrefabNameAndCountCSV" value="Bounce Block:1,Wall:1,Block:1,Booster_Down:1,Booster_Right:1"/>
-    <property name="TextSize" type="int" value="30"/>
-   </properties>
-  </object>
-  <object id="291" name="Pause" type="gxpengine_template.MyClasses.UI.PauseButton" gid="44" x="940" y="727" width="85" height="118"/>
  </objectgroup>
  <objectgroup id="10" name="Managers">
   <object id="77" name="Draggerss" type="gxpengine_template.MyClasses.Dragging.Dragger" x="-246.667" y="25.3333" width="93.3333" height="77.3333"/>
@@ -250,8 +250,8 @@
   </object>
   <object id="139" name="GameManager" type="gxpengine_template.MyClasses.GameManager" x="-227.273" y="151.515" width="57.5758" height="72.7273">
    <properties>
-    <property name="BgMusic" value="Assets/Sounds/Sakura-Girl-Daisy-chosic.com_.mp3"/>
-    <property name="BgMusicVolume" type="float" value="0"/>
+    <property name="BgMusic" value="Assets/Sounds/Main_theme.wav"/>
+    <property name="BgMusicVolume" type="float" value="0.2"/>
     <property name="MuffleFrequency" type="float" value="30000"/>
    </properties>
   </object>
